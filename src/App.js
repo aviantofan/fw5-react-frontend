@@ -27,6 +27,8 @@
 
 import React, { Component } from 'react'
 import Homepage from './pages/Homepage'
+// import Registerpage from './pages/Registerpage'
+// import Loginpage from './pages/Loginpage'
 export default class App extends Component {
   render() {
     return (
