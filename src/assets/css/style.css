@@ -1,0 +1,362 @@
+/* Style Homepage */
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+.header-home{
+  background-image: url(../images/header-home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 758px;
+}
+
+.header-home .header-content{
+  background-color:rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 758px;
+  color: white;
+}
+
+.header-home .header-content .header-nav span{
+  font-size: 24px;
+}
+
+.header-home .header-content h1.heading2{
+  font-size: 64px;
+  font-family: 'Playfair Display', serif;
+  text-align: left;
+  font-weight: bold;
+  line-height: 85px;
+  padding-top: 69px;
+}
+
+.header-home .header-content p.text2{
+  font-size: 22px;
+  text-align: left;
+  font-weight: 900;
+  line-height: 85px;
+  margin-bottom: 0px;
+}
+
+.header-home .header-content div.line2{
+  background:white;
+  width: 32px;
+  height: 2px;
+  border-radius: 4px;
+}
+
+.header-home .header-content div select.form-select{
+  width: 100%;
+  height: 52px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #393939;
+}
+
+.header-home .header-content form div{
+  text-align: left;
+}
+
+.header-home .header-content form div button.button-filled{
+  width: 180px;
+  height: 52px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.header-home .header-content .text{
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 33px;
+}
+
+.header-home .header-content .text span{
+  font-weight: 900;
+}
+
+section h2.home {
+  margin-top: 82px;
+  margin-bottom: 56px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 36px;
+  font-family: 'Playfair Display', serif;
+}
+
+section .direction{
+  margin-top: 90px;
+  text-align: right;
+}
+
+section .direction a{
+  font-weight: 400;
+}
+
+section h2.testimonials {
+  margin-top: 82px;
+  margin-bottom: 56px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 36px;
+  font-family: 'Playfair Display', serif;
+}
+
+main section img {
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+main section a {
+  text-decoration: none;
+}
+
+.item-list .highlight{
+  width: 128px;
+}
+
+main section .highlight h5 {
+  color: #042521;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+main section .highlight span {
+  font-size: 17px;
+  color: #686767;
+}
+
+section.testimonials .left-testi {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+section.testimonials .comment svg {
+  color:#FFBB0C;
+  margin-right: 15px;
+}
+
+section.testimonials .comment p {
+  margin-top: 31px;
+  margin-bottom: 40px;
+  width: 450px;
+  font-size: 24px;
+  line-height: 36px;
+  font-family: 'Mulish', sans-serif;
+}
+
+section.testimonials .profile h5 {
+  font-weight: bold;
+}
+
+section.testimonials .profile-pic .image {
+  margin: 0 auto;
+  width: 396px;
+}
+
+section.testimonials .profile-pic img {
+  border-radius: 10px;
+  width: 396px;
+}
+
+section.testimonials .profile-pic .next-prev {
+  position: relative;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: -70px;
+  width: 132px;
+  height: 60px;
+  border-radius: 16px 0px 0px 0px;
+}
+
+section.testimonials .profile-pic button.prev{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  min-height: unset;
+  min-width: unset;
+  border: 2px solid #D7D7D7 ;
+  top: 10px;
+  bottom: 25px;
+  right: 80px;
+}
+
+section.testimonials .profile-pic button.next{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  min-height: unset;
+  min-width: unset;
+  border: 2px solid #4FBDBA ;
+  top: 10px;
+  bottom: 25px;
+  right: 15px;
+}
+
+section.testimonials .profile-pic .prev svg {
+  color: #686767;
+}
+
+@media (max-width: 500px) {
+  .header-forgot .header-content {
+    padding: 0 10px;
+  }
+
+  .header-forgot .header-content form div input {
+    width: 100%;
+  }
+
+  .header-forgot .header-content form div button.button-send {
+    width: 100%;
+  }
+  section.testimonials .comment p{
+    width: 100%;
+  }
+  section.testimonials .profile-pic img{
+    width: 100%;
+  }
+  footer.footer-home .description{
+    width: 100%;
+  }
+  .brand{
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-home .header-content .select-option .option{
+    text-align: center;
+  }
+}
+
+@media(max-width: 989px){
+  .header-login .header-content h1.heading{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    padding-top: unset;
+    line-height: 85px;
+  }
+  .header-login .header-content div div.line1{
+    width: unset;
+    height:unset;
+  }
+  .header-login .header-content div div.circle1{
+    width: unset;
+    height: unset;
+    border-radius: unset;
+  }
+  .header-login .header-content div div.circle2{
+    width: unset;
+    height: unset;
+    border-radius: unset;
+  }
+  .header-login .header-content div.accs{
+    width: unset;
+    height: unset;
+    display: unset;
+    justify-content: unset;
+    padding: 0 0 0 0;
+    margin-top: unset;
+  }
+  .header-login .header-content div input.email{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: 50px;
+    margin-left: unset;
+  }
+  .header-login .header-content div input.password{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: unset;
+    margin-left: unset;
+  }
+  .header-login .header-content div p.forgot{
+    font-size: 18px;
+    font-family: 'Mulish', sans-serif;
+    line-height: 20px;
+    text-decoration: underline;
+    color: white;
+    margin-top: 0;
+    margin-left: unset;
+  }
+  .header-login .header-content div button.button-login{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    margin-left: unset;
+    background-color: #4FBDBA;
+    font-weight: 900;
+    font-size: 24px;
+  }
+  .header-login .header-content div button.button-login-google{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    margin-left: unset;
+    background-color: #FFFFFF;
+    font-weight: 900;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+    .toggled-action {
+      text-align: center;
+    }
+    .icon-profile{
+      text-align: center;
+    }
+    section.profile{
+      padding-top: 100px;
+    }
+    section.button .button-filled,
+    section.button .button-dark,
+    section.button .button-gray {
+      width: 90px;
+      height: 50px;
+      font-weight: 900;
+      font-size: 12px;
+    } 
+    .header-home .header-content h1.heading2{
+      font-size: 54px;
+      text-align: center;
+      padding-top: 10px;
+    }
+    .header-home .header-content p.text2{
+      text-align: center;
+    }
+}
+
+@media (max-width: 1439px) {
+  .navigation {
+    height: 80px;
+  }
+
+.logo-brand {
+  justify-content: center;
+}
+
+.auth-action {
+  text-align: center;
+  }
+}

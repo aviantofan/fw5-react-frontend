@@ -1,0 +1,73 @@
+nav.navbar{
+  height: 162px;
+}
+
+nav.container {
+  padding-top: 81px;
+}
+
+.brand{
+  font-size: 35px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #072227;
+  stroke: 2px #32DBC6;
+  stroke-linejoin: round;
+}
+
+nav.container .link {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+nav.container .link li {
+  display: inline-block;
+  margin: 0 17.5px;
+}
+
+nav.container .link li a {
+  color: #B8BECD;
+  text-decoration: none;
+}
+
+nav.container .link li a.active {
+  color: #000;
+}
+
+button {
+  width: 132px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.button-outline {
+  background-color: transparent;
+  border: 1px solid #4FBDBA;
+  /* border-width: 1px;
+  border-color: #FFCD61;
+  border-style: solid; */
+}
+
+.button-filled {
+  background-color: #4FBDBA;
+  border: unset;
+}
+
+.button-dark {
+  background-color: #072227;
+  border: unset;
+}
+
+.button-gray {
+  background-color: rgba(203, 203, 212, 0.27);
+  border: unset;
+}
+
+img.img-rounded-circle{
+  border-radius: 30px;
+  margin-left: 38px;
+}
