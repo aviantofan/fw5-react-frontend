@@ -207,6 +207,275 @@ section.testimonials .profile-pic .prev svg {
   color: #686767;
 }
 
+/* Style Login */
+
+.header-login{
+  background-image: url(../images/header-login.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 758px;
+}
+
+.header-login .header-content{
+  background-color:rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 758px;
+  color: white;
+}
+
+.header-login .header-content h1.heading{
+  font-family: 'Playfair Display', serif;;
+  font-weight: 700;
+  font-size: 64px;
+  padding-top: 107px;
+  line-height: 85px;
+}
+
+.header-login .header-content p{
+  font-weight: 700;
+  margin-top: 43px;
+}
+
+.header-login .header-content div button.button-dark{
+  width: 100%;
+  height: 79px;
+  font-size: 24px;
+  font-weight: 900;
+  border-radius: 10px;
+  color: #AEFEFF;
+}
+
+.header-login .header-content div.accs{
+  width: 20px;
+  height: 650px;
+  display: flex;
+  justify-content: right;
+  padding: 0 0 0 0;
+  margin-top: 20px;
+}
+
+.header-login .header-content div div.circle1{
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.header-login .header-content div div.line1{
+  background: white;
+  height: 100%;
+  width: 1px;
+}
+
+.header-login .header-content div div.circle2{
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.header-login .header-content div input.email{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  margin-top: 160px;
+  margin-left: 120px;
+}
+
+.header-login .header-content div input.password{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  margin-left: 120px;
+}
+
+.header-login .header-content div input:focus{
+  outline: none;
+}
+
+.header-login .header-content div input.email:read-write,
+.header-login .header-content div input.password:read-write{
+  padding-left: 41px;
+}
+
+.header-login .header-content div input.email::placeholder,
+.header-login .header-content div input.password::placeholder{
+  color: #FFFFFF
+}
+
+.header-login .header-content div p.forgot{
+  font-size: 18px;
+  font-family: 'Mulish', sans-serif;
+  line-height: 28px;
+  text-decoration: underline;
+  color: white;
+  margin-top: 0;
+  margin-left: 120px;
+}
+
+.header-login .header-content div button.button-login{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 120px;
+  background-color: #4FBDBA;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.header-login .header-content div button.button-login-google{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 120px;
+  background-color:white;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+/* Style register */
+.header-register{
+  background-image: url(../images/header-login.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 758px;
+}
+
+.header-register .header-content{
+  background-color:rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 758px;
+  color: white;
+}
+
+.header-register .header-content h1.heading{
+  font-family: 'Playfair Display', serif;;
+  font-weight: 700;
+  font-size: 64px;
+  padding-top: 107px;
+  line-height: 85px;
+}
+
+.header-register .header-content p{
+  font-weight: 700;
+  margin-top: 43px;
+}
+
+.header-register .header-content div button.button-dark{
+  width: 100%;
+  height: 79px;
+  font-size: 24px;
+  font-weight: 900;
+  border-radius: 10px;
+  color: #AEFEFF;
+}
+
+.header-register .header-content div.accs{
+  width: 20px;
+  height: 650px;
+  display: flex;
+  justify-content: right;
+  padding: 0 0 0 0;
+  margin-top: 20px;
+}
+
+.header-register .header-content div div.circle1{
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.header-register .header-content div div.line1{
+  background: white;
+  height: 100%;
+  width: 1px;
+}
+
+.header-register .header-content div div.circle2{
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.header-register .header-content div input.name{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  margin-top: 130px;
+  margin-left: 120px;
+}
+
+.header-register .header-content div input.email{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  margin-top: 24;
+  margin-left: 120px;
+}
+
+.header-register .header-content div input.password{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  margin-top: 24;
+  margin-left: 120px;
+}
+
+.header-register .header-content div input:focus{
+  outline: none;
+}
+
+.header-register .header-content div input.name:read-write,
+.header-register .header-content div input.email:read-write,
+.header-register .header-content div input.password:read-write{
+  padding-left: 41px;
+}
+
+.header-register .header-content div input.name::placeholder,
+.header-register .header-content div input.email::placeholder,
+.header-register .header-content div input.password::placeholder{
+  color: #FFFFFF;
+}
+
+.header-register .header-content div button.button-signup{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 120px;
+  background-color: #4FBDBA;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.header-register .header-content div button.button-signup-google{
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 120px;
+  background-color:white;
+  font-weight: 900;
+  font-size: 24px;
+}
+
 @media (max-width: 500px) {
   .header-forgot .header-content {
     padding: 0 10px;
@@ -309,6 +578,85 @@ section.testimonials .profile-pic .prev svg {
     font-size: 24px;
   }
   .header-login .header-content div button.button-login-google{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    margin-left: unset;
+    background-color: #FFFFFF;
+    font-weight: 900;
+    font-size: 24px;
+  }
+
+  .header-register .header-content h1.heading{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    padding-top: unset;
+    line-height: 85px;
+  }
+  .header-register.header-content div div.line1{
+    width: unset;
+    height:unset;
+  }
+  .header-register .header-content div div.circle1{
+    width: unset;
+    height: unset;
+    border-radius: unset;
+  }
+  .header-register .header-content div div.circle2{
+    width: unset;
+    height: unset;
+    border-radius: unset;
+  }
+  .header-register .header-content div.accs{
+    width: unset;
+    height: unset;
+    display: unset;
+    justify-content: unset;
+    padding: 0 0 0 0;
+    margin-top: unset;
+  }
+  .header-register .header-content div input.name{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: 50px;
+    margin-left: unset;
+  }
+  .header-register .header-content div input.email{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: unset;
+    margin-left: unset;
+  }
+  .header-register .header-content div input.password{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: unset;
+    margin-left: unset;
+  }
+  .header-register .header-content div button.button-signup{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    margin-left: unset;
+    background-color: #4FBDBA;
+    font-weight: 900;
+    font-size: 24px;
+  }
+  .header-register .header-content div button.button-signup-google{
     height: 60px;
     border: none;
     border-radius: 10px;
