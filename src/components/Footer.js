@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import logo from '../assets/images/logo.png'
+import Logo from '../assets/images/logo.png'
 import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 
 export default class Footer extends Component {
   render() {
     return (
-      <footer className="footer-home">
+      <footer className="footer">
         <div className="container">
           <div className="row text">
             <div className="col">
               <div>
-                <img src={logo} alt="Logo" />
-                <span className="brand">V E H I C O O L</span>
+                <img src={Logo} alt="Logo" />
+                <span className="brand align-middle mx-3">V E H I C O O L</span>
               </div>
               <div className="description">Plan and book your perfect trip with
                 expert advice, travel tips for vehicle
