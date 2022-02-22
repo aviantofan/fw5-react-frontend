@@ -1,0 +1,19 @@
+.button-outline {
+  background-color: transparent;
+  border: 1px solid #4FBDBA;
+}
+
+.button-filled {
+  background-color: #4FBDBA;
+  border: unset;
+}
+
+.button-dark {
+  background-color: #072227;
+  border: unset;
+}
+
+.button-gray {
+  background-color: rgba(203, 203, 212, 0.27);
+  border: unset;
+}
