@@ -6,7 +6,7 @@ export default class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="Homepage.js">
             <img className='img-fluid' src={logo} alt="logo" />
           </a>
           <div className="brand">
@@ -32,7 +32,7 @@ export default class Navbar extends Component {
               </li>
             </ul>
             <div className="toggled-action">
-              <a href="#">
+              <a href="Loginpage.js">
                 <button className="button-outline mx-3">Login</button>
               </a>
               <a href="#">
