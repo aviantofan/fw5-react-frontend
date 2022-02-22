@@ -164,7 +164,7 @@ export default class Homepage extends Component {
                     <span>Founder Circle</span>
                   </div>
                 </div>
-                <div className="col-12 col-lg-6 mt-5 d-flex profile-pic">
+                <div className="col-12 col-lg-6 mt-5 d-flex profile-pic mb-5">
                   <div className="image d-inline-block position-relative">
                     <img src={User} alt="User-Home" />
                     <div className="row ms-auto next-prev">
