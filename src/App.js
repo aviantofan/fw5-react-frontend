@@ -26,13 +26,15 @@
 // export default  App
 
 import React, { Component } from 'react'
-import Homepage from './pages/Homepage'
+// import Homepage from './pages/Homepage'
+// import Vehicletypepage from './pages/Vehicletypepage'
 // import Registerpage from './pages/Registerpage'
 // import Loginpage from './pages/Loginpage'
+import Forgotpasswordpage from './pages/Forgotpasswordpage'
 export default class App extends Component {
   render() {
     return (
-      <Homepage />
+      <Forgotpasswordpage />
     )
   }
 }
