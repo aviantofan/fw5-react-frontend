@@ -11,7 +11,7 @@ export default class Forgotpasswordpage extends Component {
             <div class="header-content">
               <div class="header-nav">
                 <div>
-                  <a href="./login.html">
+                  <a href="#">
                     <FaChevronLeft fa-xl />
                   </a>
                   <span>Back</span>
