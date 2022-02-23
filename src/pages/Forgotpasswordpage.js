@@ -7,9 +7,9 @@ export default class Forgotpasswordpage extends Component {
     return (
       <>
         <body>
-          <header class="header-forgot">
-            <div class="header-content">
-              <div class="header-nav">
+          <header className="header-forgot">
+            <div className="header-content">
+              <div className="header-nav">
                 <div>
                   <a href="#">
                     <FaChevronLeft fa-xl />
@@ -17,16 +17,16 @@ export default class Forgotpasswordpage extends Component {
                   <span>Back</span>
                 </div>
               </div>
-              <h1 class="heading">Don’t worry, we got your back!</h1>
+              <h1 className="heading">Don’t worry, we got your back!</h1>
               <form>
                 <div>
-                  <input placeholder="Enter your email address" type="email" class="email" />
+                  <input placeholder="Enter your email address" type="email" className="email" />
                 </div>
                 <div>
-                  <button class="button-send">Send Link</button>
+                  <button className="button-send">Send Link</button>
                 </div>
               </form>
-              <p class="text">
+              <p className="text">
                 You will receive a link to reset your password.<br />
                 If you haven’t received any link, click <span>Resend Link</span>
               </p>
