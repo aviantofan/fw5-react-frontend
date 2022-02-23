@@ -2,14 +2,12 @@
 body{
   font-family: 'Nunito', sans-serif;
 }
-
 .header-home{
   background-image: url(../images/header-home.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 758px;
 }
-
 .header-home .header-content{
   background-color:rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
@@ -17,11 +15,9 @@ body{
   height: 758px;
   color: white;
 }
-
 .header-home .header-content .header-nav span{
   font-size: 24px;
 }
-
 .header-home .header-content h1.heading2{
   font-size: 64px;
   font-family: 'Playfair Display', serif;
@@ -30,7 +26,6 @@ body{
   line-height: 85px;
   padding-top: 69px;
 }
-
 .header-home .header-content p.text2{
   font-size: 22px;
   text-align: left;
@@ -38,14 +33,12 @@ body{
   line-height: 85px;
   margin-bottom: 0px;
 }
-
 .header-home .header-content div.line2{
   background:white;
   width: 32px;
   height: 2px;
   border-radius: 4px;
 }
-
 .header-home .header-content div select.form-select{
   width: 100%;
   height: 52px;
@@ -57,11 +50,9 @@ body{
   padding-right: 25px;
   color: #393939;
 }
-
 .header-home .header-content form div{
   text-align: left;
 }
-
 .header-home .header-content form div button.button-filled{
   width: 180px;
   height: 52px;
@@ -70,18 +61,15 @@ body{
   font-size: 17px;
   font-weight: 900;
 }
-
 .header-home .header-content .text{
   font-size: 24px;
   font-weight: 700;
   text-align: center;
   line-height: 33px;
 }
-
 .header-home .header-content .text span{
   font-weight: 900;
 }
-
 section h2.home {
   margin-top: 82px;
   margin-bottom: 56px;
@@ -90,16 +78,13 @@ section h2.home {
   font-size: 36px;
   font-family: 'Playfair Display', serif;
 }
-
 section .direction{
   margin-top: 90px;
   text-align: right;
 }
-
 section .direction a{
   font-weight: 400;
 }
-
 section h2.testimonials {
   margin-top: 82px;
   margin-bottom: 56px;
@@ -108,42 +93,34 @@ section h2.testimonials {
   font-size: 36px;
   font-family: 'Playfair Display', serif;
 }
-
 main section img {
   border-radius: 10px;
   margin-bottom: 15px;
 }
-
 main section a {
   text-decoration: none;
 }
-
 .item-list .highlight{
   width: 128px;
 }
-
 main section .highlight h5 {
   color: #042521;
   font-weight: 600;
   font-size: 17px;
 }
-
 main section .highlight span {
   font-size: 17px;
   color: #686767;
 }
-
 section.testimonials .left-testi {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-
 section.testimonials .comment svg {
   color:#FFBB0C;
   margin-right: 15px;
 }
-
 section.testimonials .comment p {
   margin-top: 31px;
   margin-bottom: 40px;
@@ -152,21 +129,17 @@ section.testimonials .comment p {
   line-height: 36px;
   font-family: 'Mulish', sans-serif;
 }
-
 section.testimonials .profile h5 {
   font-weight: bold;
 }
-
 section.testimonials .profile-pic .image {
   margin: 0 auto;
   width: 396px;
 }
-
 section.testimonials .profile-pic img {
   border-radius: 10px;
   width: 396px;
 }
-
 section.testimonials .profile-pic .next-prev {
   position: relative;
   background-color: #fff;
@@ -176,7 +149,6 @@ section.testimonials .profile-pic .next-prev {
   height: 60px;
   border-radius: 16px 0px 0px 0px;
 }
-
 section.testimonials .profile-pic button.prev{
   position: absolute;
   width: 40px;
@@ -189,7 +161,6 @@ section.testimonials .profile-pic button.prev{
   bottom: 25px;
   right: 80px;
 }
-
 section.testimonials .profile-pic button.next{
   position: absolute;
   width: 40px;
@@ -202,20 +173,17 @@ section.testimonials .profile-pic button.next{
   bottom: 25px;
   right: 15px;
 }
-
 section.testimonials .profile-pic .prev svg {
   color: #686767;
 }
 
 /* Style Login */
-
 .header-login{
   background-image: url(../images/header-login.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 758px;
 }
-
 .header-login .header-content{
   background-color:rgba(0, 0, 0, 0.4);
   background-repeat: no-repeat;
@@ -223,7 +191,6 @@ section.testimonials .profile-pic .prev svg {
   height: 758px;
   color: white;
 }
-
 .header-login .header-content h1.heading{
   font-family: 'Playfair Display', serif;;
   font-weight: 700;
@@ -231,12 +198,10 @@ section.testimonials .profile-pic .prev svg {
   padding-top: 107px;
   line-height: 85px;
 }
-
 .header-login .header-content p{
   font-weight: 700;
   margin-top: 43px;
 }
-
 .header-login .header-content div button.button-dark{
   width: 100%;
   height: 79px;
@@ -245,7 +210,6 @@ section.testimonials .profile-pic .prev svg {
   border-radius: 10px;
   color: #AEFEFF;
 }
-
 .header-login .header-content div.accs{
   width: 20px;
   height: 650px;
@@ -254,27 +218,23 @@ section.testimonials .profile-pic .prev svg {
   padding: 0 0 0 0;
   margin-top: 20px;
 }
-
 .header-login .header-content div div.circle1{
   width: 20px;
   height: 20px;
   background-color: white;
   border-radius: 20px;
 }
-
 .header-login .header-content div div.line1{
   background: white;
   height: 100%;
   width: 1px;
 }
-
 .header-login .header-content div div.circle2{
   width: 20px;
   height: 20px;
   background-color: white;
   border-radius: 20px;
 }
-
 .header-login .header-content div input.email{
   height: 79px;
   border: none;
@@ -285,7 +245,6 @@ section.testimonials .profile-pic .prev svg {
   margin-top: 160px;
   margin-left: 120px;
 }
-
 .header-login .header-content div input.password{
   height: 79px;
   border: none;
@@ -295,21 +254,17 @@ section.testimonials .profile-pic .prev svg {
   color: white;
   margin-left: 120px;
 }
-
 .header-login .header-content div input:focus{
   outline: none;
 }
-
 .header-login .header-content div input.email:read-write,
 .header-login .header-content div input.password:read-write{
   padding-left: 41px;
 }
-
 .header-login .header-content div input.email::placeholder,
 .header-login .header-content div input.password::placeholder{
   color: #FFFFFF
 }
-
 .header-login .header-content div p.forgot{
   font-size: 18px;
   font-family: 'Mulish', sans-serif;
@@ -319,7 +274,6 @@ section.testimonials .profile-pic .prev svg {
   margin-top: 0;
   margin-left: 120px;
 }
-
 .header-login .header-content div button.button-login{
   height: 79px;
   border: none;
@@ -329,7 +283,6 @@ section.testimonials .profile-pic .prev svg {
   font-weight: 900;
   font-size: 24px;
 }
-
 .header-login .header-content div button.button-login-google{
   height: 79px;
   border: none;
@@ -347,7 +300,6 @@ section.testimonials .profile-pic .prev svg {
   background-size: cover;
   height: 758px;
 }
-
 .header-register .header-content{
   background-color:rgba(0, 0, 0, 0.4);
   background-repeat: no-repeat;
@@ -355,7 +307,6 @@ section.testimonials .profile-pic .prev svg {
   height: 758px;
   color: white;
 }
-
 .header-register .header-content h1.heading{
   font-family: 'Playfair Display', serif;;
   font-weight: 700;
@@ -363,12 +314,10 @@ section.testimonials .profile-pic .prev svg {
   padding-top: 107px;
   line-height: 85px;
 }
-
 .header-register .header-content p{
   font-weight: 700;
   margin-top: 43px;
 }
-
 .header-register .header-content div button.button-dark{
   width: 100%;
   height: 79px;
@@ -377,7 +326,6 @@ section.testimonials .profile-pic .prev svg {
   border-radius: 10px;
   color: #AEFEFF;
 }
-
 .header-register .header-content div.accs{
   width: 20px;
   height: 650px;
@@ -386,27 +334,23 @@ section.testimonials .profile-pic .prev svg {
   padding: 0 0 0 0;
   margin-top: 20px;
 }
-
 .header-register .header-content div div.circle1{
   width: 20px;
   height: 20px;
   background-color: white;
   border-radius: 20px;
 }
-
 .header-register .header-content div div.line1{
   background: white;
   height: 100%;
   width: 1px;
 }
-
 .header-register .header-content div div.circle2{
   width: 20px;
   height: 20px;
   background-color: white;
   border-radius: 20px;
 }
-
 .header-register .header-content div input.name{
   height: 79px;
   border: none;
@@ -417,7 +361,6 @@ section.testimonials .profile-pic .prev svg {
   margin-top: 130px;
   margin-left: 120px;
 }
-
 .header-register .header-content div input.email{
   height: 79px;
   border: none;
@@ -428,7 +371,6 @@ section.testimonials .profile-pic .prev svg {
   margin-top: 24;
   margin-left: 120px;
 }
-
 .header-register .header-content div input.password{
   height: 79px;
   border: none;
@@ -439,23 +381,19 @@ section.testimonials .profile-pic .prev svg {
   margin-top: 24;
   margin-left: 120px;
 }
-
 .header-register .header-content div input:focus{
   outline: none;
 }
-
 .header-register .header-content div input.name:read-write,
 .header-register .header-content div input.email:read-write,
 .header-register .header-content div input.password:read-write{
   padding-left: 41px;
 }
-
 .header-register .header-content div input.name::placeholder,
 .header-register .header-content div input.email::placeholder,
 .header-register .header-content div input.password::placeholder{
   color: #FFFFFF;
 }
-
 .header-register .header-content div button.button-signup{
   height: 79px;
   border: none;
@@ -465,7 +403,6 @@ section.testimonials .profile-pic .prev svg {
   font-weight: 900;
   font-size: 24px;
 }
-
 .header-register .header-content div button.button-signup-google{
   height: 79px;
   border: none;
@@ -474,6 +411,105 @@ section.testimonials .profile-pic .prev svg {
   background-color:white;
   font-weight: 900;
   font-size: 24px;
+}
+
+/* Style Vehicle Type */
+section.search .search-input{
+  height: 62px;
+}
+section.search .search-type{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: unset;
+  border-radius: 25px;
+  min-height: unset;
+  min-width: unset;
+  bottom: 15px;
+  right: 40px;
+  top: 5px;
+}
+section.search .search-input:read-write{
+  padding-left: 41px;
+}
+
+/* Style Forgot Password */
+
+.header-forgot{
+  background-image: url(../images/header-forgot.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 758px;
+}
+.header-forgot .header-content{
+  background-color:rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 758px;
+  color: white;
+}
+.header-forgot .header-content .header-nav{
+  margin: 0 89px;
+  padding-top: 74px;
+
+}
+.header-forgot .header-content .header-nav svg{
+  font-size: 30px;
+  margin-right: 45px;
+}
+.header-forgot .header-content .header-nav span{
+  font-size: 24px;
+}
+.header-forgot .header-content h1.heading{
+  font-size: 64px;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-weight: bold;
+  line-height: 85px;
+  margin-top: 40px;
+  margin-bottom: 83px;
+}
+.header-forgot .header-content form div{
+  text-align: center;
+}
+.header-forgot .header-content form div input{
+  width: 447px;
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  margin-bottom: 31px;
+}
+.header-forgot .header-content form div input::placeholder{
+  color: #FFFFFF;
+}
+.header-forgot .header-content form div input:focus{
+  outline: none;
+}
+.header-forgot .header-content form div button.button-send{
+  width: 447px;
+  height: 79px;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 900;
+  background-color: #4FBDBA;
+  margin-bottom: 54px;
+  color: #072227;
+}
+.header-forgot .header-content .text{
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 33px;
+  margin-top: 170px;
+}
+.header-forgot .header-content .text span{
+  font-weight: 900;
 }
 
 @media (max-width: 500px) {
