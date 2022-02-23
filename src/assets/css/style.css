@@ -506,10 +506,430 @@ section.search .search-input:read-write{
   font-weight: 700;
   text-align: center;
   line-height: 33px;
-  margin-top: 170px;
 }
 .header-forgot .header-content .text span{
   font-weight: 900;
+}
+
+/* Style Vehicle Detail */
+
+section.back div i{
+  margin-right: 45;
+}
+section.back div span{
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 25px;
+}
+section.preview button.prev{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  min-height: unset;
+  min-width: unset;
+  color: #4A4C53;
+  background-color: white;
+  border: unset;
+}
+section.preview button.next{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  min-height: unset;
+  min-width: unset;
+  color: #4A4C53;
+  background-color: white;
+  border: unset;
+  padding-right: 20px;
+}
+section.preview .desc h2{
+  font-weight: 900;
+}
+section.preview .desc p{
+  font-weight: 400;
+}
+section.preview .desc h2,
+section.preview .desc p{
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+}
+section.preview .status-vehicle{
+  font-weight: 300;
+  font-size: 24px;
+}
+section.preview .info{
+  font-weight: 300;
+  font-size: 24px;
+}
+section.preview .price{
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 36px;
+}
+section.preview button.plus{
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  text-align: center;
+  border: unset;
+  background-color: #4FBDBA;
+}
+section.preview button.minus{
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  text-align: center;
+  border: unset;
+  background-color: rgba(203, 203, 212, 0.2);;
+}
+section.preview .count{
+  font-size: 48px;
+  font-weight: 900;
+}
+section.preview .day{
+  text-align: center;
+}
+section.semi-footer button.button-dark{
+  color: #4FBDBA;
+  width: 415px;
+  height: 89px;
+  font-weight: 700;
+  font-size: 24px;
+}
+section.semi-footer button.button-filled{
+  color: #072227;
+  width: 415px;
+  height: 89px;
+  font-weight: 700;
+  font-size: 24px;
+}
+section.semi-footer .button-like{
+  color: #4FBDBA;
+  background-color: #072227;
+  width: 235px;
+  height: 89px;
+  font-size: 24px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+/* Style Payment */
+
+section.preview .status-v span{
+  font-weight: 700;
+  font-size: 32px;
+}
+section.preview .status span{
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+}
+section.preview .code button.button-filled{
+  font-weight: 700;
+  font-size: 24px;
+  width: 240px;
+  height: 35px;
+}
+section.data .qty{
+  border: 1px solid black;
+  height: 107px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
+section.data .date{
+  border: 1px solid black;
+  height: 107px;
+  border-radius: 10px;
+  justify-content: center;
+  padding-left: 59px;
+}
+section.data .date .dates{
+  padding-left: 200px;
+}
+section.data .details{
+  border: 1px solid black;
+  height: 245px;
+  border-radius: 10px;
+  justify-content: center;
+  padding-left: 65px;
+}
+section.data .identity{
+  border: 1px solid black;
+  height: 245px;
+  border-radius: 10px;
+  justify-content: center;
+  padding-left: 59px;
+}
+section.semi-footer .text{
+  font-size: 32px;
+  justify-content: center;
+}
+section.semi-footer .code{
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  padding-left: 35px;
+}
+section.semi-footer .code span{
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+section.semi-footer .button-copy{
+  position: absolute;
+  font-family: 'Nunito', sans-serif;
+  width: 115px;
+  height: 42px;
+  background-color: #072227;
+  font-size: 24px;
+  color: #4FBDBA;
+  margin-left: 40px;
+}
+section.semi-footer .form-select{
+  justify-content: center;
+  height: 80px;
+  font-size: 24px;
+  padding-top: 20px;
+  padding-left: 45px;
+  border-color: black;
+}
+
+/* Style History */
+
+.main-section {
+  margin: 180px 0;
+}
+form, .form-select, button {
+  height: 62px;
+}
+.form-section {
+  padding-right: 22px;
+}
+form input::placeholder {
+  font-size: 19px;
+  color: #B8BECD !important;
+}
+.form-control, .form-select {
+  padding-left: 20px;
+  background-color: #f1f1f1;
+}
+.form-control:focus,
+.form-select:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(13, 253, 221, 0.25) !important;
+}
+.form-control::placeholder {
+  color: #B8BECD;
+}
+.search-icon {
+  font-size: 25px;
+  padding-right: 40px;
+}
+.select-bar:focus,
+.select-bar:active {
+  color: black;
+}
+.history-data {
+  cursor: pointer;
+  width: 100%;
+  margin-top: 40px;
+  animation: myanim 3s infinite;
+  transition: all 0.3s ease;
+}
+.history-data .des{
+  margin-left: 10px;
+}
+.history-contain:hover {
+  justify-content: space-between;
+}
+.history-contain:hover .delete {
+  display: block !important;
+}
+.description {
+  margin: 40px 0;
+}
+.today-history a {
+  padding: 30px 0;
+}
+.weekly-history {
+  margin-top: 40px;
+}
+.vehicle-image1,
+.vehicle-image2 {
+  border-radius: 8px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.btn-green {
+  height: 44px;
+  padding: 0 41px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #32DBC6;
+}
+.border {
+  padding: 20px 0;
+  border-radius: 8px;
+  border: 1px solid rgb(179, 175, 175) !important;
+}
+section.down h5 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', Times, serif;
+}
+.new-arival {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+.vehicle1,
+.vehicle2 {
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.new-arival .vehicle1 img,
+.new-arival .vehicle2 img{
+  border-radius: 10px;
+}
+.highlight {
+  font-family: Nunito, Times, serif;
+  font-size: 15px !important;
+  position: absolute;
+  bottom: -4px;
+  background-color: #FFF;
+  padding: 10px 10px 10px 0;
+  border-top-right-radius: 8px;
+}
+
+/* Style Profile */
+
+section.profile h2.page-name{
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  margin-top: 22px;
+}
+section.profile form div{
+  text-align: center;
+}
+.fa-envelope:before{
+  color: #4FBDBA;
+}
+section.profile img.img-rounded-circle{
+  border-radius: 100px;
+  margin-left: 0px;
+  margin-bottom: 23px;
+}
+section.profile .edit-photo {
+  position: absolute;
+  background: #4FBDBA;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  min-height: unset;
+  min-width: unset;
+  border: unset;
+  color: #393939;
+  bottom: 15px;
+  right: 20px;
+}
+section.profile h2.username{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+section.profile div.profile-desc p{
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  color: #B8BECD;
+  margin-bottom: 57px;
+}
+.radio-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.radio-button input {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.radio-button .checkmark {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  border: 3px solid #9F9F9F;
+  display: inline-block;
+}
+.radio-button .text {
+  display: inline-block;
+  margin-left: 19px;
+}
+.radio-button input:checked~.checkmark {
+  border-color: #072227;
+  background-color: #4FBDBA;
+}
+section.profile-edit{
+  font-family: 'Nunito', sans-serif;
+  margin-top: 400px;
+}
+section.profile-edit label{
+  font-weight: 700;
+}
+section.contact h5{
+  font-weight: 900;
+}
+section.identity h5{
+  font-weight: 900;
+}
+.input-underline {
+  border: 0;
+  border-bottom: 1px solid #000;
+  padding-bottom: 26px;
+  height: 40px;
+}
+.input-underline:focus {
+  outline: none;
+}
+section.contact label{
+  color: #9F9F9F;
+}
+section.identity label{
+  color: #9F9F9F;
+}
+section.button .button-filled,
+section.button .button-dark,
+section.button .button-gray {
+  width: 322px;
+  height: 89px;
+  font-weight: 900;
+  font-size: 24px;
+}
+section.button .button-dark{
+  color: #4FBDBA;
+}
+
+/* Style Reservation */
+
+section.preview .form-select{
+  width: 396px;
+  height: 80px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #393939;
 }
 
 @media (max-width: 500px) {
