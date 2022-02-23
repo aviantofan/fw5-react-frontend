@@ -30,11 +30,16 @@ import React, { Component } from 'react'
 // import Vehicletypepage from './pages/Vehicletypepage'
 // import Registerpage from './pages/Registerpage'
 // import Loginpage from './pages/Loginpage'
-import Forgotpasswordpage from './pages/Forgotpasswordpage'
+// import Forgotpasswordpage from './pages/Forgotpasswordpage'
+// import Vehicledetailpage from './pages/Vehicledetailpage'
+// import Paymentpage from './pages/Paymentpage'
+// import Historypage from './pages/Historypage'
+// import Profilepage from './pages/Profilepage'
+import Reservationpage from './pages/Reservationpage'
 export default class App extends Component {
   render() {
     return (
-      <Forgotpasswordpage />
+      <Reservationpage />
     )
   }
 }
