@@ -39,7 +39,7 @@ export default class Vehicletypepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <Link className="section-link-view mt-2" to="/vehicleType">
+                    <Link className="section-link-view mt-2" to="/vehicles">
                       View all
                       <FaChevronRight />
                     </Link>
@@ -101,7 +101,7 @@ export default class Vehicletypepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <Link className="section-link-view mt-2" to="/vehicleType">
+                    <Link className="section-link-view mt-2" to="/vehicles">
                       View all
                       <FaChevronRight />
                     </Link>
@@ -163,7 +163,7 @@ export default class Vehicletypepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <Link className="section-link-view mt-2" to="vehicle-type.html">
+                    <Link className="section-link-view mt-2" to="vehicles">
                       View all
                       <FaChevronRight />
                     </Link>
@@ -225,7 +225,7 @@ export default class Vehicletypepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <Link className="section-link-view mt-2" to="vehicle-type.html">
+                    <Link className="section-link-view mt-2" to="vehicles">
                       View all
                       <FaChevronRight />
                     </Link>
