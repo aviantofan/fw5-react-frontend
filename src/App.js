@@ -37,16 +37,24 @@ import Historypage from './pages/Historypage'
 import Profilepage from './pages/Profilepage'
 import Reservationpage from './pages/Reservationpage'
 import Vehiclelistpage from './pages/Vehiclelistpage'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import NotFound from './pages/NotFound'
+import { unstable_HistoryRouter as HistoryRouter, /*BrowserRouter*/ Route, Routes } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 export default class App extends Component {
+  componentDidMount() {
+    console.log(this.props)
+  }
+  history = createBrowserHistory()
   render() {
     return (
-      <BrowserRouter>
+      <HistoryRouter history={this.history}>
+        {/* <BrowserRouter> */}
         <Routes>
           <Route path='/' element={<Homepage />} />
+          <Route path='404' element={<NotFound />} />
           <Route path='vehicleType' element={<Vehicletypepage />} />
           <Route path='vehicles' element={<Vehiclelistpage />} />
-          <Route path='vehicleDetail' element={<Vehicledetailpage />} />
+          <Route path='vehicles/:id' element={<Vehicledetailpage />} />
           <Route path='login' element={<Loginpage />} />
           <Route path='register' element={<Registerpage />} />
           <Route path='forgotPassword' element={<Forgotpasswordpage />} />
@@ -55,7 +63,8 @@ export default class App extends Component {
           <Route path='history' element={<Historypage />} />
           <Route path='reservation' element={<Reservationpage />} />
         </Routes>
-      </BrowserRouter>
+        {/* </BrowserRouter> */}
+      </HistoryRouter>
     )
   }
 }
