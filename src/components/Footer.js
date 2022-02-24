@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Logo from '../assets/images/logo.png'
 import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 
@@ -10,7 +11,9 @@ export default class Footer extends Component {
           <div className="row text">
             <div className="col">
               <div>
-                <img src={Logo} alt="Logo" />
+                <Link to="/">
+                  <img src={Logo} alt="Logo" />
+                </Link>
                 <span className="brand align-middle mx-3">V E H I C O O L</span>
               </div>
               <div className="description">Plan and book your perfect trip with

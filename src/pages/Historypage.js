@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Navlogin from '../components/NavLogin'
 import Vespa from '../assets/images/vespa-history.png'
 import Motorbike from '../assets/images/motorbike-history.png'
 import Lambo from '../assets/images/lambo-history.png'
@@ -11,6 +13,7 @@ export default class Historypage extends Component {
     return (
       <>
         <body>
+          <Navlogin />
           <main className="row main-section">
             <section className="upper col-12 col-xl-8 ps-5">
               <div className="row form-section">
@@ -34,14 +37,14 @@ export default class Historypage extends Component {
               </div>
               <div className="container today-history">
                 <div className="text-muted description">Today</div>
-                <a className="d-flex align-items-center justify-content-between border-bottom" href="#">
+                <Link className="d-flex align-items-center justify-content-between border-bottom" to="/payment">
                   <span>Please finish your payment for vespa for Vespa Rental Jogja</span>
                   <FaChevronRight />
-                </a>
-                <a className="d-flex align-items-center justify-content-between border-bottom" href="#">
+                </Link>
+                <Link className="d-flex align-items-center justify-content-between border-bottom" to="">
                   <span>Your payment has been confirmed!</span>
                   <FaChevronRight />
-                </a>
+                </Link>
               </div>
               <div className="container weekly-history">
                 <div className="text-muted head-weekly">A week ago</div>
@@ -91,7 +94,7 @@ export default class Historypage extends Component {
               <div className="border  text-center">
                 <h5 className="fw-bold">New Arrival</h5>
                 <div className="new-arival">
-                  <a href="#">
+                  <Link to="">
                     <div className="vehicle1">
                       <img src={Lambo} alt="" />
                     </div>
@@ -99,10 +102,10 @@ export default class Historypage extends Component {
                       <h6 className="fw-bold">Lamborghini</h6>
                       <span className="text-muted">South Jakarta</span>
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="new-arival">
-                  <a href="#">
+                  <Link to="">
                     <div className="vehicle2">
                       <img src={Jeep} alt="" />
                     </div>
@@ -110,15 +113,15 @@ export default class Historypage extends Component {
                       <h6 className="fw-bold">White Jeep</h6>
                       <span className="text-muted">Kalimantan</span>
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="new-arival">
-                  <a href="#">
+                  <Link to="">
                     <span className="text-muted">View more</span>
-                  </a>
-                  <div>
-                    <FaChevronDown />
-                  </div>
+                    <div>
+                      <FaChevronDown />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </section>

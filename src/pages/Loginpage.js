@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Google from '../assets/images/google.png'
 
@@ -20,9 +21,9 @@ export default class Loginpage extends Component {
                     </div>
                     <div>
                       <div className="col-md-9">
-                        <a href="#">
+                        <Link to="/register">
                           <button className="button-dark">Sign Up</button>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -46,9 +47,9 @@ export default class Loginpage extends Component {
                     </div>
                     <div className="col-md-5">
                       <div className="mb-5">
-                        <a href="#">
+                        <Link to="/forgotPassword">
                           <p className="forgot w-100">Forgot password?</p>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="col-md-12">

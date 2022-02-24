@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
 
 export default class Navbar extends Component {
@@ -6,9 +7,9 @@ export default class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
-          <a className="navbar-brand" href="Homepage.js">
+          <Link className="navbar-brand" to="/">
             <img className='img-fluid' src={logo} alt="logo" />
-          </a>
+          </Link>
           <div className="brand">
             <span>V E H I C O O L</span>
           </div>
@@ -19,25 +20,25 @@ export default class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                <Link className="nav-link" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Vehicle</a>
+                <Link className="nav-link" to="/vehicleType">Vehicle</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">History</a>
+                <Link className="nav-link" to="/history">History</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">About</a>
+                <Link className="nav-link" to="">About</Link>
               </li>
             </ul>
             <div className="toggled-action">
-              <a href="Loginpage.js">
+              <Link to="login">
                 <button className="button-outline mx-3">Login</button>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="register">
                 <button className="button-filled">Register</button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

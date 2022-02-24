@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Footer from '../components/Footer'
+import Navlogin from '../components/NavLogin'
 import Profile from '../assets/images/profile-picture.png'
 import { FaPencilAlt } from 'react-icons/fa'
 
@@ -8,6 +9,7 @@ export default class Profilepage extends Component {
     return (
       <>
         <body>
+          <Navlogin />
           <main className="container">
             <section className="profile">
               <h2 className="page-name">Profile</h2>

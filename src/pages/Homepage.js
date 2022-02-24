@@ -6,6 +6,7 @@ import TelukBogam from '../assets/images/teluk-bogam.png'
 import Bromo from '../assets/images/bromo.png'
 import Malioboro from '../assets/images/malioboro.png'
 import User from '../assets/images/user-home.png'
+import { Link } from 'react-router-dom'
 import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
 
 export default class Homepage extends Component {
@@ -89,56 +90,56 @@ export default class Homepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <a className="section-link-view mt-2" href="#">
+                    <Link className="section-link-view mt-2" to="/vehicleType">
                       View all
                       <FaChevronRight />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="/vehicleDetail">
                       <img className="img-fluid" src={Merapi} alt="Popular-Items" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Merapi</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="/vehicleDetail">
                       <img className="img-fluid" src={TelukBogam} alt="Popular-Items" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Teluk Bogam</h5>
                         <span>Kalimantan</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="/vehicleDetail">
                       <img className="img-fluid" src={Bromo} alt="Popular-Items" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Bromo</h5>
                         <span>Malang</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="/vehicleDetail">
                       <img className="img-fluid" src={Malioboro} alt="Popular-Items" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Malioboro</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

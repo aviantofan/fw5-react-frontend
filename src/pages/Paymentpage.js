@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Navlogin from '../components/NavLogin'
 import Payment from '../assets/images/payment.png'
 import { FaChevronLeft } from 'react-icons/fa'
 
@@ -8,12 +10,13 @@ export default class Paymentpage extends Component {
     return (
       <>
         <body>
+          <Navlogin />
           <main className="container">
             <section className="back">
               <div>
-                <a href="#">
+                <Link to="reservation">
                   <FaChevronLeft />
-                </a>
+                </Link>
                 <span>Payment</span>
               </div>
             </section>
@@ -21,7 +24,7 @@ export default class Paymentpage extends Component {
             <section className="preview">
               <div className="row pt-5">
                 <div className="col-md-5">
-                  <img src={Payment} alt="Reserved Image" />
+                  <img src={Payment} alt="Reserved" />
                 </div>
                 <div className="col">
                   <div className="desc">
@@ -103,9 +106,9 @@ export default class Paymentpage extends Component {
             <section className="semi-footer">
               <div className="row mt-4">
                 <div className="col mb-4">
-                  <a href="history.html">
+                  <Link to="/history">
                     <button className="button-filled w-100">Finish payment : <span className="text-danger">59:30</span></button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </section>

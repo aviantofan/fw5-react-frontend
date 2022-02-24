@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Navlogin from '../components/NavLogin'
 import Fixie from '../assets/images/fixie-white-width.png'
 import FixieS from '../assets/images/fixie-white-width2.png'
 import { FaChevronLeft, FaChevronRight, FaPlus, FaMinus } from 'react-icons/fa'
@@ -9,12 +11,13 @@ export default class Vehicledetailpage extends Component {
     return (
       <>
         <body>
+          <Navlogin />
           <main className="container">
             <section className="back">
               <div>
-                <a href="#">
+                <Link to="">
                   <i className="fa-solid fa-chevron-left fa-2xl "></i>
-                </a>
+                </Link>
                 <span>Detail</span>
               </div>
             </section>
@@ -79,14 +82,14 @@ export default class Vehicledetailpage extends Component {
             <section className="semi-footer">
               <div className="row mt-4">
                 <div className="col">
-                  <a href="#">
+                  <Link to="">
                     <button className="button-dark">Chat Admin</button>
-                  </a>
+                  </Link>
                 </div>
                 <div className="col">
-                  <a href="reservation.html">
+                  <Link to="/reservation">
                     <button className="button-filled">Reservation</button>
-                  </a>
+                  </Link>
                 </div>
                 <div className="col mb-4">
                   <button className="button-like"><i className="fa-solid fa-heart fa-2xl"></i>

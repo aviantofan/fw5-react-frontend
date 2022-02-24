@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Navlogin from '../components/NavLogin'
 import Fixie from '../assets/images/fixie-reserved.png'
 import { FaChevronLeft, FaPlus, FaMinus } from 'react-icons/fa'
 
@@ -8,12 +10,13 @@ export default class Reservationpage extends Component {
     return (
       <>
         <body>
+          <Navlogin />
           <main className="container">
             <section className="back">
               <div>
-                <a href="vehicle-detail.html">
+                <Link to="/vehicleDetail">
                   <FaChevronLeft />
-                </a>
+                </Link>
                 <span>Reservation</span>
               </div>
             </section>
@@ -39,7 +42,7 @@ export default class Reservationpage extends Component {
                       <div className="count">2</div>
                     </div>
                     <div className="col">
-                      <button className="plus"><FaPlus></i></button>
+                      <button className="plus"><FaPlus /></button>
                     </div>
                   </div>
                   <div className="status-vehicle mb-3 pt-5 d-flex flex-column">
@@ -62,9 +65,9 @@ export default class Reservationpage extends Component {
             <section className="semi-footer">
               <div className="row mt-4">
                 <div className="col mb-4">
-                  <a href="payment.html">
+                  <Link to="/payment">
                     <button className="button-filled w-100">Pay now : Rp. 178.000</button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </section>

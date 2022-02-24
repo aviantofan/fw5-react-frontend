@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Footer from '../components/Footer'
+import Navlogin from '../components/NavLogin'
 import Merapi from '../assets/images/merapi.png'
 import TelukBogam from '../assets/images/teluk-bogam.png'
 import Bromo from '../assets/images/bromo.png'
@@ -13,12 +14,14 @@ import FixieWhite from '../assets/images/fixie-white.png'
 import SportBike from '../assets/images/sports.png'
 import Onthel from '../assets/images/onthel.png'
 import { FaChevronRight, FaSearch } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 export default class Vehicletypepage extends Component {
   render() {
     return (
       <>
         <body>
+          <Navlogin />
           <main className="container">
             <section className="search">
               <div className="mb-5">
@@ -36,56 +39,56 @@ export default class Vehicletypepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <a className="section-link-view mt-2" href="vehicle-type.html">
+                    <Link className="section-link-view mt-2" to="/vehicleType">
                       View all
                       <FaChevronRight />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Merapi} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Merapi</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={TelukBogam} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Teluk Bogam</h5>
                         <span>Kalimantan</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Bromo} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Bromo</h5>
                         <span>Malang</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Malioboro} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Malioboro</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -98,56 +101,56 @@ export default class Vehicletypepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <a className="section-link-view mt-2" href="vehicle-type.html">
+                    <Link className="section-link-view mt-2" to="/vehicleType">
                       View all
                       <FaChevronRight />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Merapi} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Van</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Lamborghini} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Lamborghini</h5>
                         <span>South Jakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Bromo} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Jeep</h5>
                         <span>Malang</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={JeepWhite} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>White Jeep</h5>
                         <span>Kalimantan</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -160,56 +163,56 @@ export default class Vehicletypepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <a className="section-link-view mt-2" href="vehicle-type.html">
+                    <Link className="section-link-view mt-2" to="vehicle-type.html">
                       View all
                       <FaChevronRight />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Vespa} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Vespa</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={TelukBogam} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Honda KLX</h5>
                         <span>Kalimantan</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Honda} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Honda</h5>
                         <span>Malang</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Malioboro} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Matic Bike</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -222,56 +225,56 @@ export default class Vehicletypepage extends Component {
                 </div>
                 <div className="col">
                   <div className="direction justify-content-center">
-                    <a className="section-link-view mt-2" href="vehicle-type.html">
+                    <Link className="section-link-view mt-2" to="vehicle-type.html">
                       View all
                       <FaChevronRight />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Fixie} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Fixie</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={SportBike} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Sport Bike</h5>
                         <span>Kalimantan</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={Onthel} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Onthel</h5>
                         <span>Malang</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='col-sm-6 col-md-3 text-center item-list'>
                   <div className='my-2 d-inline-block position-relative'>
-                    <a href="#">
+                    <Link to="">
                       <img className="img-fluid" src={FixieWhite} alt="Vehicle Type" />
                       <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                         <h5>Fixie Gray</h5>
                         <span>Yogyakarta</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

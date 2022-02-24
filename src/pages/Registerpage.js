@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Google from '../assets/images/google.png'
 
@@ -20,9 +21,9 @@ export default class Registerpage extends Component {
                     </div>
                     <div>
                       <div className="col-md-9">
-                        <a href="#">
+                        <Link to="/login">
                           <button className="button-dark">Login</button>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
