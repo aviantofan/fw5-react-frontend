@@ -36,6 +36,7 @@ import Paymentpage from './pages/Paymentpage'
 import Historypage from './pages/Historypage'
 import Profilepage from './pages/Profilepage'
 import Reservationpage from './pages/Reservationpage'
+import Vehiclelistpage from './pages/Vehiclelistpage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 export default class App extends Component {
   render() {
@@ -44,6 +45,7 @@ export default class App extends Component {
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='vehicleType' element={<Vehicletypepage />} />
+          <Route path='vehicles' element={<Vehiclelistpage />} />
           <Route path='vehicleDetail' element={<Vehicledetailpage />} />
           <Route path='login' element={<Loginpage />} />
           <Route path='register' element={<Registerpage />} />
