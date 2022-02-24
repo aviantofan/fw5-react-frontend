@@ -65,7 +65,7 @@ export const Vehiclelistpage = () => {
   }
 
   const goToDetail = (id) => {
-    navigate(`/vehicle/${id}`)
+    navigate(`/vehicles/${id}`)
   }
 
   return (
