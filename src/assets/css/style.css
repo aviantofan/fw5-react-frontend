@@ -473,7 +473,7 @@ section.search .search-input:read-write{
 .header-forgot .header-content form div{
   text-align: center;
 }
-.header-forgot .header-content form div input{
+.header-forgot .header-content form div input.forgotemail{
   width: 447px;
   height: 79px;
   border: none;
@@ -484,7 +484,7 @@ section.search .search-input:read-write{
   color: white;
   margin-bottom: 31px;
 }
-.header-forgot .header-content form div input::placeholder{
+.header-forgot .header-content form div input.forgotemail::placeholder{
   color: #FFFFFF;
 }
 .header-forgot .header-content form div input:focus{
@@ -710,7 +710,7 @@ form, .form-select, button {
 }
 form input::placeholder {
   font-size: 19px;
-  color: #B8BECD !important;
+  color: #B8BECD;
 }
 .form-control, .form-select {
   padding-left: 20px;
