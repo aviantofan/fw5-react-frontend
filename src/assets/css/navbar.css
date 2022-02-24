@@ -67,6 +67,10 @@ button {
   border: unset;
 }
 
+.icon-profile svg{
+  color: #4FBDBA;
+}
+
 img.img-rounded-circle{
   border-radius: 30px;
   margin-left: 38px;
