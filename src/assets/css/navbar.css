@@ -1,5 +1,5 @@
 nav.navbar{
-  height: 162px;
+  height: 100%;
 }
 
 nav.container {
@@ -44,6 +44,10 @@ button {
   border-radius: 8px;
 }
 
+button.navbar-toogler{
+  width: 44;
+}
+
 .button-outline {
   background-color: transparent;
   border: 1px solid #4FBDBA;
@@ -69,9 +73,26 @@ button {
 
 .icon-profile svg{
   color: #4FBDBA;
+  font-size: 50px;
 }
 
 img.img-rounded-circle{
   border-radius: 30px;
   margin-left: 38px;
+}
+
+@media (max-width: 991px){
+  .toggled-action {
+    text-align: center;
+  }
+  .icon-profile{
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px){
+  nav.navbar .brand{
+    font-size: 16px;
+    display: flex !important;
+  }
 }

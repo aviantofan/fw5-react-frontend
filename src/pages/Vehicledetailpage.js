@@ -2,9 +2,9 @@ import React, { useEffect, useState /*Component*/ } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Navlogin from '../components/NavLogin'
-import Fixie from '../assets/images/fixie-white-width.png'
-import FixieS from '../assets/images/fixie-white-width2.png'
-import { FaChevronLeft, FaChevronRight, FaPlus, FaMinus } from 'react-icons/fa'
+// import Fixie from '../assets/images/fixie-white-width.png'
+// import FixieS from '../assets/images/fixie-white-width2.png'
+import { FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaHeart } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getData } from '../helpers/http'
 
@@ -17,10 +17,14 @@ export const Vehicledetailpage = (props) => {
     getDataComponent(id)
   }, [])
 
+  useEffect(() => {
+    console.log(vehicle)
+  })
+
   const getDataComponent = async (id) => {
     try {
       const { data } = await getData(`http://localhost:5000/vehicles/${id}`, props.history)
-      setVehicle(data)
+      setVehicle(data.results)
     } catch (e) {
 
     }
@@ -109,7 +113,7 @@ export const Vehicledetailpage = (props) => {
               </Link>
             </div>
             <div className="col mb-4">
-              <button className="button-like"><i className="fa-solid fa-heart fa-2xl"></i>
+              <button className="button-like"><FaHeart />
                 <span>Like</span>
               </button>
             </div>

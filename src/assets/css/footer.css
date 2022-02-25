@@ -1,28 +1,19 @@
 footer.footer{
   background-color: #F9F9FB;
 }
-
 footer.footer-home{
   margin-top: 69.16px;
   background-color: #F9F9FB;
 }
-
 footer.footer .container{
   padding-top: 69.16px;
 }
-
 footer.footer-home .container{
   padding-top: 69.16px;
 }
-
 footer.footer .row.text{
   margin-bottom: 78.04px;
 }
-
-footer.footer-home .row.text{
-  margin-bottom: 78.04px;
-}
-
 footer.footer ul{
   list-style-type: none;
   padding-left: 0;
@@ -30,7 +21,6 @@ footer.footer ul{
   line-height: 38px;
   color: #848484;
 }
-
 footer.footer-home ul{
   list-style-type: none;
   padding-left: 0;
@@ -38,41 +28,52 @@ footer.footer-home ul{
   line-height: 38px;
   color: #848484;
 }
-
 footer.footer .description{
   width: 260px;
   margin-top: 26.27px;
   margin-bottom: 53px;
   line-height: 28px;
 }
-
-footer.footer-home .description{
+footer.footer .copyright{
   width: 260px;
   margin-top: 26.27px;
   margin-bottom: 53px;
   line-height: 28px;
 }
-
 footer.footer .link-social{
   border-top: 1px solid #C4C4C4;
   padding: 31px;
   text-align: center;
 }
-
-footer.footer-home .link-social{
-  border-top: 1px solid #C4C4C4;
-  padding: 31px;
-  text-align: center;
-}
-
 footer.footer .link-social svg{
   font-size: 25px;
   margin-left: 17.5px;
   margin-right: 17.5px;
 }
 
-footer.footer-home .link-social svg{
-  font-size: 25px;
-  margin-left: 17.5px;
-  margin-right: 17.5px;
+@media (max-width: 600px){
+  footer.footer .brand{
+    font-size: 100%;
+  }
+  footer.footer .link-social svg{
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  footer.footer .desc{
+    width: 100%;
+  }
+  footer.footer .copyright{
+    text-align: center;
+    justify-content: center;
+  }
+  footer.footer .destination{
+    text-align: center;
+  }
+  footer.footer .vehicle{
+    text-align: center;
+  }
+  footer.footer .interest{
+    text-align: center;
+  }
 }

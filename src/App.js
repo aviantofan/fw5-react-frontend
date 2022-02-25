@@ -37,7 +37,6 @@ import Historypage from './pages/Historypage'
 import Profilepage from './pages/Profilepage'
 import Reservationpage from './pages/Reservationpage'
 import Vehiclelistpage from './pages/Vehiclelistpage'
-import NotFound from './pages/NotFound'
 import { unstable_HistoryRouter as HistoryRouter, /*BrowserRouter*/ Route, Routes } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 export default class App extends Component {
@@ -51,7 +50,6 @@ export default class App extends Component {
         {/* <BrowserRouter> */}
         <Routes>
           <Route path='/' element={<Homepage />} />
-          <Route path='404' element={<NotFound />} />
           <Route path='vehicleType' element={<Vehicletypepage />} />
           <Route path='vehicles' element={<Vehiclelistpage />} />
           <Route path='vehicles/:id' element={<Vehicledetailpage />} />

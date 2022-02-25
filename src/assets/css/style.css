@@ -958,14 +958,13 @@ section.preview .form-select{
   .header-forgot .header-content {
     padding: 0 10px;
   }
-
   .header-forgot .header-content form div input {
     width: 100%;
   }
-
   .header-forgot .header-content form div button.button-send {
     width: 100%;
   }
+
   section.testimonials .comment p{
     width: 100%;
   }
@@ -975,18 +974,7 @@ section.preview .form-select{
   footer.footer-home .description{
     width: 100%;
   }
-  .brand{
-    font-size: 100%;
-  }
-}
 
-@media (max-width: 600px) {
-  .header-home .header-content .select-option .option{
-    text-align: center;
-  }
-}
-
-@media(max-width: 989px){
   .header-login .header-content h1.heading{
     font-family: 'Playfair Display', serif;
     text-align: center;
@@ -1070,10 +1058,10 @@ section.preview .form-select{
     text-align: center;
     font-weight: 700;
     font-size: 40px;
-    padding-top: unset;
+    padding-top: unset; 
     line-height: 85px;
   }
-  .header-register.header-content div div.line1{
+  .header-register .header-content div div.line1{
     width: unset;
     height:unset;
   }
@@ -1141,17 +1129,211 @@ section.preview .form-select{
     margin-left: unset;
     background-color: #FFFFFF;
     font-weight: 900;
-    font-size: 24px;
+    font-size: 20px;
+  } 
+}
+
+@media (max-width: 600px) {
+  .header-home .header-content .select-option .option{
+    text-align: center;
+  }
+  .header-home .header-content div.line2{
+    background:unset;
+    width: unset;
+    height: unset;
+    border-radius: unset;
+    margin-bottom: unset;
+  }
+  .header-home .header-content h1.heading2{
+    font-size: 44px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .header-home .header-content p.text2{
+    text-align: center;
   }
 }
 
-@media (max-width: 991px) {
-    .toggled-action {
-      text-align: center;
-    }
-    .icon-profile{
-      text-align: center;
-    }
+@media (max-width: 768px){
+  section.testimonials h2.testimonials{
+    margin-bottom: unset;
+  }
+  section.testimonials .testi{
+    flex-wrap: wrap-reverse;
+  }
+  section.testimonials .testi .left-testi{
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .header-login .header-content h1.heading{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 40px;
+    padding-top: 107px;
+    line-height: 85px;
+  }
+  .header-login .header-content div div.circle1{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 20px;
+  }
+  .header-login .header-content div div.line1{
+    background: white;
+    height: 100%;
+    width: 1px;
+  }
+  .header-login .header-content div div.circle2{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 20px;
+  }
+  .header-login .header-content div.accs{
+    width: 20px;
+    height: 650px;
+    display: flex;
+    justify-content: right;
+    padding: 0 0 0 0;
+    margin-top: 20px;
+  }
+  .header-login .header-content div input.email{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: 160px;
+    margin-left: 40px;
+  }
+  .header-login .header-content div input.password{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: unset;
+    margin-left: 40px;
+  }
+  .header-login .header-content div p.forgot{
+    font-size: 18px;
+    font-family: 'Mulish', sans-serif;
+    line-height: 20px;
+    text-decoration: underline;
+    color: white;
+    margin-top: 0;
+    margin-left: 40px;
+  }
+  .header-login .header-content div button.button-login{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 40px;
+    background-color: #4FBDBA;
+    font-weight: 900;
+    font-size: 24px;
+  }
+  .header-login .header-content div button.button-login-google{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 40px;
+    background-color: #FFFFFF;
+    font-weight: 900;
+    font-size: 24px;
+  }
+
+  .header-register .header-content h1.heading{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 40px;
+    padding-top: 107px;
+    line-height: 85px;
+  }
+  .header-register .header-content div div.line1{
+    width: unset;
+    height:unset;
+  }
+  .header-register.header-content div div.circle1{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 20px;
+  }
+  .header-register .header-content div div.line1{
+    background: white;
+    height: 100%;
+    width: 1px;
+  }
+  .header-register .header-content div div.circle2{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 20px;
+  }
+  .header-register .header-content div.accs{
+    width: 20px;
+    height: 650px;
+    display: flex;
+    justify-content: right;
+    padding: 0 0 0 0;
+    margin-top: 20px;
+  }
+  .header-register .header-content div input.name{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: 130px;
+    margin-left: 40px;
+  }
+  .header-register .header-content div input.email{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: unset;
+    margin-left: 40px;
+  }
+  .header-register .header-content div input.password{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-top: unset;
+    margin-left: 40px;
+  }
+  .header-register .header-content div button.button-signup{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 40px;
+    background-color: #4FBDBA;
+    font-weight: 900;
+    font-size: 24px;
+  }
+  .header-register .header-content div button.button-signup-google{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 40px;
+    background-color: #FFFFFF;
+    font-weight: 900;
+    font-size: 20px;
+  }
+}
+
+@media (min-width:601px) and ( max-width: 991px) {
     section.profile{
       padding-top: 100px;
     }

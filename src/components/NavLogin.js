@@ -11,12 +11,12 @@ export default class NavLogin extends Component {
         <body>
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container">
-              <Link className="navbar-brand" to="/">
+              <Link className="navbar-brand text-center" to="/">
                 <img src={Logo} alt="logo" />
+                <div className="brand brand d-inline align-middle">
+                  <span className='mx-2'>V E H I C O O L</span>
+                </div>
               </Link>
-              <div className="brand">
-                <span>V E H I C O O L</span>
-              </div>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>

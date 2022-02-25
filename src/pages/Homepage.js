@@ -147,7 +147,7 @@ export default class Homepage extends Component {
 
             <section className="testimonials">
               <h2 className="testimonials">Testimonials</h2>
-              <div className="row">
+              <div className="row testi">
                 <div className="col-12 col-lg-6 mt-5 left-testi">
                   <div className="comment">
                     <div className="stars">
@@ -166,7 +166,7 @@ export default class Homepage extends Component {
                   </div>
                 </div>
                 <div className="col-12 col-lg-6 mt-5 d-flex profile-pic mb-5">
-                  <div className="image d-inline-block position-relative">
+                  <div className="img-fluid position-relative">
                     <img src={User} alt="User-Home" />
                     <div className="row ms-auto next-prev">
                       <button className="position-absolute prev"><FaChevronLeft /></button>
