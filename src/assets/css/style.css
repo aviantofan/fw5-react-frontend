@@ -550,7 +550,7 @@ section.preview button.prev{
   min-height: unset;
   min-width: unset;
   color: #4A4C53;
-  background-color: white;
+  background-color: transparent;
   border: unset;
 }
 section.preview button.next{
@@ -560,9 +560,18 @@ section.preview button.next{
   min-height: unset;
   min-width: unset;
   color: #4A4C53;
-  background-color: white;
+  background-color: transparent;
   border: unset;
-  padding-right: 20px;
+}
+section.preview img.detail{
+  width: 610px;
+  height: 409px;
+  object-fit: cover;
+}
+section.preview img.detail1{
+  width: 233px;
+  height: 158px;
+  object-fit: cover;
 }
 section.preview .desc h2{
   font-weight: 900;
@@ -613,14 +622,12 @@ section.preview .day{
 }
 section.semi-footer button.button-dark{
   color: #4FBDBA;
-  width: 415px;
   height: 89px;
   font-weight: 700;
   font-size: 24px;
 }
 section.semi-footer button.button-filled{
   color: #072227;
-  width: 415px;
   height: 89px;
   font-weight: 700;
   font-size: 24px;
@@ -628,7 +635,6 @@ section.semi-footer button.button-filled{
 section.semi-footer .button-like{
   color: #4FBDBA;
   background-color: #072227;
-  width: 235px;
   height: 89px;
   font-size: 24px;
   font-family: 'Nunito', sans-serif;
@@ -954,6 +960,12 @@ section.preview .form-select{
   color: #393939;
 }
 
+@media (max-width: 320px){
+  section.identity label{
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 500px) {
   .header-forgot .header-content {
     padding: 0 10px;
@@ -1137,13 +1149,6 @@ section.preview .form-select{
   .header-home .header-content .select-option .option{
     text-align: center;
   }
-  .header-home .header-content div.line2{
-    background:unset;
-    width: unset;
-    height: unset;
-    border-radius: unset;
-    margin-bottom: unset;
-  }
   .header-home .header-content h1.heading2{
     font-size: 44px;
     text-align: center;
@@ -1155,6 +1160,13 @@ section.preview .form-select{
 }
 
 @media (max-width: 768px){
+  section.preview .picture{
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px){
   section.testimonials h2.testimonials{
     margin-bottom: unset;
   }
@@ -1163,6 +1175,32 @@ section.preview .form-select{
   }
   section.testimonials .testi .left-testi{
     flex-direction: column-reverse;
+  }
+  section.preview img.detail{
+    width: 100%;
+    height:unset;
+  }
+  section.preview .pic{
+    display: inline;
+  }
+}
+
+@media (max-width: 1023px){
+  .header-home .header-content div.line2{
+    background:unset;
+    width: unset;
+    height: unset;
+    border-radius: unset;
+    margin-bottom: unset;
+  }
+}
+
+@media (max-width: 1024px){
+  section.preview button.prev{
+    background-color:#4FBDBA;
+  }
+  section.preview button.next{
+    background-color:#4FBDBA;
   }
 }
 

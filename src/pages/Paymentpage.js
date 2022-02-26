@@ -24,7 +24,7 @@ export default class Paymentpage extends Component {
             <section className="preview">
               <div className="row pt-5">
                 <div className="col-md-5">
-                  <img src={Payment} alt="Reserved" />
+                  <img src={Payment} className="img-fluid" alt="Reserved" />
                 </div>
                 <div className="col">
                   <div className="desc">

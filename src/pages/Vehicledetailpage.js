@@ -35,7 +35,7 @@ export const Vehicledetailpage = (props) => {
       <Navlogin />
       <main className="container">
         <section className="back">
-          <div>
+          <div className='pt-3'>
             <Link to="/vehicles">
               <FaChevronLeft />
             </Link>
@@ -44,20 +44,22 @@ export const Vehicledetailpage = (props) => {
         </section>
 
         <section className="preview">
-          <div className="row pt-5">
-            <div className="col">
-              <img src={vehicle?.image} className="img-fluid" alt="Vehicle Detail" />
-              <div className="row align-items-center justify-content-center">
-                <div className="col-md-1">
+          <div className="row pt-5 pic">
+            <div className="col text-center">
+              <img src={vehicle?.image} className="img-fluid detail" alt="Vehicle Detail" />
+              <div className='position-relative'>
+                <div className='position-absolute top-50 start-0 translate-middle'>
                   <button className="prev"><FaChevronLeft /></button>
                 </div>
-                <div className="col-md-5">
-                  <img src={vehicle?.image} className="img-fluid" alt="Vehicle Detail" />
+                <div className="row align-items-center justify-content-center pic-preview">
+                  <div className="col text-center">
+                    <img src={vehicle?.image} className="img-fluid detail1 mb-0" alt="Vehicle Detail" />
+                  </div>
+                  <div className="col text-center">
+                    <img src={vehicle?.image} className="img-fluid detail1 mb-0" alt="Vehicle Detail" />
+                  </div>
                 </div>
-                <div className="col-md-5 text-end">
-                  <img src={vehicle?.image} className="img-fluid" alt="Vehicle Detail" />
-                </div>
-                <div className="col-md-1">
+                <div className='position-absolute top-50 start-100 translate-middle'>
                   <button className="next"><FaChevronRight /></button>
                 </div>
               </div>
@@ -85,11 +87,11 @@ export const Vehicledetailpage = (props) => {
               <div className="price mt-4 mb-4 text-end">
                 Rp.78.000/day
               </div>
-              <div className="day d-flex flex-row justify-content-between align-items-center">
+              <div className="day d-flex row justify-content-between align-items-center">
                 <div className="col">
                   <button className="plus"><FaPlus /></button>
                 </div>
-                <div className="col-md-8">
+                <div className="col">
                   <div className="count">2</div>
                 </div>
                 <div className="col">
@@ -101,19 +103,19 @@ export const Vehicledetailpage = (props) => {
         </section>
 
         <section className="semi-footer">
-          <div className="row mt-4">
-            <div className="col">
+          <div className="row mt-4 mb-4">
+            <div className="col-sm-5 ">
               <Link to="">
-                <button className="button-dark">Chat Admin</button>
+                <button className="button-dark w-100 mb-2">Chat Admin</button>
               </Link>
             </div>
-            <div className="col">
+            <div className="col-sm-5 mb-2">
               <Link to="/reservation">
-                <button className="button-filled">Reservation</button>
+                <button className="button-filled w-100">Reservation</button>
               </Link>
             </div>
-            <div className="col mb-4">
-              <button className="button-like"><FaHeart />
+            <div className="col sm-4">
+              <button className="button-like w-100"><FaHeart />
                 <span>Like</span>
               </button>
             </div>
@@ -138,7 +140,7 @@ export default Vehicledetailpage
         //     <section className="back">
         //       <div>
         //         <Link to="">
-        //           <i className="fa-solid fa-chevron-left fa-2xl "></i>
+        //           <i className="fa-solid fa-chevron-left"></i>
         //         </Link>
         //         <span>Detail</span>
         //       </div>

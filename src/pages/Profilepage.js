@@ -83,15 +83,15 @@ export default class Profilepage extends Component {
             </section>
 
             <section className="button">
-              <div className="mt-5 mb-5 d-flex justify-content-between">
-                <div>
-                  <button className="button-filled">Save Change</button>
+              <div className="row mt-5 mb-5">
+                <div className='col-md-4'>
+                  <button className="button-filled w-100">Save Change</button>
                 </div>
-                <div>
-                  <button className="button-dark">Edit Password</button>
+                <div className='col-md-4'>
+                  <button className="button-dark w-100">Edit Password</button>
                 </div>
-                <div>
-                  <button className="button-gray">Cancel</button>
+                <div className='col-md-4'>
+                  <button className="button-gray w-100">Cancel</button>
                 </div>
               </div>
             </section>
