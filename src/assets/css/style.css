@@ -1151,9 +1151,6 @@ section.preview .form-select{
     text-align: center;
     width: 100%;
   }
-}
-
-@media (max-width: 767px){
   section.testimonials h2.testimonials{
     margin-bottom: unset;
   }
@@ -1169,6 +1166,9 @@ section.preview .form-select{
   }
   section.preview .pic{
     display: inline;
+  }
+  main .histroy{
+    flex-wrap: wrap-reverse;
   }
 }
 
