@@ -83,12 +83,12 @@ export default class Profilepage extends Component {
             </section>
 
             <section className="button">
-              <div className="row mt-5 mb-5">
+              <div className="row mt-5 mb-4">
                 <div className='col-md-4'>
-                  <button className="button-filled w-100">Save Change</button>
+                  <button className="button-filled mb-2 w-100">Save Change</button>
                 </div>
                 <div className='col-md-4'>
-                  <button className="button-dark w-100">Edit Password</button>
+                  <button className="button-dark mb-2 w-100">Edit Password</button>
                 </div>
                 <div className='col-md-4'>
                   <button className="button-gray w-100">Cancel</button>

@@ -23,7 +23,7 @@ export default class Paymentpage extends Component {
 
             <section className="preview">
               <div className="row pt-5">
-                <div className="col-md-5">
+                <div className="col-5 picture">
                   <img src={Payment} className="img-fluid" alt="Reserved" />
                 </div>
                 <div className="col">
@@ -52,11 +52,16 @@ export default class Paymentpage extends Component {
                   </div>
                   <div className="col">
                     <div className=" date mb-3 d-flex flex-column">
-                      <span>Reservation Date :
-                        <div className="dates d-inline-block">
-                          <span className="text-muted">Jan 18-20-2021</span>
+                      <div className='row d-inline-flex'>
+                        <div className='col text-center'>
+                          <span>Reservation Date :</span>
                         </div>
-                      </span>
+                        <div className='col text-center'>
+                          <div className="dates">
+                            <span className="text-muted">Jan 18-20-2021</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -82,20 +87,20 @@ export default class Paymentpage extends Component {
             </section>
 
             <section className="semi-footer">
-              <div className="row mt-4">
-                <div className="col-md-3 pt-2">
+              <div className="row mt-4 mb-4">
+                <div className="col-sm-4 mb-2  pt-2">
                   <div className="text fw-bold d-flex flex-column">
                     <span>Payment code:</span>
                   </div>
                 </div>
-                <div className="col">
+                <div className="col-sm-4 mb-2  text-center">
                   <div className="code d-flex flex-column">
                     <span>#FG1209878YZS
-                      <button className="button-copy">Copy</button>
+                      <button className="button-copy mx-2">Copy</button>
                     </span>
                   </div>
                 </div>
-                <div className="col mb-4">
+                <div className="col-sm-4">
                   <select className="form-select d-flex flex-column">
                     <option value="">Select payment methods</option>
                   </select>

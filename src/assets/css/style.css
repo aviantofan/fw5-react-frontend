@@ -670,10 +670,6 @@ section.data .date{
   height: 107px;
   border-radius: 10px;
   justify-content: center;
-  padding-left: 59px;
-}
-section.data .date .dates{
-  padding-left: 200px;
 }
 section.data .details{
   border: 1px solid black;
@@ -698,50 +694,45 @@ section.semi-footer .code{
   border: 1px solid black;
   border-radius: 10px;
   justify-content: center;
-  padding-left: 35px;
 }
 section.semi-footer .code span{
-  position: relative;
   font-family: 'Playfair Display', serif;
   font-size: 24px;
   font-weight: bold;
 }
 section.semi-footer .button-copy{
-  position: absolute;
   font-family: 'Nunito', sans-serif;
-  width: 115px;
   height: 42px;
   background-color: #072227;
   font-size: 24px;
   color: #4FBDBA;
-  margin-left: 40px;
 }
 section.semi-footer .form-select{
   justify-content: center;
   height: 80px;
+  border-radius: 10px;
   font-size: 24px;
   padding-top: 20px;
-  padding-left: 45px;
   border-color: black;
 }
 
 /* Style History */
 
-.main-section {
-  margin: 180px 0;
-}
 form, .form-select, button {
   height: 62px;
 }
-.form-section {
-  padding-right: 22px;
+.form-section button{
+  top: 10px;
+  width: fit-content;
+  border-radius: 20px;
+  background-color: transparent;
 }
 form input::placeholder {
   font-size: 19px;
   color: #B8BECD;
 }
 .form-control, .form-select {
-  padding-left: 20px;
+  
   background-color: #f1f1f1;
 }
 .form-control:focus,
@@ -754,7 +745,6 @@ form input::placeholder {
 }
 .search-icon {
   font-size: 25px;
-  padding-right: 40px;
 }
 .select-bar:focus,
 .select-bar:active {
@@ -807,36 +797,23 @@ form input::placeholder {
   border-radius: 8px;
   border: 1px solid rgb(179, 175, 175) !important;
 }
-section.down h5 {
-  margin-top: 20px;
-  margin-bottom: 30px;
-  font-family: 'Playfair Display', Times, serif;
-}
 .new-arival {
   position: relative;
   width: 80%;
   margin: auto;
   margin-top: 30px;
 }
-.vehicle1,
-.vehicle2 {
-  height: 350px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+section.down .highlight{
+  width: 128px;
 }
-.new-arival .vehicle1 img,
-.new-arival .vehicle2 img{
-  border-radius: 10px;
+section.down .highlight h5{
+  color: #042521;
+  font-weight: 600;
+  font-size: 17px;
 }
-.highlight {
-  font-family: Nunito, Times, serif;
-  font-size: 15px !important;
-  position: absolute;
-  bottom: -4px;
-  background-color: #FFF;
-  padding: 10px 10px 10px 0;
-  border-top-right-radius: 8px;
+section.down .highlight span{
+  font-size: 17px;
+  color: #686767;
 }
 
 /* Style Profile */
@@ -963,6 +940,16 @@ section.preview .form-select{
 @media (max-width: 320px){
   section.identity label{
     font-size: 14px;
+  }
+}
+
+@media (max-width: 352px){
+  section.semi-footer .code span{
+    font-size: 100%;
+  }
+  section.semi-footer .button-copy{
+    width: 45px;
+    font-size:small;
   }
 }
 
@@ -1368,6 +1355,14 @@ section.preview .form-select{
     background-color: #FFFFFF;
     font-weight: 900;
     font-size: 20px;
+  }
+
+  section.semi-footer .code span{
+    font-size: 100%;
+  }
+  section.semi-footer .button-copy{
+    width: 45px;
+    font-size:small;
   }
 }
 
