@@ -17,3 +17,8 @@
   background-color: rgba(203, 203, 212, 0.27);
   border: unset;
 }
+
+.button-transparent{
+  background-color: transparent;
+  border: unset;
+}
