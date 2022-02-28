@@ -16,7 +16,7 @@ export const Paymentpage = () => {
 
   useEffect(() => {
     getDataComponent(id)
-  }, [])
+  })
 
   useEffect(() => {
     console.log(vehicle)

@@ -18,7 +18,7 @@ export const Reservationpage = () => {
 
   useEffect(() => {
     getDataComponent(id)
-  }, [])
+  })
 
   useEffect(() => {
     console.log(vehicle)

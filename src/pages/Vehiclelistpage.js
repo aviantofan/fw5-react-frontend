@@ -1,14 +1,14 @@
 import React, { /*Component*/ useEffect, useState } from 'react'
 import NavLogin from '../components/NavLogin'
 import { default as axios } from 'axios'
-import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, /*useParams*/ useSearchParams } from 'react-router-dom'
 import Footer from '../components/Footer'
 import { FaChevronLeft } from 'react-icons/fa'
 
 export const Vehiclelistpage = () => {
   const [listVehicle, setListVehicle] = useState([])
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [page, setPage] = useState([])
+  const [searchParams, /*setSearchParams*/] = useSearchParams()
+  const [/*page*/, setPage] = useState([])
   const navigate = useNavigate()
   // const { id } = useParams()
 
@@ -20,7 +20,7 @@ export const Vehiclelistpage = () => {
     } if (searchParams.get('categoryId')) {
       getDataSearchCategory(searchParams.get('categoryId'))
     }
-  }, []);
+  });
 
   const getDataSearchName = async (name) => {
     const { data } = await axios.get(`http://localhost:5000/vehicles?name=${name}`);

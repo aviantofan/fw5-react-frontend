@@ -19,7 +19,7 @@ export const Vehicledetailpage = (props) => {
 
   useEffect(() => {
     getDataComponent(id)
-  }, [])
+  })
 
   useEffect(() => {
     console.log(vehicle)
