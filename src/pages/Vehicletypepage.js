@@ -1,288 +1,270 @@
-import React, { Component } from 'react'
+import React, { /*Component*/useState, useEffect } from 'react'
+import { default as axios } from 'axios'
 import Footer from '../components/Footer'
 import Navlogin from '../components/NavLogin'
-import Merapi from '../assets/images/merapi.png'
-import TelukBogam from '../assets/images/teluk-bogam.png'
-import Bromo from '../assets/images/bromo.png'
-import Malioboro from '../assets/images/malioboro.png'
-import Lamborghini from '../assets/images/lambo.png'
-import JeepWhite from '../assets/images/jeep-white.png'
-import Vespa from '../assets/images/vespa.png'
-import Honda from '../assets/images/honda.png'
-import Fixie from '../assets/images/fixie.png'
-import FixieWhite from '../assets/images/fixie-white.png'
-import SportBike from '../assets/images/sports.png'
-import Onthel from '../assets/images/onthel.png'
+// import Merapi from '../assets/images/merapi.png'
+// import TelukBogam from '../assets/images/teluk-bogam.png'
+// import Bromo from '../assets/images/bromo.png'
+// import Malioboro from '../assets/images/malioboro.png'
+// import Lamborghini from '../assets/images/lambo.png'
+// import JeepWhite from '../assets/images/jeep-white.png'
+// import Vespa from '../assets/images/vespa.png'
+// import Honda from '../assets/images/honda.png'
+// import Fixie from '../assets/images/fixie.png'
+// import FixieWhite from '../assets/images/fixie-white.png'
+// import SportBike from '../assets/images/sports.png'
+// import Onthel from '../assets/images/onthel.png'
 import { FaChevronRight, FaSearch } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
 
-export default class Vehicletypepage extends Component {
-  render() {
-    return (
-      <>
-        <body>
-          <Navlogin />
-          <main className="container">
-            <section className="search">
-              <div className="mb-5">
-                <div className="position-relative">
-                  <input placeholder="Search vehicle (ex. cars, cars name)" className="w-100 search-input" type="text" />
-                  <button className="search-type"><FaSearch fa-xl /></button>
-                </div>
-              </div>
-            </section>
+export const Vehicletypepage = () => {
+  const [vehiclePopular, setVehiclePopular] = useState([])
+  const [vehicleCategoryCar, setVehicleCategoryCar] = useState([])
+  const [vehicleCategoryMotorbike, setVehicleCategoryMotorbike] = useState([])
+  const [vehicleCategoryBike, setVehicleCategoryBike] = useState([])
+  const [pagePopular, setPagePopular] = useState({})
+  const [pageCar, setPageCar] = useState({})
+  const [pageMotorbike, setPageMotorbike] = useState({})
+  const [pageBike, setPageBike] = useState({})
 
-            <section className="destination">
-              <div className="row">
-                <div className="col">
-                  <h2 className="home">Popular in town</h2>
-                </div>
-                <div className="col">
-                  <div className="direction justify-content-center">
-                    <Link className="section-link-view mt-2" to="/vehicles">
-                      View all
-                      <FaChevronRight />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Merapi} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Merapi</h5>
-                        <span>Yogyakarta</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={TelukBogam} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Teluk Bogam</h5>
-                        <span>Kalimantan</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Bromo} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Bromo</h5>
-                        <span>Malang</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Malioboro} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Malioboro</h5>
-                        <span>Yogyakarta</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
+  const navigate = useNavigate()
 
-            <section className="destination">
-              <div className="row">
-                <div className="col">
-                  <h2 className="home">Cars</h2>
-                </div>
-                <div className="col">
-                  <div className="direction justify-content-center">
-                    <Link className="section-link-view mt-2" to="/vehicles">
-                      View all
-                      <FaChevronRight />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Merapi} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Van</h5>
-                        <span>Yogyakarta</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Lamborghini} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Lamborghini</h5>
-                        <span>South Jakarta</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Bromo} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Jeep</h5>
-                        <span>Malang</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={JeepWhite} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>White Jeep</h5>
-                        <span>Kalimantan</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
+  useEffect(() => {
+    getVehiclePopular()
+  }, [])
 
-            <section className="destination">
-              <div className="row">
-                <div className="col">
-                  <h2 className="home">Motorbike</h2>
-                </div>
-                <div className="col">
-                  <div className="direction justify-content-center">
-                    <Link className="section-link-view mt-2" to="vehicles">
-                      View all
-                      <FaChevronRight />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Vespa} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Vespa</h5>
-                        <span>Yogyakarta</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={TelukBogam} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Honda KLX</h5>
-                        <span>Kalimantan</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Honda} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Honda</h5>
-                        <span>Malang</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Malioboro} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Matic Bike</h5>
-                        <span>Yogyakarta</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
+  useEffect(() => {
+    getCategoryCar()
+  }, [])
 
-            <section className="destination">
-              <div className="row">
-                <div className="col">
-                  <h2 className="home">Bike</h2>
-                </div>
-                <div className="col">
-                  <div className="direction justify-content-center">
-                    <Link className="section-link-view mt-2" to="vehicles">
-                      View all
-                      <FaChevronRight />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Fixie} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Fixie</h5>
-                        <span>Yogyakarta</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={SportBike} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Sport Bike</h5>
-                        <span>Kalimantan</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={Onthel} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Onthel</h5>
-                        <span>Malang</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-sm-6 col-md-3 text-center item-list'>
-                  <div className='my-2 d-inline-block position-relative'>
-                    <Link to="">
-                      <img className="img-fluid" src={FixieWhite} alt="Vehicle Type" />
-                      <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                        <h5>Fixie Gray</h5>
-                        <span>Yogyakarta</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </main>
-          <Footer />
-        </body>
-      </>
-    )
+  useEffect(() => {
+    getCategoryMotorbike()
+  }, [])
+
+  useEffect(() => {
+    getCategoryBike()
+  }, [])
+
+  const getVehiclePopular = async () => {
+    const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
+    setVehiclePopular(data.results)
+    setPagePopular(data.pageInfo)
   }
+
+  const getCategoryCar = async () => {
+    const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=1&limit=4')
+    setVehicleCategoryCar(data.results)
+    setPageCar(data.pageInfo)
+  }
+
+  const getCategoryMotorbike = async () => {
+    const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=2&limit=4')
+    setVehicleCategoryMotorbike(data.results)
+    setPageMotorbike(data.pageInfo)
+  }
+
+  const getCategoryBike = async () => {
+    const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=3&limit=4')
+    setVehicleCategoryBike(data.results)
+    setPageBike(data.pageInfo)
+  }
+
+  const getNextDataPopular = async (url) => {
+    const { data } = await axios.get(url)
+    setVehiclePopular([
+      ...vehiclePopular,
+      ...data.results
+    ])
+    setPagePopular(data.pageInfo)
+  }
+
+  const getNextDataCategoryCar = async (url) => {
+    const { data } = await axios.get(url)
+    setVehicleCategoryCar([
+      ...vehicleCategoryCar,
+      ...data.results
+    ])
+    setPageCar(data.pageInfo)
+  }
+
+  const getNextDataCategoryMotorbike = async (url) => {
+    const { data } = await axios.get(url)
+    setVehicleCategoryMotorbike([
+      ...vehicleCategoryMotorbike,
+      ...data.results
+    ])
+    setPageMotorbike(data.pageInfo)
+  }
+
+  const getNextDataCategoryBike = async (url) => {
+    const { data } = await axios.get(url)
+    setVehicleCategoryBike([
+      ...vehicleCategoryBike,
+      ...data.results
+    ])
+    setPageBike(data.pageInfo)
+  }
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    const name = event.target.elements["name"].value;
+    navigate(`/vehicles?name=${name}`, { replace: true })
+  }
+
+  const goToDetail = (id) => {
+    navigate(`/vehicles/${id}`)
+  }
+
+  return (
+    <>
+      <body>
+        <Navlogin />
+        <main className="container">
+          <section className="search">
+            <div className="pt-4">
+              <form id="search" onSubmit={handleSearch} className="position-relative round">
+                <input name='name' placeholder="Search vehicle (ex. cars, cars name)" className="w-100 search-input" type="text" />
+                <button type='submit' className="search-type"><FaSearch fa-xl /></button>
+              </form>
+            </div>
+          </section>
+
+          <section className="destination">
+            <div className="row">
+              <div className="col">
+                <h2 className="home">Popular in town</h2>
+              </div>
+              <div className="col">
+                <div className="direction justify-content-center">
+                  <button onClick={() => getNextDataPopular(pagePopular.next)} className="button-transparent mt-2">
+                    View all
+                    <FaChevronRight />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              {vehiclePopular.map((data, idx) => {
+                return (
+                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                    <div className='my-2 d-inline-block position-relative'>
+                      <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
+                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
+                          <h5>{data.vehicleName}</h5>
+                          <span>{data.location}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+
+          <section className="destination">
+            <div className="row">
+              <div className="col">
+                <h2 className="home">Cars</h2>
+              </div>
+              <div className="col">
+                <div className="direction justify-content-center">
+                  <button onClick={() => getNextDataCategoryCar(pageCar.next)} className="button-transparent mt-2">
+                    View all
+                    <FaChevronRight />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              {vehicleCategoryCar.map((data, idx) => {
+                return (
+                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                    <div className='my-2 d-inline-block position-relative'>
+                      <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
+                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
+                          <h5>{data.name}</h5>
+                          <span>{data.loc}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+
+          <section className="destination">
+            <div className="row">
+              <div className="col">
+                <h2 className="home">Motorbike</h2>
+              </div>
+              <div className="col">
+                <div className="direction justify-content-center">
+                  <button onClick={() => getNextDataCategoryMotorbike(pageMotorbike.next)} className="button-transparent mt-2">
+                    View all
+                    <FaChevronRight />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              {vehicleCategoryMotorbike.map((data, idx) => {
+                return (
+                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                    <div className='my-2 d-inline-block position-relative'>
+                      <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
+                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
+                          <h5>{data.name}</h5>
+                          <span>{data.loc}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+
+          <section className="destination">
+            <div className="row">
+              <div className="col">
+                <h2 className="home">Bike</h2>
+              </div>
+              <div className="col">
+                <div className="direction justify-content-center">
+                  <button onClick={() => getNextDataCategoryBike(pageBike.next)} className="button-transparent mt-2">
+                    View all
+                    <FaChevronRight />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              {vehicleCategoryBike.map((data, idx) => {
+                return (
+                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                    <div className='my-2 d-inline-block position-relative'>
+                      <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
+                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
+                          <h5>{data.name}</h5>
+                          <span>{data.loc}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </body>
+    </>
+  )
 }
+
+export default Vehicletypepage

@@ -1,10 +1,12 @@
 import React, { useEffect, useState /*Component*/ } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Button from '../components/Button'
 import Navlogin from '../components/NavLogin'
+import NumberFormat from 'react-number-format'
 // import Fixie from '../assets/images/fixie-white-width.png'
 // import FixieS from '../assets/images/fixie-white-width2.png'
-import { FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaHeart } from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight, FaHeart } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getData } from '../helpers/http'
 
@@ -12,6 +14,8 @@ export const Vehicledetailpage = (props) => {
   const [vehicle, setVehicle] = useState({})
 
   const { id } = useParams()
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     getDataComponent(id)
@@ -22,12 +26,12 @@ export const Vehicledetailpage = (props) => {
   })
 
   const getDataComponent = async (id) => {
-    try {
-      const { data } = await getData(`http://localhost:5000/vehicles/${id}`, props.history)
-      setVehicle(data.results)
-    } catch (e) {
+    const { data } = await getData(`http://localhost:5000/vehicles/${id}`)
+    setVehicle(data.results)
+  }
 
-    }
+  const goToReservation = (id) => {
+    navigate(`/reservation/${id}`)
   }
 
   return (
@@ -36,10 +40,10 @@ export const Vehicledetailpage = (props) => {
       <main className="container">
         <section className="back">
           <div className='pt-3'>
-            <Link to="/vehicles">
+            <Link to="/vehicleType">
               <FaChevronLeft />
+              <span>Detail</span>
             </Link>
-            <span>Detail</span>
           </div>
         </section>
 
@@ -75,29 +79,19 @@ export const Vehicledetailpage = (props) => {
               </div>
               <div className="info">
                 <div className="mb-2">
-                  Capacity: 1 Person
+                  Capacity: {vehicle?.capacity} Person
                 </div>
                 <div className="mb-2">
-                  Type : Bike
+                  Type : {vehicle?.categoryName}
                 </div>
                 <div>
-                  Reservation before 2 PM
+                  Reservation before {vehicle?.reservationBefore}
                 </div>
               </div>
               <div className="price mt-4 mb-4 text-end">
-                Rp.78.000/day
+                <NumberFormat value={vehicle?.price} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={"Rp. "} suffix={"/Day"} />
               </div>
-              <div className="day d-flex row justify-content-between align-items-center">
-                <div className="col">
-                  <button className="plus"><FaPlus /></button>
-                </div>
-                <div className="col">
-                  <div className="count">2</div>
-                </div>
-                <div className="col">
-                  <button className="minus"><FaMinus /></button>
-                </div>
-              </div>
+              <Button></Button>
             </div>
           </div>
         </section>
@@ -110,9 +104,7 @@ export const Vehicledetailpage = (props) => {
               </Link>
             </div>
             <div className="col-sm-5 mb-2">
-              <Link to="/reservation">
-                <button className="button-filled w-100">Reservation</button>
-              </Link>
+              <button onClick={() => goToReservation(vehicle?.id)} style={{ cursor: 'pointer' }} key={String(vehicle?.id)} className="button-filled w-100">Reservation</button>
             </div>
             <div className="col sm-4">
               <button className="button-like w-100"><FaHeart />

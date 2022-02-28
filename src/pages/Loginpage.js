@@ -4,6 +4,30 @@ import Footer from '../components/Footer'
 import Google from '../assets/images/google.png'
 
 export default class Loginpage extends Component {
+  state = {
+    email: '',
+    password: '',
+    isLogged: false
+  }
+
+  handleEmailChange = (e) => {
+    this.setState({ email: e.target.value })
+  }
+  handlePasswordChange = (e) => {
+    this.setState({ password: e.target.value })
+  }
+
+
+  onLogin = (e) => {
+    e.preventDefault()
+    if (this.state.email === "admin@mail.com" && this.state.password === "1234") {
+      this.setState({ isLogged: true })
+      this.props.onLogin(true)
+    } else {
+      window.alert("Email atau password salah!")
+      this.props.onLogin(false)
+    }
+  }
   render() {
     return (
       <>
@@ -37,12 +61,12 @@ export default class Loginpage extends Component {
                   <div className="col-md-5">
                     <div className="col-md-12">
                       <div className="mb-4">
-                        <input placeholder="Email" type="email" className="email w-100" />
+                        <input onChange={this.handleEmailChange} placeholder="Email" type="email" className="email form-control w-100" />
                       </div>
                     </div>
                     <div className="col-md-12">
                       <div className="mb-2">
-                        <input placeholder="Password" type="password" className="password w-100" />
+                        <input onChange={this.handlePasswordChange} placeholder="Password" type="password" className="password form-control w-100" />
                       </div>
                     </div>
                     <div className="col-md-5">
@@ -54,7 +78,7 @@ export default class Loginpage extends Component {
                     </div>
                     <div className="col-md-12">
                       <div className="mb-4">
-                        <button className="button-login w-100">Login</button>
+                        <button onClick={this.onLogin} type='submit' className="button-login w-100">Login</button>
                       </div>
                     </div>
                     <div className="col-md-12">
