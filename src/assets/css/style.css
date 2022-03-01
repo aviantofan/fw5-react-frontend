@@ -430,12 +430,16 @@ section.testimonials .profile-pic .prev svg {
 section.search .search-input{
   height: 62px;
   border-radius: 10px;
+  border-color:#4FBDBA;
+}
+section.search .search-type svg{
+  color: #32DBC6;
 }
 section.search .search-type{
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: white;
+  background-color: transparent;
   border: unset;
   border-radius: 25px;
   min-height: unset;
