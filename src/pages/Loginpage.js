@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Google from '../assets/images/google.png'
 import Button from '../components/Button'
+import Input from '../components/Input'
 
 export default class Loginpage extends Component {
   state = {
@@ -62,12 +63,12 @@ export default class Loginpage extends Component {
                   <div className="col-md-5">
                     <div className="col-md-12">
                       <div className="mb-4">
-                        <input onChange={this.handleEmailChange} placeholder="Email" type="email" className="email form-control w-100" />
+                        <Input onChange={this.handleEmailChange} placeholder="Email" type="email" className="email form-control w-100" />
                       </div>
                     </div>
                     <div className="col-md-12">
                       <div className="mb-2">
-                        <input onChange={this.handlePasswordChange} placeholder="Password" type="password" className="password form-control w-100" />
+                        <Input onChange={this.handlePasswordChange} placeholder="Password" type="password" className="password form-control w-100" />
                       </div>
                     </div>
                     <div className="col-md-5">

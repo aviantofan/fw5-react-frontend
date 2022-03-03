@@ -2,6 +2,7 @@ import React, { /*Component*/useState, useEffect } from 'react'
 import { default as axios } from 'axios'
 import Footer from '../components/Footer'
 import Navlogin from '../components/NavLogin'
+import Input from '../components/Input'
 import { FaChevronRight, FaSearch } from 'react-icons/fa'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
 
@@ -111,7 +112,7 @@ export const Vehicletypepage = () => {
           <section className="search">
             <div className="pt-4">
               <form id="search" onSubmit={handleSearch} className="position-relative round">
-                <input name='name' placeholder="Search vehicle (ex. cars, cars name)" className="w-100 search-input" type="text" />
+                <Input name='name' placeholder="Search vehicle (ex. cars, cars name)" className="w-100 search-input" type="text" />
                 <button type='submit' className="search-type"><FaSearch fa-xl /></button>
               </form>
             </div>

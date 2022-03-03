@@ -4,6 +4,7 @@ import Navlogin from '../components/NavLogin'
 import Profile from '../assets/images/profile-picture.png'
 import { FaPencilAlt } from 'react-icons/fa'
 import Button from '../components/Button'
+import Input from '../components/Input'
 
 export default class Profilepage extends Component {
   render() {
@@ -55,7 +56,7 @@ export default class Profilepage extends Component {
               </div>
               <div className="mb-5">
                 <label className="mb-2">Email: </label>
-                <input className="d-block w-100 input-underline" type="email" value="zulaikha17@gmail.com" />
+                <Input className="d-block w-100 input-underline" type="email" value="zulaikha17@gmail.com" />
               </div>
               <div className="mb-5">
                 <label className="mb-2">Address: </label>
@@ -63,7 +64,7 @@ export default class Profilepage extends Component {
               </div>
               <div className="mb-5">
                 <label className="mb-2">Mobile Number: </label>
-                <input className="d-block w-100 input-underline" type="text" value="(+62)813456782" />
+                <Input className="d-block w-100 input-underline" type="text" value="(+62)813456782" />
               </div>
             </section>
 
@@ -74,11 +75,11 @@ export default class Profilepage extends Component {
               <div className="row">
                 <div className="col">
                   <label className="mb-2">Display Name: </label>
-                  <input className="d-block w-100 input-underline" type="text" value="Zulaikha" />
+                  <Input className="d-block w-100 input-underline" type="text" value="Zulaikha" />
                 </div>
                 <div className="col">
                   <label className="mb-2">DD/MM/YY: </label>
-                  <input className="d-block w-100 input-underline" type="date" value="03/09/2003" />
+                  <Input className="d-block w-100 input-underline" type="date" value="03/09/2003" />
                 </div>
               </div>
             </section>

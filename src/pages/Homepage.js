@@ -7,6 +7,7 @@ import Button from '../components/Button'
 import User from '../assets/images/user-home.png'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
 import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
+import Input from '../components/Input'
 
 export const Homepage = () => {
   const [vehiclePopular, setVehiclePopular] = useState([])
@@ -89,7 +90,7 @@ export const Homepage = () => {
                     </select>
                   </div>
                   <div className="col-sm-5 mb-5 option">
-                    <input className="form-option" type="date"></input>
+                    <Input className="form-option" type="date"></Input>
                   </div>
                 </div>
                 <div className="row select-option">

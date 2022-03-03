@@ -7,6 +7,7 @@ import Motorbike from '../assets/images/motorbike-history.png'
 import Lambo from '../assets/images/lambo-history.png'
 import Jeep from '../assets/images/jeep-history.png'
 import { FaChevronRight, FaChevronDown, FaSearch } from 'react-icons/fa'
+import Input from '../components/Input'
 
 export default class Historypage extends Component {
   render() {
@@ -20,7 +21,7 @@ export default class Historypage extends Component {
                 <div className="row form-section">
                   <div className="col search-bar mb-2">
                     <form className="container d-flex position-relative px-0">
-                      <input className="form-control" type="search" placeholder="Search history" />
+                      <Input className="form-control" type="search" placeholder="Search history" />
                       <button type="submit" className="btn position-absolute top-50 end-0 translate-middle-y">
                         <FaSearch />
                       </button>
