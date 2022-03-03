@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import Homepage from './pages/Homepage'
-// import Homeloggedpage from './pages/Homeloggedpage'
+import Homeloggedpage from './pages/Homeloggedpage'
 import Vehicletypepage from './pages/Vehicletypepage'
 import Registerpage from './pages/Registerpage'
 import Loginpage from './pages/Loginpage'
@@ -16,26 +16,15 @@ import Vehiclelistpage from './pages/Vehiclelistpage'
 import { unstable_HistoryRouter as HistoryRouter, /*BrowserRouter*/ Route, Routes } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 export default class App extends Component {
-  // state = {
-  //   isLogged: false,
-  //   greetings: ''
-  // }
-  // toggle = () => {
-  //   this.setState({ isLogged: !this.state.isLogged })
-  // }
-  // componentDidMount() {
-  //   console.log(this.props)
-  // }
   history = createBrowserHistory()
   render() {
     return (
       <div>
         <HistoryRouter history={this.history}>
-          {/* {!this.state.isLogged && <Homepage onLogin={(value) => { this.setState({ isLogged: value }) }} />}
-          {this.state.isLogged && <Homeloggedpage />} */}
           {/* <BrowserRouter> */}
           <Routes>
             <Route path='/' element={<Homepage />} />
+            <Route path='homeLogged' element={<Homeloggedpage />} />
             <Route path='vehicleType' element={<Vehicletypepage />} />
             <Route path='vehicles' element={<Vehiclelistpage />} />
             <Route path='vehicles/:id' element={<Vehicledetailpage />} />

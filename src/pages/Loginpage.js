@@ -1,74 +1,68 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, Navigate } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Google from '../assets/images/google.png'
 import Button from '../components/Button'
 import Input from '../components/Input'
+import { connect } from 'react-redux'
 
-export default class Loginpage extends Component {
-  state = {
-    email: '',
-    password: '',
-    isLogged: false
-  }
+export const Loginpage = ({ auth, dispatch }) => {
 
-  handleEmailChange = (e) => {
-    this.setState({ email: e.target.value })
-  }
-  handlePasswordChange = (e) => {
-    this.setState({ password: e.target.value })
-  }
+  useEffect(() => {
+    console.log(auth);
+  })
 
-
-  onLogin = (e) => {
+  const onLogin = (e) => {
     e.preventDefault()
-    if (this.state.email === "admin@mail.com" && this.state.password === "1234") {
-      this.setState({ isLogged: true })
-      this.props.onLogin(true)
-    } else {
-      window.alert("Email atau password salah!")
-      this.props.onLogin(false)
-    }
+    dispatch({
+      type: 'LOGIN',
+      payload: {
+        email: e.target.elements['email'].value,
+        password: e.target.elements['password'].value
+      }
+    })
   }
-  render() {
-    return (
-      <>
-        <body>
-          <header className="header-login">
-            <div className="header-content">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="mb-3">
-                      <h1 className="heading w-100">Let’s Explore <br /> The World</h1>
-                    </div>
-                    <div className="mb-2">
-                      <p>Don’t have account?</p>
-                    </div>
-                    <div>
-                      <div className="col-md-9">
-                        <Link to="/register">
-                          <Button className="dark">Sign Up</Button>
-                        </Link>
-                      </div>
+
+  return (
+    <>
+      <body>
+        <header className="header-login">
+          <div className="header-content">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="mb-3">
+                    <h1 className="heading w-100">Let’s Explore <br /> The World</h1>
+                  </div>
+                  <div className="mb-2">
+                    <p>Don’t have account?</p>
+                  </div>
+                  <div>
+                    <div className="col-md-9">
+                      <Link to="/register">
+                        <Button className="dark">Sign Up</Button>
+                      </Link>
                     </div>
                   </div>
-                  <div className="col-md-3 accs">
-                    <div className="align-items-center flex-column accs">
-                      <div className="circle1"></div>
-                      <div className="line1"></div>
-                      <div className="circle2"></div>
-                    </div>
+                </div>
+                <div className="col-md-3 accs">
+                  <div className="align-items-center flex-column accs">
+                    <div className="circle1"></div>
+                    <div className="line1"></div>
+                    <div className="circle2"></div>
                   </div>
-                  <div className="col-md-5">
+                </div>
+                {auth.token !== null && <Navigate to="/homeLogged" />}
+                <div className="col-md-5">
+                  <form onSubmit={onLogin}>
                     <div className="col-md-12">
                       <div className="mb-4">
-                        <Input onChange={this.handleEmailChange} placeholder="Email" type="email" className="email form-control w-100" />
+                        <Input name="email" placeholder="Email" id="email" type="email" className="email form-control w-100" />
                       </div>
                     </div>
                     <div className="col-md-12">
                       <div className="mb-2">
-                        <Input onChange={this.handlePasswordChange} placeholder="Password" type="password" className="password form-control w-100" />
+                        <Input name="password" placeholder="Password" id="password" type="password" className="password form-control w-100" />
                       </div>
                     </div>
                     <div className="col-md-5">
@@ -80,7 +74,7 @@ export default class Loginpage extends Component {
                     </div>
                     <div className="col-md-12">
                       <div className="mb-4">
-                        <Button onClick={this.onLogin} type='submit' className="login w-100">Login</Button>
+                        <Button type='submit' className="login w-100">Login</Button>
                       </div>
                     </div>
                     <div className="col-md-12">
@@ -91,14 +85,20 @@ export default class Loginpage extends Component {
                         </Button>
                       </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
-          </header>
-          <Footer />
-        </body>
-      </>
-    )
-  }
+          </div>
+        </header>
+        <Footer />
+      </body>
+    </>
+  )
 }
+
+const mapStateToProps = state => ({ auth: state.auth })
+
+const mapDispatchToProps = dispatch => ({ dispatch })
+
+export default connect(mapStateToProps, mapDispatchToProps)(Loginpage)

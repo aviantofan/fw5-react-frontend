@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { default as axios } from 'axios'
-import NavLogin from '../components/NavLogin'
 import Footer from '../components/Footer'
+import Button from '../components/Button'
 // import Merapi from '../assets/images/merapi.png'
 import User from '../assets/images/user-home.png'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
 import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
+import Input from '../components/Input'
+import NavLogin from '../components/NavLogin'
 
 export const Homeloggedpage = () => {
   const [vehiclePopular, setVehiclePopular] = useState([])
   const [page, setPage] = useState({})
-
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -36,6 +37,13 @@ export const Homeloggedpage = () => {
     navigate(`/vehicles/${id}`)
   }
 
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    const location = event.target.elements["location"].value;
+    const categoryId = event.target.elements["categoryId"].value;
+    navigate(`/vehicles?location=${location}&categoryId=${categoryId}`, { replace: true })
+  }
+
   return (
     <>
       <body>
@@ -52,37 +60,42 @@ export const Homeloggedpage = () => {
                   <div className="mb-5 line2"></div>
                 </p>
               </div>
-              <form className="col-sm-12 col-lg-6">
+              <form id="search" onSubmit={handleSearch} className="col-sm-12 col-lg-6">
                 <div className="row select-option">
                   <div className="col-sm-5 mb-4 option">
-                    <select className="form-select">
-                      <option value="">Location</option>
+                    <select name='location' className="form-select" >
+                      <option value="" style={{ display: 'none' }}>Location</option>
+                      <option value="south jakarta">South Jakarta</option>
+                      <option value="yogyakarta">Yogyakarta</option>
+                      <option value="malang">Malang</option>
+                      <option value="kalimantan">Kalimantan</option>
                     </select>
                   </div>
                   <div className="col-sm-5 mb-4 option">
-                    <select className="form-select">
-                      <option>Type</option>
-                      <option value="">Cars</option>
-                      <option value="">Motorbike</option>
-                      <option value="">Bike</option>
+                    <select name='categoryId' className="form-select">
+                      <option value="" style={{ display: 'none' }}>Type</option>
+                      <option value="1">Car</option>
+                      <option value="2">Motorbike</option>
+                      <option value="3">Bike</option>
                     </select>
                   </div>
                 </div>
                 <div className="row select-option">
                   <div className="col-sm-5 mb-4 option">
-                    <select className="form-select">
+                    <select className="form-select" >
                       <option value="">Payment</option>
+                      <option value="cash">Cash</option>
+                      <option value="tf">Transfer</option>
+                      <option value="va">Virtual Account</option>
                     </select>
                   </div>
                   <div className="col-sm-5 mb-5 option">
-                    <select className="form-select" type="date">
-                      <option value="">Date</option>
-                    </select>
+                    <Input className="form-option" type="date"></Input>
                   </div>
                 </div>
                 <div className="row select-option">
                   <div className="col-sm-5 option">
-                    <button className="button-filled">Explore</button>
+                    <Button type="submit" className="filled">Explore</Button>
                   </div>
                 </div>
               </form>
@@ -111,7 +124,7 @@ export const Homeloggedpage = () => {
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
-                        <img className="img-fluid" src={data.image} alt={data.name} />
+                        <img className="img-fluid image-preview" src={data.image} alt={data.name} />
                         <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                           <h5>{data.vehicleName}</h5>
                           <span>{data.location}</span>
