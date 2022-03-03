@@ -10,7 +10,6 @@ import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
 export const Homepage = () => {
   const [vehiclePopular, setVehiclePopular] = useState([])
   const [page, setPage] = useState({})
-
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -123,7 +122,7 @@ export const Homepage = () => {
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
-                        <img className="img-fluid" src={data.image} alt={data.name} />
+                        <img className="img-fluid image-preview" src={data.image} alt={data.name} />
                         <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                           <h5>{data.vehicleName}</h5>
                           <span>{data.location}</span>

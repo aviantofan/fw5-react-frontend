@@ -1,7 +1,7 @@
 import React, { useEffect, useState /*Component*/ } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
-import Button from '../components/Button'
+import Buttonplusminus from '../components/Buttonplusminus'
 import Navlogin from '../components/NavLogin'
 import NumberFormat from 'react-number-format'
 // import Fixie from '../assets/images/fixie-white-width.png'
@@ -91,7 +91,7 @@ export const Vehicledetailpage = (props) => {
               <div className="price mt-4 mb-4 text-end">
                 <NumberFormat value={vehicle?.price} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={"Rp. "} suffix={"/Day"} />
               </div>
-              <Button></Button>
+              <Buttonplusminus></Buttonplusminus>
             </div>
           </div>
         </section>

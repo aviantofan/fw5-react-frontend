@@ -8,7 +8,7 @@ export default class Footer extends Component {
     return (
       <footer className="footer">
         <div className="container">
-          <div className="row">
+          <div className="row gx-0">
             <div className="col desc">
               <div className='row d-inline-block'>
                 <div className='col'>

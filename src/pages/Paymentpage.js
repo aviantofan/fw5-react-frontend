@@ -8,10 +8,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { getData } from '../helpers/http'
 
 export const Paymentpage = () => {
+  const { APP_URL } = process.env;
   const [vehicle, setVehicle] = useState({})
-
   const { id } = useParams()
-
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -23,7 +22,7 @@ export const Paymentpage = () => {
   })
 
   const getDataComponent = async (id) => {
-    const { data } = await getData(`http://localhost:5000/vehicles/${id}`)
+    const { data } = await getData(`${APP_URL}/vehicles/${id}`)
     setVehicle(data.results)
   }
 

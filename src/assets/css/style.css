@@ -1,3 +1,9 @@
+/*Style image*/
+.image-preview{
+  height: 333px;
+  object-fit: cover;
+}
+
 /* Style Homepage */
 body{
   font-family: 'Nunito', sans-serif;
@@ -489,11 +495,6 @@ section.destination .nextList .button-filled{
   height: 758px;
   color: white;
 }
-.header-forgot .header-content .header-nav{
-  margin: 0 89px;
-  padding-top: 74px;
-
-}
 .header-forgot .header-content .header-nav svg{
   font-size: 30px;
   margin-right: 45px;
@@ -514,7 +515,6 @@ section.destination .nextList .button-filled{
   text-align: center;
 }
 .header-forgot .header-content form div input.forgotemail{
-  width: 447px;
   height: 79px;
   border: none;
   border-radius: 10px;
@@ -538,7 +538,6 @@ section.destination .nextList .button-filled{
   font-size: 24px;
   font-weight: 900;
   background-color: #4FBDBA;
-  margin-bottom: 54px;
   color: #072227;
 }
 .header-forgot .header-content .text{
@@ -1175,6 +1174,17 @@ section.preview img.reservation{
   }
   .header-home .header-content p.text2{
     text-align: center;
+  }
+}
+
+@media (max-width: 767px){
+  .header-forgot .header-content h1.heading{
+    font-size: 36px;
+    margin-top: unset;
+    margin-bottom: 15px;
+  }
+  .header-forgot .header-content .text{
+    font-size: 15px;
   }
 }
 

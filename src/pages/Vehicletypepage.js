@@ -2,18 +2,6 @@ import React, { /*Component*/useState, useEffect } from 'react'
 import { default as axios } from 'axios'
 import Footer from '../components/Footer'
 import Navlogin from '../components/NavLogin'
-// import Merapi from '../assets/images/merapi.png'
-// import TelukBogam from '../assets/images/teluk-bogam.png'
-// import Bromo from '../assets/images/bromo.png'
-// import Malioboro from '../assets/images/malioboro.png'
-// import Lamborghini from '../assets/images/lambo.png'
-// import JeepWhite from '../assets/images/jeep-white.png'
-// import Vespa from '../assets/images/vespa.png'
-// import Honda from '../assets/images/honda.png'
-// import Fixie from '../assets/images/fixie.png'
-// import FixieWhite from '../assets/images/fixie-white.png'
-// import SportBike from '../assets/images/sports.png'
-// import Onthel from '../assets/images/onthel.png'
 import { FaChevronRight, FaSearch } from 'react-icons/fa'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
 
@@ -149,7 +137,7 @@ export const Vehicletypepage = () => {
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
-                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
                         <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                           <h5>{data.vehicleName}</h5>
                           <span>{data.location}</span>
@@ -182,7 +170,7 @@ export const Vehicletypepage = () => {
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
-                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
                         <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                           <h5>{data.name}</h5>
                           <span>{data.loc}</span>
@@ -215,7 +203,7 @@ export const Vehicletypepage = () => {
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
-                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
                         <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                           <h5>{data.name}</h5>
                           <span>{data.loc}</span>
@@ -248,7 +236,7 @@ export const Vehicletypepage = () => {
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
-                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
                         <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                           <h5>{data.name}</h5>
                           <span>{data.loc}</span>

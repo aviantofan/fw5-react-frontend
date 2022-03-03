@@ -1,7 +1,7 @@
 import React, { /*Component*/ useEffect, useState } from 'react'
 // import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
-import Reversebutton from '../components/Reversebutton'
+import Reversebuttonplusminus from '../components/Reversebuttonplusminus'
 import Navlogin from '../components/NavLogin'
 import NumberFormat from 'react-number-format'
 // import Fixie from '../assets/images/fixie-reserved.png'
@@ -62,7 +62,7 @@ export const Reservationpage = () => {
                 <div className="status-vehicle mb-3 d-flex flex-column">
                   <span className="text-danger mb-3 fw-bold">No prepayment</span>
                 </div>
-                <Reversebutton></Reversebutton>
+                <Reversebuttonplusminus></Reversebuttonplusminus>
                 <div className="status-vehicle mb-3 pt-5 d-flex flex-column">
                   <span className="mb-3 fw-bold">Reservation Date :</span>
                 </div>

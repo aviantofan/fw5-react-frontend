@@ -74,7 +74,7 @@ export const Vehiclelistpage = () => {
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
-                        <img className="img-fluid" src={data.image} alt="Vehicle Type" />
+                        <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
                         <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
                           <h5>{data.name}</h5>
                           <span>{data.loc}</span>
