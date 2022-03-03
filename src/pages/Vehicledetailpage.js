@@ -9,6 +9,7 @@ import NumberFormat from 'react-number-format'
 import { FaChevronLeft, FaChevronRight, FaHeart } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getData } from '../helpers/http'
+import Button from '../components/Button'
 
 export const Vehicledetailpage = (props) => {
   const [vehicle, setVehicle] = useState({})
@@ -100,16 +101,16 @@ export const Vehicledetailpage = (props) => {
           <div className="row mt-4 mb-4">
             <div className="col-sm-5 ">
               <Link to="">
-                <button className="button-dark w-100 mb-2">Chat Admin</button>
+                <Button className="dark w-100 mb-2">Chat Admin</Button>
               </Link>
             </div>
             <div className="col-sm-5 mb-2">
-              <button onClick={() => goToReservation(vehicle?.id)} style={{ cursor: 'pointer' }} key={String(vehicle?.id)} className="button-filled w-100">Reservation</button>
+              <Button onClick={() => goToReservation(vehicle?.id)} style={{ cursor: 'pointer' }} key={String(vehicle?.id)} className="filled w-100">Reservation</Button>
             </div>
             <div className="col sm-4">
-              <button className="button-like w-100"><FaHeart />
+              <Button className="like w-100"><FaHeart />
                 <span>Like</span>
-              </button>
+              </Button>
             </div>
           </div>
         </section>

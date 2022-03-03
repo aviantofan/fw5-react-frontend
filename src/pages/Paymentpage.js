@@ -6,6 +6,7 @@ import Navlogin from '../components/NavLogin'
 import { FaChevronLeft } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getData } from '../helpers/http'
+import Button from '../components/Button'
 
 export const Paymentpage = () => {
   const { APP_URL } = process.env;
@@ -59,7 +60,7 @@ export const Paymentpage = () => {
                   <span className="mb-2 fw-bold">#FG1209878YZS</span>
                 </div>
                 <div className="code d-flex flex-column">
-                  <button className="button-filled"> Copy booking code</button>
+                  <Button className="filled"> Copy booking code</Button>
                 </div>
               </div>
             </div>
@@ -117,7 +118,7 @@ export const Paymentpage = () => {
               <div className="col-sm-4 mb-2  text-center">
                 <div className="code d-flex flex-column">
                   <span>#FG1209878YZS
-                    <button className="button-copy mx-2">Copy</button>
+                    <Button className="copy mx-2">Copy</Button>
                   </span>
                 </div>
               </div>
@@ -133,7 +134,7 @@ export const Paymentpage = () => {
             <div className="row mt-4">
               <div className="col mb-4">
                 <Link to="/history">
-                  <button className="button-filled w-100">Finish payment : <span className="text-danger">59:30</span></button>
+                  <Button className="filled w-100">Finish payment : <span className="text-danger">59:30</span></Button>
                 </Link>
               </div>
             </div>

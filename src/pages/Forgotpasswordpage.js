@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import { FaChevronLeft } from 'react-icons/fa'
-
+import Button from '../components/Button'
 
 export default class Forgotpasswordpage extends Component {
   render() {
@@ -34,7 +34,7 @@ export default class Forgotpasswordpage extends Component {
                         </div>
                         <div className='row justify-content-center mb-5'>
                           <div className='col-md-6'>
-                            <button className="button-send w-100">Send Link</button>
+                            <Button className="send w-100">Send Link</Button>
                           </div>
                         </div>
                         <div className='row justify-content-center'>

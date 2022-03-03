@@ -8,6 +8,7 @@ import NumberFormat from 'react-number-format'
 import { FaChevronLeft } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getData } from '../helpers/http'
+import Button from '../components/Button'
 
 export const Reservationpage = () => {
   const [vehicle, setVehicle] = useState({})
@@ -87,9 +88,9 @@ export const Reservationpage = () => {
           <section className="semi-footer">
             <div className="row mt-4">
               <div className="col mb-4">
-                <button className="button-filled w-100" onClick={() => goToPayment(vehicle?.id)} style={{ cursor: 'pointer' }} key={String(vehicle?.id)}>
+                <Button className="filled w-100" onClick={() => goToPayment(vehicle?.id)} style={{ cursor: 'pointer' }} key={String(vehicle?.id)}>
                   Pay Now : <NumberFormat value={vehicle?.price} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={"Rp. "} />
-                </button>
+                </Button>
               </div>
             </div>
           </section>

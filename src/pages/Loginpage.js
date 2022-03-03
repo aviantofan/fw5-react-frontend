@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Google from '../assets/images/google.png'
+import Button from '../components/Button'
 
 export default class Loginpage extends Component {
   state = {
@@ -46,7 +47,7 @@ export default class Loginpage extends Component {
                     <div>
                       <div className="col-md-9">
                         <Link to="/register">
-                          <button className="button-dark">Sign Up</button>
+                          <Button className="dark">Sign Up</Button>
                         </Link>
                       </div>
                     </div>
@@ -78,15 +79,15 @@ export default class Loginpage extends Component {
                     </div>
                     <div className="col-md-12">
                       <div className="mb-4">
-                        <button onClick={this.onLogin} type='submit' className="button-login w-100">Login</button>
+                        <Button onClick={this.onLogin} type='submit' className="login w-100">Login</Button>
                       </div>
                     </div>
                     <div className="col-md-12">
                       <div>
-                        <button className="button-login-google w-100">
+                        <Button className="login-google w-100">
                           <img src={Google} alt="Logo" />
                           Login With Google
-                        </button>
+                        </Button>
                       </div>
                     </div>
                   </div>

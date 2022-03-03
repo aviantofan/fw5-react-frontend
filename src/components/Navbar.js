@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
+import Button from './Button'
 
 export default class Navbar extends Component {
   render() {
@@ -40,10 +41,10 @@ export default class Navbar extends Component {
             </ul>
             <div className="toggled-action">
               <Link to="login">
-                <button className="button-outline mx-3">Login</button>
+                <Button className="outline mx-3">Login</Button>
               </Link>
               <Link to="register">
-                <button className="button-filled">Register</button>
+                <Button className="filled">Register</Button>
               </Link>
             </div>
           </div>

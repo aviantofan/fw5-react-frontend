@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { default as axios } from 'axios'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Button from '../components/Button'
 // import Merapi from '../assets/images/merapi.png'
 import User from '../assets/images/user-home.png'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
@@ -93,7 +94,7 @@ export const Homepage = () => {
                 </div>
                 <div className="row select-option">
                   <div className="col-sm-5 option">
-                    <button type="submit" className="button-filled">Explore</button>
+                    <Button type="submit" className="filled">Explore</Button>
                   </div>
                 </div>
               </form>

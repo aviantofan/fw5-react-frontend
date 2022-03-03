@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import Navlogin from '../components/NavLogin'
 import Profile from '../assets/images/profile-picture.png'
 import { FaPencilAlt } from 'react-icons/fa'
+import Button from '../components/Button'
 
 export default class Profilepage extends Component {
   render() {
@@ -85,13 +86,13 @@ export default class Profilepage extends Component {
             <section className="button">
               <div className="row mt-5 mb-4">
                 <div className='col-md-4'>
-                  <button className="button-filled mb-2 w-100">Save Change</button>
+                  <Button className="filled mb-2 w-100">Save Change</Button>
                 </div>
                 <div className='col-md-4'>
-                  <button className="button-dark mb-2 w-100">Edit Password</button>
+                  <Button className="dark mb-2 w-100">Edit Password</Button>
                 </div>
                 <div className='col-md-4'>
-                  <button className="button-gray w-100">Cancel</button>
+                  <Button className="gray w-100">Cancel</Button>
                 </div>
               </div>
             </section>
