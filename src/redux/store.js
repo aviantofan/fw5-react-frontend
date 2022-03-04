@@ -1,10 +1,12 @@
 import { createStore, applyMiddleware } from "redux";
-import rootReducer from "./reducers";
 import logger from "redux-logger";
+import promise from "redux-promise-middleware";
+import rootReducers from "./reducers";
 
 const store = createStore(
-  rootReducer,
+  rootReducers,
   applyMiddleware(
+    promise,
     logger
   )
 )

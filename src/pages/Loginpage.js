@@ -1,26 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Google from '../assets/images/google.png'
 import Button from '../components/Button'
 import Input from '../components/Input'
-import { connect } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
+import { login } from '../redux/actions/auth'
 
-export const Loginpage = ({ auth, dispatch }) => {
-
-  useEffect(() => {
-    console.log(auth);
-  })
+export const Loginpage = () => {
+  const dispatch = useDispatch()
+  const auth = useSelector(state => state.auth)
 
   const onLogin = (e) => {
     e.preventDefault()
-    dispatch({
-      type: 'LOGIN',
-      payload: {
-        email: e.target.elements['email'].value,
-        password: e.target.elements['password'].value
-      }
-    })
+    e.preventDefault()
+    const email = e.target.elements['email'].value
+    const password = e.target.elements['password'].value
+    dispatch(login(email, password))
   }
 
   return (
@@ -52,9 +48,10 @@ export const Loginpage = ({ auth, dispatch }) => {
                     <div className="circle2"></div>
                   </div>
                 </div>
-                {auth.token !== null && <Navigate to="/homeLogged" />}
+                {auth.token !== null && <Navigate to='/homeLogged' />}
                 <div className="col-md-5">
                   <form onSubmit={onLogin}>
+                    {auth.isError && auth.errorMsg && <div className='alert alert-danger mb-5'>{auth.errorMsg}</div>}
                     <div className="col-md-12">
                       <div className="mb-4">
                         <Input name="email" placeholder="Email" id="email" type="email" className="email form-control w-100" />
@@ -74,7 +71,7 @@ export const Loginpage = ({ auth, dispatch }) => {
                     </div>
                     <div className="col-md-12">
                       <div className="mb-4">
-                        <Button type='submit' className="login w-100">Login</Button>
+                        <Button disabled={auth.isLoading} type='submit' className="login w-100">Login</Button>
                       </div>
                     </div>
                     <div className="col-md-12">

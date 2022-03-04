@@ -113,7 +113,7 @@ export const Vehicletypepage = () => {
             <div className="pt-4">
               <form id="search" onSubmit={handleSearch} className="position-relative round">
                 <Input name='name' placeholder="Search vehicle (ex. cars, cars name)" className="w-100 search-input" type="text" />
-                <button type='submit' className="search-type"><FaSearch fa-xl /></button>
+                <button type='submit' className="search-type"><FaSearch /></button>
               </form>
             </div>
           </section>

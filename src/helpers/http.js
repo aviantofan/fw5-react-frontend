@@ -1,14 +1,14 @@
-import { default as axios } from 'axios'
+import axios from "axios";
 
-export const getData = async (url, history) => {
-  try {
-    const data = await axios.get(url)
-    return data
-  } catch (e) {
-    if (e.message.includes('404')) {
-      history.push('/404')
-    }
-  }
+export const getData = async (url) => {
+  const data = await axios.get(url)
+  return data
 }
 
-export default axios
+const { REACT_APP_URL } = process.env
+
+const http = (token) => axios.create({
+  baseURL: REACT_APP_URL
+})
+
+export default http
