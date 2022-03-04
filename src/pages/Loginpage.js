@@ -51,7 +51,6 @@ export const Loginpage = () => {
                 {auth.token !== null && <Navigate to='/homeLogged' />}
                 <div className="col-md-5">
                   <form onSubmit={onLogin}>
-                    {auth.isError && auth.errorMsg && <div className='alert alert-danger mb-5'>{auth.errorMsg}</div>}
                     <div className="col-md-12">
                       <div className="mb-4">
                         <Input name="email" placeholder="Email" id="email" type="email" className="email form-control w-100" />
@@ -62,7 +61,12 @@ export const Loginpage = () => {
                         <Input name="password" placeholder="Password" id="password" type="password" className="password form-control w-100" />
                       </div>
                     </div>
-                    <div className="col-md-5">
+                    <div className='col-md-10'>
+                      <div>
+                        {auth.isError && auth.errorMsg && <div className='alert alert-danger w-100'>{auth.errorMsg}</div>}
+                      </div>
+                    </div>
+                    <div className="col-md-12">
                       <div className="mb-5">
                         <Link to="/forgotPassword">
                           <p className="forgot w-100">Forgot password?</p>
@@ -75,7 +79,7 @@ export const Loginpage = () => {
                       </div>
                     </div>
                     <div className="col-md-12">
-                      <div>
+                      <div className='mb-2'>
                         <Button className="login-google w-100">
                           <img src={Google} alt="Logo" />
                           Login With Google

@@ -284,6 +284,9 @@ section.testimonials .profile-pic .prev svg {
 .header-login .header-content div input.password::placeholder{
   color: #FFFFFF
 }
+.header-login .header-content div .alert{
+  margin-left: 120px;
+}
 .header-login .header-content div p.forgot{
   font-size: 18px;
   font-family: 'Mulish', sans-serif;
@@ -1055,6 +1058,9 @@ section.preview img.reservation{
     margin-top: unset;
     margin-left: unset;
   }
+  .header-login .header-content div .alert{
+    margin-left: unset;
+  }
   .header-login .header-content div p.forgot{
     font-size: 18px;
     font-family: 'Mulish', sans-serif;
@@ -1284,6 +1290,9 @@ section.preview img.reservation{
     background-color: rgba(255, 255, 255, 0.5);
     color: white;
     margin-top: unset;
+    margin-left: 40px;
+  }
+  .header-login .header-content div .alert{
     margin-left: 40px;
   }
   .header-login .header-content div p.forgot{
