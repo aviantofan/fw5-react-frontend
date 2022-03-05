@@ -7,9 +7,11 @@ import { FaChevronRight, FaSearch } from 'react-icons/fa'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
 import { getVehiclePopular } from '../redux/actions/vehiclePopular'
 import { getCategoryCar } from '../redux/actions/vehicleCategoryCar'
+import { getCategoryMotorbike } from '../redux/actions/vehicleCategoryMotorbike'
+import { getCategoryBike } from '../redux/actions/vehicleCategoryBike'
 import { connect, useSelector } from 'react-redux'
 
-export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar }) => {
+export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategoryMotorbike, getCategoryBike }) => {
   const [vehiclePopular, setVehiclePopular] = useState([])
   const [vehicleCategoryCar, setVehicleCategoryCar] = useState([])
   const [vehicleCategoryMotorbike, setVehicleCategoryMotorbike] = useState([])
@@ -18,21 +20,14 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar }) => {
   const [pageCar, setPageCar] = useState({})
   const [pageMotorbike, setPageMotorbike] = useState({})
   const [pageBike, setPageBike] = useState({})
-  const { vehiclePopular: Popular, vehicleCategoryCar: Car } = useSelector(state => state)
-  console.log(Car);
+  const { vehiclePopular: Popular, vehicleCategoryCar: Car, vehicleCategoryMotorbike: Motorbike, vehicleCategoryBike: Bike } = useSelector(state => state)
 
   const navigate = useNavigate()
 
   useEffect(() => {
     getVehiclePopular()
     getCategoryCar()
-  }, [])
-
-  useEffect(() => {
     getCategoryMotorbike()
-  }, [])
-
-  useEffect(() => {
     getCategoryBike()
   }, [])
 
@@ -48,17 +43,17 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar }) => {
   //   setPageCar(data.pageInfo)
   // }
 
-  const getCategoryMotorbike = async () => {
-    const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=2&limit=4')
-    setVehicleCategoryMotorbike(data.results)
-    setPageMotorbike(data.pageInfo)
-  }
+  // const getCategoryMotorbike = async () => {
+  //   const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=2&limit=4')
+  //   setVehicleCategoryMotorbike(data.results)
+  //   setPageMotorbike(data.pageInfo)
+  // }
 
-  const getCategoryBike = async () => {
-    const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=3&limit=4')
-    setVehicleCategoryBike(data.results)
-    setPageBike(data.pageInfo)
-  }
+  // const getCategoryBike = async () => {
+  //   const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=3&limit=4')
+  //   setVehicleCategoryBike(data.results)
+  //   setPageBike(data.pageInfo)
+  // }
 
   const getNextDataPopular = async (url) => {
     const { data } = await axios.get(url)
@@ -201,7 +196,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar }) => {
               </div>
             </div>
             <div className="row">
-              {vehicleCategoryMotorbike.map((data, idx) => {
+              {Motorbike.vehicleCategoryMotorbike.map((data, idx) => {
                 return (
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
@@ -234,7 +229,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar }) => {
               </div>
             </div>
             <div className="row">
-              {vehicleCategoryBike.map((data, idx) => {
+              {Bike.vehicleCategoryBike.map((data, idx) => {
                 return (
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
@@ -258,8 +253,8 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar }) => {
   )
 }
 
-const mapStateToProps = state => ({ vehiclePopular: state.vehiclePopular, vehicleCategoryCar: state.vehicleCategoryCar })
+const mapStateToProps = state => ({ vehiclePopular: state.vehiclePopular, vehicleCategoryCar: state.vehicleCategoryCar, vehicleCategoryMotorbike: state.vehicleCategoryMotorbike, vehicleCategoryBike: state.vehicleCategoryBike })
 
-const mapDispatchToProps = { getVehiclePopular, getCategoryCar }
+const mapDispatchToProps = { getVehiclePopular, getCategoryCar, getCategoryMotorbike, getCategoryBike }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Vehicletypepage)
