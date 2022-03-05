@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { default as axios } from 'axios'
+// import { default as axios } from 'axios'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Button from '../components/Button'
@@ -8,24 +8,28 @@ import User from '../assets/images/user-home.png'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
 import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
 import Input from '../components/Input'
+import { getVehiclePopular } from '../redux/actions/vehiclePopular'
+import { connect, useSelector } from 'react-redux'
+import Skeleton from 'react-loading-skeleton'
 
-export const Homepage = () => {
+export const Homepage = ({ getVehiclePopular }) => {
   const [vehiclePopular, setVehiclePopular] = useState([])
   const [page, setPage] = useState({})
   const navigate = useNavigate()
+  const { vehiclePopular: Popular } = useSelector(state => state)
 
   useEffect(() => {
     getVehiclePopular()
   }, [])
 
-  const getVehiclePopular = async () => {
-    const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
-    setVehiclePopular(data.results)
-    setPage(data.pageInfo)
-  }
+  // const getVehiclePopular = async () => {
+  //   const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
+  //   setVehiclePopular(data.results)
+  //   setPage(data.pageInfo)
+  // }
 
   const getNextData = async (url) => {
-    const { data } = await axios.get(url)
+    const { data } = getVehiclePopular(url)
     setVehiclePopular([
       ...vehiclePopular,
       ...data.results
@@ -43,7 +47,7 @@ export const Homepage = () => {
     const categoryId = event.target.elements["categoryId"].value;
     navigate(`/vehicles?location=${location}&categoryId=${categoryId}`, { replace: true })
   }
-
+  console.log(Popular);
   return (
     <>
       <body>
@@ -111,7 +115,7 @@ export const Homepage = () => {
               </div>
               <div className="col">
                 <div className="direction justify-content-center">
-                  <button onClick={() => getNextData(page.next)} className="button-transparent mt-2">
+                  <button onClick={() => getNextData(Popular.pageInfo.next)} className="button-transparent mt-2">
                     View all
                     <FaChevronRight />
                   </button>
@@ -119,21 +123,26 @@ export const Homepage = () => {
               </div>
             </div>
             <div className="row">
-              {vehiclePopular.map((data, idx) => {
-                return (
-                  <div className='col-sm-6 col-md-3 text-center item-list'>
-                    <div className='my-2 d-inline-block position-relative'>
-                      <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
-                        <img className="img-fluid image-preview" src={data.image} alt={data.name} />
-                        <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                          <h5>{data.vehicleName}</h5>
-                          <span>{data.location}</span>
+              {Popular.isLoading &&
+                <Skeleton height={150} containerClassName='row' count={8} wrapper={({ children }) => (<div className='col-md-3'>{children}</div>)} />
+              }
+              {!Popular.isLoading && <div className='row my-5'>
+                {Popular.vehiclePopular.map((data, idx) => {
+                  return (
+                    <div className='col-sm-6 col-md-3 text-center item-list'>
+                      <div className='my-2 d-inline-block position-relative'>
+                        <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
+                          <img className="img-fluid image-preview" src={data.image} alt={data.name} />
+                          <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
+                            <h5>{data.vehicleName}</h5>
+                            <span>{data.location}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>}
             </div>
           </section>
 
@@ -174,5 +183,8 @@ export const Homepage = () => {
     </>
   )
 }
+const mapStateToProps = state => ({ vehiclePopular: state.vehiclePopular })
 
-export default Homepage
+const mapDispatchToProps = { getVehiclePopular }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage)
