@@ -5,8 +5,11 @@ import Navlogin from '../components/NavLogin'
 import Input from '../components/Input'
 import { FaChevronRight, FaSearch } from 'react-icons/fa'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
+import { getVehiclePopular } from '../redux/actions/vehiclePopular'
+import { getCategoryCar } from '../redux/actions/vehicleCategoryCar'
+import { connect, useSelector } from 'react-redux'
 
-export const Vehicletypepage = () => {
+export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar }) => {
   const [vehiclePopular, setVehiclePopular] = useState([])
   const [vehicleCategoryCar, setVehicleCategoryCar] = useState([])
   const [vehicleCategoryMotorbike, setVehicleCategoryMotorbike] = useState([])
@@ -15,14 +18,13 @@ export const Vehicletypepage = () => {
   const [pageCar, setPageCar] = useState({})
   const [pageMotorbike, setPageMotorbike] = useState({})
   const [pageBike, setPageBike] = useState({})
+  const { vehiclePopular: Popular, vehicleCategoryCar: Car } = useSelector(state => state)
+  console.log(Car);
 
   const navigate = useNavigate()
 
   useEffect(() => {
     getVehiclePopular()
-  }, [])
-
-  useEffect(() => {
     getCategoryCar()
   }, [])
 
@@ -34,17 +36,17 @@ export const Vehicletypepage = () => {
     getCategoryBike()
   }, [])
 
-  const getVehiclePopular = async () => {
-    const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
-    setVehiclePopular(data.results)
-    setPagePopular(data.pageInfo)
-  }
+  // const getVehiclePopular = async () => {
+  //   const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
+  //   setVehiclePopular(data.results)
+  //   setPagePopular(data.pageInfo)
+  // }
 
-  const getCategoryCar = async () => {
-    const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=1&limit=4')
-    setVehicleCategoryCar(data.results)
-    setPageCar(data.pageInfo)
-  }
+  // const getCategoryCar = async () => {
+  //   const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=1&limit=4')
+  //   setVehicleCategoryCar(data.results)
+  //   setPageCar(data.pageInfo)
+  // }
 
   const getCategoryMotorbike = async () => {
     const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=2&limit=4')
@@ -133,7 +135,7 @@ export const Vehicletypepage = () => {
               </div>
             </div>
             <div className="row">
-              {vehiclePopular.map((data, idx) => {
+              {Popular.vehiclePopular.map((data, idx) => {
                 return (
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
@@ -166,7 +168,7 @@ export const Vehicletypepage = () => {
               </div>
             </div>
             <div className="row">
-              {vehicleCategoryCar.map((data, idx) => {
+              {Car.vehicleCategoryCar.map((data, idx) => {
                 return (
                   <div className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
@@ -256,4 +258,8 @@ export const Vehicletypepage = () => {
   )
 }
 
-export default Vehicletypepage
+const mapStateToProps = state => ({ vehiclePopular: state.vehiclePopular, vehicleCategoryCar: state.vehicleCategoryCar })
+
+const mapDispatchToProps = { getVehiclePopular, getCategoryCar }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Vehicletypepage)
