@@ -47,7 +47,6 @@ export const Homepage = ({ getVehiclePopular }) => {
     const categoryId = event.target.elements["categoryId"].value;
     navigate(`/vehicles?location=${location}&categoryId=${categoryId}`, { replace: true })
   }
-  console.log(Popular);
   return (
     <>
       <body>
