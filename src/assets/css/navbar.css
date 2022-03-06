@@ -6,6 +6,15 @@ nav.container {
   padding-top: 81px;
 }
 
+nav.navbar .brand{
+  font-size: 25px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #072227;
+  stroke: 2px #32DBC6;
+  stroke-linejoin: round
+}
+
 .brand{
   font-size: 35px;
   font-family: 'Playfair Display', serif;
@@ -73,12 +82,22 @@ button.navbar-toogler{
 
 .icon-profile svg{
   color: #4FBDBA;
-  font-size: 50px;
+  font-size: 30px;
 }
 
-img.img-rounded-circle{
+nav.navbar img.img-rounded-circle{
+  height: 30px;
+  width: 30px;
   border-radius: 30px;
   margin-left: 38px;
+}
+
+.logout{
+  margin-left: 38px;
+  cursor: pointer;
+}
+.logout:hover{
+  color: #32DBC6;
 }
 
 @media (max-width: 991px){
