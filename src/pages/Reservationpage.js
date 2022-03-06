@@ -1,9 +1,10 @@
 import React, { /*Component*/ useEffect /*useState*/ } from 'react'
 // import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 import Input from '../components/Input'
 // import Reversebuttonplusminus from '../components/Reversebuttonplusminus'
-import Navlogin from '../components/NavLogin'
+// import Navlogin from '../components/NavLogin'
 import NumberFormat from 'react-number-format'
 // import Fixie from '../assets/images/fixie-reserved.png'
 import { FaChevronLeft, FaPlus, FaMinus } from 'react-icons/fa'
@@ -49,7 +50,7 @@ export const Reservationpage = ({ getVehicleDetail }) => {
   return (
     <>
       <body>
-        <Navlogin />
+        <Navbar />
         <main className="container">
           <section className="back">
             <div className='pt-3' onClick={() => goToDetail(Detail.vehicleDetail.id)} style={{ cursor: 'pointer' }} key={String(Detail.vehicleDetail.id)}>

@@ -1,9 +1,10 @@
 import React, { /*Component*/ useEffect, useState } from 'react'
-import NavLogin from '../components/NavLogin'
+// import NavLogin from '../components/NavLogin'
 import { default as axios } from 'axios'
 import { Link, useNavigate, /*useParams*/ useSearchParams } from 'react-router-dom'
 import Footer from '../components/Footer'
 import { FaChevronLeft } from 'react-icons/fa'
+import Navbar from '../components/Navbar'
 
 export const Vehiclelistpage = () => {
   const [listVehicle, setListVehicle] = useState([])
@@ -53,7 +54,7 @@ export const Vehiclelistpage = () => {
   return (
     <>
       <body>
-        <NavLogin />
+        <Navbar />
         <main className="container">
           <section className="back pt-4">
             <Link to="/vehicleType">

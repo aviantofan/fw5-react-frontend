@@ -1,31 +1,31 @@
-import React, { /*Component*/ useEffect, useState } from 'react'
+import React, { /*Component*/ useEffect /*useState*/ } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Navlogin from '../components/NavLogin'
+import NumberFormat from 'react-number-format'
 // import Payment from '../assets/images/payment.png'
 import { FaChevronLeft } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getData } from '../helpers/http'
+// import { getData } from '../helpers/http'
 import Button from '../components/Button'
+import { connect, useSelector } from 'react-redux'
+import { getVehicleDetail } from '../redux/actions/vehicleDetail'
 
-export const Paymentpage = () => {
-  const { APP_URL } = process.env;
-  const [vehicle, setVehicle] = useState({})
+export const Paymentpage = ({ getVehicleDetail }) => {
+  // const [vehicleDetail, setVehicle] = useState({})
+  const { vehicleDetail: Detail } = useSelector(state => state)
+  const counter = useSelector(state => state.counter)
   const { id } = useParams()
   const navigate = useNavigate()
 
   useEffect(() => {
-    getDataComponent(id)
-  })
+    getVehicleDetail(id)
+  }, [])
 
-  useEffect(() => {
-    console.log(vehicle)
-  })
-
-  const getDataComponent = async (id) => {
-    const { data } = await getData(`${APP_URL}/vehicles/${id}`)
-    setVehicle(data.results)
-  }
+  // const getDataComponent = async (id) => {
+  //   const { data } = await getData(`${APP_URL}/vehicles/${id}`)
+  //   setVehicle(data.results)
+  // }
 
   const goToReservation = (id) => {
     navigate(`/reservation/${id}`)
@@ -37,7 +37,7 @@ export const Paymentpage = () => {
         <Navlogin />
         <main className="container">
           <section className="back pt-4">
-            <div onClick={() => goToReservation(vehicle?.id)} style={{ cursor: 'pointer' }} key={String(vehicle?.id)}>
+            <div onClick={() => goToReservation(Detail.vehicleDetail.id)} style={{ cursor: 'pointer' }} key={String(Detail.vehicleDetail.id)}>
               <FaChevronLeft />
               <span>Payment</span>
             </div>
@@ -46,12 +46,12 @@ export const Paymentpage = () => {
           <section className="preview">
             <div className="row pt-5">
               <div className="col-5 picture">
-                <img src={vehicle?.image} className="img-fluid payment" alt="Reserved" />
+                <img src={Detail.vehicleDetail.image} className="img-fluid payment" alt="Reserved" />
               </div>
               <div className="col">
                 <div className="desc">
-                  <h2 className="mb-0">{vehicle?.name}</h2>
-                  <p className="text-muted mb-4">{vehicle?.loc}</p>
+                  <h2 className="mb-0">{Detail.vehicleDetail.name}</h2>
+                  <p className="text-muted mb-4">{Detail.vehicleDetail.loc}</p>
                 </div>
                 <div className="status-v mb-3 d-flex flex-column">
                   <span className="text-muted fw-bold">No Prepayment</span>
@@ -69,7 +69,7 @@ export const Paymentpage = () => {
               <div className="row pt-5">
                 <div className="col-md-5">
                   <div className="qty mb-3 d-flex flex-column">
-                    <span>Quantity : {vehicle?.qty} bikes</span>
+                    <span>Quantity : {counter.num} {Detail.vehicleDetail.categoryName}</span>
                   </div>
                 </div>
                 <div className="col">
@@ -92,9 +92,9 @@ export const Paymentpage = () => {
                 <div className="col-md-5">
                   <div className="details mb-3 d-flex flex-column">
                     <span className="fw-bold mb-2">Order Details :</span>
-                    <span className="mb-2">1 Bike : Rp. 78.000</span>
-                    <span className="mb-3">1 Bike : Rp. 78.000</span>
-                    <span>Total : 178.000</span>
+                    <span className="mb-2">{counter.num} {Detail.vehicleDetail.categoryName} : <NumberFormat value={Detail.vehicleDetail.price * counter.num} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={"Rp. "} /></span>
+                    {/* <span className="mb-3">1 Bike : Rp. 78.000</span> */}
+                    <span>Total : <NumberFormat value={Detail.vehicleDetail.price * counter.num} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={"Rp. "} /></span>
                   </div>
                 </div>
                 <div className="col">
@@ -145,5 +145,8 @@ export const Paymentpage = () => {
     </>
   )
 }
+const mapStateToProps = state => ({ vehicleDetail: state.vehicleDetail })
 
-export default Paymentpage
+const mapDispatchToProps = { getVehicleDetail }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Paymentpage)

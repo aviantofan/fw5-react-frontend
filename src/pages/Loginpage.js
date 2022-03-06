@@ -48,7 +48,7 @@ export const Loginpage = () => {
                     <div className="circle2"></div>
                   </div>
                 </div>
-                {auth.token !== null && <Navigate to='/homeLogged' />}
+                {auth.token !== null && <Navigate to='/' />}
                 <div className="col-md-5">
                   <form onSubmit={onLogin}>
                     <div className="col-md-12">

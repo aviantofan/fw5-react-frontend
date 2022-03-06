@@ -2,7 +2,7 @@ import React, { useEffect /*useState*/ /*Component*/ } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 // import Buttonplusminus from '../components/Buttonplusminus'
-import Navlogin from '../components/NavLogin'
+// import Navlogin from '../components/NavLogin'
 import NumberFormat from 'react-number-format'
 // import Fixie from '../assets/images/fixie-white-width.png'
 // import FixieS from '../assets/images/fixie-white-width2.png'
@@ -13,6 +13,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import { getVehicleDetail } from '../redux/actions/vehicleDetail'
 import { increment, decrement } from '../redux/actions/counter'
+import Navbar from '../components/Navbar'
 
 export const Vehicledetailpage = ({ getVehicleDetail }) => {
   // const [vehicleDetail, setVehicle] = useState({})
@@ -48,7 +49,7 @@ export const Vehicledetailpage = ({ getVehicleDetail }) => {
 
   return (
     <body>
-      <Navlogin />
+      <Navbar />
       <main className="container">
         <section className="back">
           <div className='pt-3'>

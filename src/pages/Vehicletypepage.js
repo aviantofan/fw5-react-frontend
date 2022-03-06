@@ -1,7 +1,7 @@
 import React, { /*Component*/useState, useEffect } from 'react'
 import { default as axios } from 'axios'
 import Footer from '../components/Footer'
-import Navlogin from '../components/NavLogin'
+// import Navlogin from '../components/NavLogin'
 import Input from '../components/Input'
 import { FaChevronRight, FaSearch } from 'react-icons/fa'
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
@@ -10,6 +10,7 @@ import { getCategoryCar } from '../redux/actions/vehicleCategoryCar'
 import { getCategoryMotorbike } from '../redux/actions/vehicleCategoryMotorbike'
 import { getCategoryBike } from '../redux/actions/vehicleCategoryBike'
 import { connect, useSelector } from 'react-redux'
+import Navbar from '../components/Navbar'
 
 export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategoryMotorbike, getCategoryBike }) => {
   const [vehiclePopular, setVehiclePopular] = useState([])
@@ -104,7 +105,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
   return (
     <>
       <body>
-        <Navlogin />
+        <Navbar />
         <main className="container">
           <section className="search">
             <div className="pt-4">
