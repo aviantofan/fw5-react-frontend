@@ -1,14 +1,17 @@
 import axios from "axios";
 
-export const getData = async (url) => {
-  const data = await axios.get(url)
-  return data
-}
-
 const { REACT_APP_URL } = process.env
 
-const http = (token) => axios.create({
-  baseURL: REACT_APP_URL
-})
+const http = (token) => {
+  const headers = {}
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`
+    console.log(headers)
+  }
+  return axios.create({
+    baseURL: REACT_APP_URL,
+    headers
+  })
+}
 
 export default http
