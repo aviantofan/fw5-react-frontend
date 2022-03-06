@@ -2,20 +2,32 @@
   background-color: transparent;
   border: 1px solid #4FBDBA;
 }
+.button-outline:hover{
+  background-color:whitesmoke ;
+}
 
 .button-filled {
   background-color: #4FBDBA;
   border: unset;
+}
+.button-filled:hover{
+  background-color: #39a19e;
 }
 
 .button-dark {
   background-color: #072227;
   border: unset;
 }
+.button-dark:hover{
+  background-color: #052b33;
+}
 
 .button-gray {
   background-color: rgba(203, 203, 212, 0.27);
   border: unset;
+}
+.button-gray:hover{
+  background-color: rgba(156, 156, 175, 0.27);
 }
 
 .button-transparent{
