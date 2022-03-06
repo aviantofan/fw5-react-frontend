@@ -10,3 +10,10 @@ export const login = (email, password) => {
     payload: http().post('/auth/login', param)
   })
 }
+
+export const getDataUser = (token) => {
+  return ({
+    type: 'AUTH_USERDATA',
+    payload: http(token).get('/user ')
+  })
+}

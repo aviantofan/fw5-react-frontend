@@ -1,5 +1,6 @@
 const initialState = {
   token: null,
+  userData: {},
   isLoading: false,
   isError: false,
   errorMsg: ''
@@ -27,8 +28,19 @@ const auth = (state = initialState, action) => {
       state.errorMsg = message
       return { ...state }
     }
+    case 'AUTH_USERDATA_PENDING': {
+      state.isLoading = true
+      return { ...state }
+    }
+    case 'AUTH_USERDATA_FULFILLED': {
+      const { data } = action.payload
+      state.isLoading = false
+      state.userData = data.results
+      return { ...state }
+    }
     case 'AUTH_LOGOUT': {
       state.token = null
+      state.userData = {}
       window.localStorage.removeItem('token')
       return { ...state }
     }
