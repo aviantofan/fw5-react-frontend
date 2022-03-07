@@ -14,6 +14,7 @@ import { getVehicleDetail } from '../redux/actions/vehicleDetail'
 export const Paymentpage = ({ getVehicleDetail }) => {
   // const [vehicleDetail, setVehicle] = useState({})
   const { vehicleDetail: Detail } = useSelector(state => state)
+  const auth = useSelector(state => state.auth)
   const counter = useSelector(state => state.counter)
   const { id } = useParams()
   const navigate = useNavigate()
@@ -100,8 +101,8 @@ export const Paymentpage = ({ getVehicleDetail }) => {
                 <div className="col">
                   <div className="identity mb-3 d-flex flex-column">
                     <span className="fw-bold">Identity :</span>
-                    <span>Samantha Doe (+6290987682)</span>
-                    <span>samanthadoe@mail.com</span>
+                    <span>{auth.userData.name} (+6290987682)</span>
+                    <span>{auth.userData.email}</span>
                   </div>
                 </div>
               </div>

@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux'
 
 const Profilepage = () => {
   const auth = useSelector(state => state.auth)
-  console.log(auth);
   return (
     <>
       <body>
@@ -26,7 +25,7 @@ const Profilepage = () => {
                 </div>
               </div>
               <div className="proile-name">
-                <h2 className="username">Samantha Doe</h2>
+                <h2 className="username">{auth.userData.name}</h2>
               </div>
               <div className="profile-desc">
                 <p>{auth.userData.email}<br />+62833467823<br />Has been active since 2013</p>
