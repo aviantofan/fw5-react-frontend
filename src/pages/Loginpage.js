@@ -13,7 +13,6 @@ export const Loginpage = () => {
 
   const onLogin = (e) => {
     e.preventDefault()
-    e.preventDefault()
     const email = e.target.elements['email'].value
     const password = e.target.elements['password'].value
     dispatch(login(email, password))
