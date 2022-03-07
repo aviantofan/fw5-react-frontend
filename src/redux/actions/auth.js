@@ -11,6 +11,17 @@ export const login = (email, password) => {
   })
 }
 
+export const register = (data) => {
+  const param = new URLSearchParams() //query string-like body
+  param.append('name', data.name)
+  param.append('email', data.email)
+  param.append('password', data.password)
+  return ({
+    type: 'AUTH_REGISTER',
+    payload: http().post('/auth/register', param)
+  })
+}
+
 export const getDataUser = (token) => {
   return ({
     type: 'AUTH_USERDATA',

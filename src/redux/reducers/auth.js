@@ -8,6 +8,26 @@ const initialState = {
 
 const auth = (state = initialState, action) => {
   switch (action.type) {
+    case 'AUTH_REGISTER_PENDING': {
+      state.isLoading = true
+      state.isError = false
+      return { ...state }
+    }
+    case 'AUTH_REGISTER_FULFILLED': {
+      const { data } = action.payload
+      // console.log(data.result.token)
+      state.isLoading = false
+      state.isError = false
+      state.errorMsg = data.message
+      return { ...state }
+    }
+    case 'AUTH_REGISTER_REJECTED': {
+      const { message } = action.payload.response.data
+      state.isLoading = false
+      state.isError = true
+      state.errorMsg = message
+      return { ...state }
+    }
     case 'AUTH_LOGIN_PENDING': {
       state.isLoading = true
       state.isError = false
@@ -15,10 +35,12 @@ const auth = (state = initialState, action) => {
     }
     case 'AUTH_LOGIN_FULFILLED': {
       const { data } = action.payload
+      // console.log(data.result.token)
       state.isLoading = false
       state.isError = false
-      state.token = data.results.token
+      state.token = data.result.token
       window.localStorage.setItem('token', state.token)
+      console.log(data);
       return { ...state }
     }
     case 'AUTH_LOGIN_REJECTED': {
