@@ -27,7 +27,7 @@ const App = () => {
         type: 'AUTH_LOGIN_FULFILLED',
         payload: {
           data: {
-            results: {
+            result: {
               token
             }
           }
