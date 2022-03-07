@@ -14,6 +14,6 @@ export const login = (email, password) => {
 export const getDataUser = (token) => {
   return ({
     type: 'AUTH_USERDATA',
-    payload: http(token).get('/user ')
+    payload: http(token).get('/profile ')
   })
 }
