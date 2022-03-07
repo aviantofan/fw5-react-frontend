@@ -22,6 +22,15 @@ export const register = (data) => {
   })
 }
 
+export const forgotPassword = (email) => {
+  const param = new URLSearchParams() //query string-like body
+  param.append('email', email)
+  return ({
+    type: 'AUTH_FORGOT_PASSWORD',
+    payload: http().post('/auth/forgotPassword', param)
+  })
+}
+
 export const getDataUser = (token) => {
   return ({
     type: 'AUTH_USERDATA',
