@@ -46,7 +46,7 @@ const Forgotpasswordpage = () => {
                       </div>
                       <div className='row justify-content-center mb-5'>
                         <div className='col-md-6'>
-                          <Button type="submit" className="send w-100">Send Link</Button>
+                          <Button type="submit" className="send w-100">Send Reset Code</Button>
                         </div>
                       </div>
                       <div className='row justify-content-center'>
