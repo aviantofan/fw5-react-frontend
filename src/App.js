@@ -11,6 +11,7 @@ import Historypage from './pages/Historypage'
 import Profilepage from './pages/Profilepage'
 import Reservationpage from './pages/Reservationpage'
 import Vehiclelistpage from './pages/Vehiclelistpage'
+import Changepassword from './pages/Changepassword'
 import { useDispatch, useSelector } from 'react-redux'
 import { unstable_HistoryRouter as HistoryRouter, /*BrowserRouter*/ Route, Routes } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
@@ -53,6 +54,7 @@ const App = () => {
           <Route path='profile' element={<Profilepage />} />
           <Route path='history' element={<Historypage />} />
           <Route path='reservation/:id' element={<Reservationpage />} />
+          <Route path='changePassword' element={<Changepassword />} />
         </Routes>
         {/* </BrowserRouter> */}
       </HistoryRouter>
