@@ -2,7 +2,7 @@ import React /*{ Component }*/ from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
 import Button from './Button'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Profile from '../assets/images/profile-image.png'
 import { FiMail } from 'react-icons/fi'
 import { FaPowerOff } from 'react-icons/fa'
@@ -11,6 +11,13 @@ import { useDispatch, useSelector } from 'react-redux'
 const Navbar = () => {
   const dispatch = useDispatch()
   const auth = useSelector(state => state.auth)
+  const navigate = useNavigate()
+
+  const onLogout = (e) => {
+    e.preventDefault()
+    dispatch({ type: 'AUTH_LOGOUT' })
+    navigate('/')
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
@@ -51,9 +58,9 @@ const Navbar = () => {
             <Link to="/profile">
               <img src={Profile} className="img-rounded-circle" alt="profile" />
             </Link>
-            <FaPowerOff className='logout' onClick={() => dispatch({ type: 'AUTH_LOGOUT' })} />
+            <FaPowerOff className='logout' onClick={onLogout} />
           </div>}
-          {auth.token === null && <div className="toggled-action">
+          {auth.token === null && <div className="toggled-action" >
             <Link to="/login">
               <Button className="outline mx-3">Login</Button>
             </Link>
