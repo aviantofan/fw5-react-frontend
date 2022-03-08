@@ -31,6 +31,18 @@ export const forgotPassword = (email) => {
   })
 }
 
+export const changePassword = (data) => {
+  const param = new URLSearchParams() //query string-like body
+  param.append('email', data.email)
+  param.append('code', data.code)
+  param.append('password', data.password)
+  param.append('confirmPassword', data.confirmPassword)
+  return ({
+    type: 'AUTH_CHANGE_PASSWORD',
+    payload: http().post('/auth/forgotPassword', param)
+  })
+}
+
 export const getDataUser = (token) => {
   return ({
     type: 'AUTH_USERDATA',
