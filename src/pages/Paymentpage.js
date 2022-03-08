@@ -1,15 +1,17 @@
 import React, { /*Component*/ useEffect /*useState*/ } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
-import Navlogin from '../components/NavLogin'
+// import Navlogin from '../components/NavLogin'
 import NumberFormat from 'react-number-format'
 // import Payment from '../assets/images/payment.png'
 import { FaChevronLeft } from 'react-icons/fa'
 import { useParams, useNavigate } from 'react-router-dom'
 // import { getData } from '../helpers/http'
 import Button from '../components/Button'
-import { connect, useSelector } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import { getVehicleDetail } from '../redux/actions/vehicleDetail'
+import { postTransaction } from '../redux/actions/transactions'
+import Navbar from '../components/Navbar'
 
 export const Paymentpage = ({ getVehicleDetail }) => {
   // const [vehicleDetail, setVehicle] = useState({})
@@ -18,6 +20,7 @@ export const Paymentpage = ({ getVehicleDetail }) => {
   const counter = useSelector(state => state.counter)
   const { id } = useParams()
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     getVehicleDetail(id)
@@ -28,6 +31,20 @@ export const Paymentpage = ({ getVehicleDetail }) => {
   //   setVehicle(data.results)
   // }
 
+  const onPay = (e) => {
+    e.preventDefault()
+    const token = window.localStorage.getItem('token')
+    const userId = auth.userData.id
+    const vehicleId = Detail.vehicleDetail.id
+    const rentStartDate = '2021-09-10'
+    const rentEndDate = '2021-09-15'
+    const prepayment = Detail.vehicleDetail.price * counter.num
+    const isReturned = '1'
+    const data = { userId, vehicleId, rentStartDate, rentEndDate, prepayment, isReturned }
+    dispatch(postTransaction(token, data))
+    // navigate(`/history`)
+  }
+
   const goToReservation = (id) => {
     navigate(`/reservation/${id}`)
   }
@@ -35,7 +52,7 @@ export const Paymentpage = ({ getVehicleDetail }) => {
   return (
     <>
       <body>
-        <Navlogin />
+        <Navbar />
         <main className="container">
           <section className="back pt-4">
             <div onClick={() => goToReservation(Detail.vehicleDetail.id)} style={{ cursor: 'pointer' }} key={String(Detail.vehicleDetail.id)}>
@@ -134,9 +151,7 @@ export const Paymentpage = ({ getVehicleDetail }) => {
           <section className="semi-footer">
             <div className="row mt-4">
               <div className="col mb-4">
-                <Link to="/history">
-                  <Button className="filled w-100">Finish payment : <span className="text-danger">59:30</span></Button>
-                </Link>
+                <Button onClick={onPay} className="filled w-100">Finish payment : <span className="text-danger">59:30</span></Button>
               </div>
             </div>
           </section>
