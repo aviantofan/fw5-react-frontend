@@ -5,6 +5,7 @@ import vehicleCategoryCar from './vehicleCategoryCar'
 import vehicleCategoryMotorbike from "./vehicleCategoryMotorbike";
 import vehicleCategoryBike from "./vehicleCategoryBike";
 import vehicleDetail from "./vehicleDetail";
+import transactions from "./transaction";
 import counter from "./counter";
 
 const rootReducers = combineReducers({
@@ -14,6 +15,7 @@ const rootReducers = combineReducers({
   vehicleCategoryMotorbike,
   vehicleCategoryBike,
   vehicleDetail,
+  transactions,
   counter
 })
 
