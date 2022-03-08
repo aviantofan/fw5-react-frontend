@@ -19,7 +19,7 @@ const Changepassword = () => {
     const confirmPassword = e.target.elements['password'].value
     const data = { email, code, password, confirmPassword }
     dispatch(changePassword(data))
-    // navigate('/login')
+    navigate('/login')
   }
 
   return (
