@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { increment, decrement } from '../redux/actions/counter'
-import { FaPlus, FaMinus } from 'react-icons/fa'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { increment, decrement } from '../redux/actions/counter';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
 const Reversebuttonplusminus = () => {
-  const counter = useSelector(state => state.counter)
+  const counter = useSelector(state => state.counter);
   useEffect(() => {
-    console.log('update')
-  })
-  const dispatch = useDispatch()
+    console.log('update');
+  });
+  const dispatch = useDispatch();
   const onInc = () => {
-    dispatch(increment())
-  }
+    dispatch(increment());
+  };
   const onDec = () => {
-    dispatch(decrement())
-  }
+    dispatch(decrement());
+  };
 
   return (
     <div className="day d-flex row justify-content-between align-items-center">
@@ -28,7 +28,7 @@ const Reversebuttonplusminus = () => {
         <button onClick={onInc} className="plus"><FaPlus /></button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Reversebuttonplusminus
+export default Reversebuttonplusminus;

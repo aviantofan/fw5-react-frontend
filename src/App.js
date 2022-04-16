@@ -1,28 +1,28 @@
-import React, { useEffect } from 'react'
-import Homepage from './pages/Homepage'
-import Homeloggedpage from './pages/Homeloggedpage'
-import Vehicletypepage from './pages/Vehicletypepage'
-import Registerpage from './pages/Registerpage'
-import Loginpage from './pages/Loginpage'
-import Forgotpasswordpage from './pages/Forgotpasswordpage'
-import Vehicledetailpage from './pages/Vehicledetailpage'
-import Paymentpage from './pages/Paymentpage'
-import Historypage from './pages/Historypage'
-import Profilepage from './pages/Profilepage'
-import Reservationpage from './pages/Reservationpage'
-import Vehiclelistpage from './pages/Vehiclelistpage'
-import Changepassword from './pages/Changepassword'
-import { useDispatch, useSelector } from 'react-redux'
-import { unstable_HistoryRouter as HistoryRouter, /*BrowserRouter*/ Route, Routes } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
-import { getDataUser } from './redux/actions/auth'
+import React, { useEffect } from 'react';
+import Homepage from './pages/Homepage';
+import Homeloggedpage from './pages/Homeloggedpage';
+import Vehicletypepage from './pages/Vehicletypepage';
+import Registerpage from './pages/Registerpage';
+import Loginpage from './pages/Loginpage';
+import Forgotpasswordpage from './pages/Forgotpasswordpage';
+import Vehicledetailpage from './pages/Vehicledetailpage';
+import Paymentpage from './pages/Paymentpage';
+import Historypage from './pages/Historypage';
+import Profilepage from './pages/Profilepage';
+import Reservationpage from './pages/Reservationpage';
+import Vehiclelistpage from './pages/Vehiclelistpage';
+import Changepassword from './pages/Changepassword';
+import { useDispatch, useSelector } from 'react-redux';
+import { unstable_HistoryRouter as HistoryRouter, /*BrowserRouter*/ Route, Routes } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { getDataUser } from './redux/actions/auth';
 
 const App = () => {
-  const auth = useSelector(state => state.auth)
-  const history = createBrowserHistory({ window })
-  const dispatch = useDispatch()
+  const auth = useSelector(state => state.auth);
+  const history = createBrowserHistory({ window });
+  const dispatch = useDispatch();
   useEffect(() => {
-    const token = window.localStorage.getItem('token')
+    const token = window.localStorage.getItem('token');
     if (token) {
       dispatch({
         type: 'AUTH_LOGIN_FULFILLED',
@@ -33,10 +33,10 @@ const App = () => {
             }
           }
         }
-      })
-      dispatch(getDataUser(token))
+      });
+      dispatch(getDataUser(token));
     }
-  }, [dispatch, auth.token])
+  }, [dispatch, auth.token]);
   return (
     <div>
       <HistoryRouter history={history}>
@@ -59,7 +59,7 @@ const App = () => {
         {/* </BrowserRouter> */}
       </HistoryRouter>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

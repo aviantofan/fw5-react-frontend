@@ -1,24 +1,24 @@
-import React from 'react'
-import { Link, Navigate } from 'react-router-dom'
-import Footer from '../components/Footer'
-import Google from '../assets/images/google.png'
-import Button from '../components/Button'
-import Input from '../components/Input'
+import React from 'react';
+import { Link, /*Navigate*/ } from 'react-router-dom';
+import Footer from '../components/Footer';
+import Google from '../assets/images/google.png';
+import Button from '../components/Button';
+import Input from '../components/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../redux/actions/auth';
 
 const Registerpage = () => {
-  const dispatch = useDispatch()
-  const auth = useSelector(state => state.auth)
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth);
 
   const onRegister = (e) => {
-    e.preventDefault()
-    const name = e.target.elements['name'].value
-    const email = e.target.elements['email'].value
-    const password = e.target.elements['password'].value
-    const data = { name, email, password }
-    dispatch(register(data))
-  }
+    e.preventDefault();
+    const name = e.target.elements['name'].value;
+    const email = e.target.elements['email'].value;
+    const password = e.target.elements['password'].value;
+    const data = { name, email, password };
+    dispatch(register(data));
+  };
 
   return (
     <>
@@ -94,7 +94,7 @@ const Registerpage = () => {
         <Footer />
       </body>
     </>
-  )
-}
+  );
+};
 
-export default Registerpage
+export default Registerpage;

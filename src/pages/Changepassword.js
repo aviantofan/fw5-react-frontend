@@ -1,26 +1,26 @@
-import React from 'react'
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer'
-import { FaChevronLeft } from 'react-icons/fa'
-import Button from '../components/Button'
+import Footer from '../components/Footer';
+import { FaChevronLeft } from 'react-icons/fa';
+import Button from '../components/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { changePassword } from '../redux/actions/auth';
 
 const Changepassword = () => {
-  const dispatch = useDispatch()
-  const auth = useSelector(state => state.auth)
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth);
+  const navigate = useNavigate();
 
   const onChangePassword = (e) => {
-    e.preventDefault()
-    const email = e.target.elements['email'].value
-    const code = e.target.elements['code'].value
-    const password = e.target.elements['password'].value
-    const confirmPassword = e.target.elements['password'].value
-    const data = { email, code, password, confirmPassword }
-    dispatch(changePassword(data))
-    navigate('/login')
-  }
+    e.preventDefault();
+    const email = e.target.elements['email'].value;
+    const code = e.target.elements['code'].value;
+    const password = e.target.elements['password'].value;
+    const confirmPassword = e.target.elements['password'].value;
+    const data = { email, code, password, confirmPassword };
+    dispatch(changePassword(data));
+    navigate('/login');
+  };
 
   return (
     <>
@@ -78,7 +78,7 @@ const Changepassword = () => {
         <Footer />
       </body>
     </>
-  )
-}
+  );
+};
 
-export default Changepassword
+export default Changepassword;

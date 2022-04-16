@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Logo from '../assets/images/logo.png'
-import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '../assets/images/logo.png';
+import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 export default class Footer extends Component {
   render() {
@@ -71,6 +71,6 @@ export default class Footer extends Component {
           </div>
         </div>
       </footer>
-    )
+    );
   }
 }

@@ -1,38 +1,38 @@
-import React, { /*Component*/ useEffect /*useState*/ } from 'react'
+import React, { /*Component*/ useEffect /*useState*/ } from 'react';
 // import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import Input from '../components/Input'
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import Input from '../components/Input';
 // import Reversebuttonplusminus from '../components/Reversebuttonplusminus'
 // import Navlogin from '../components/NavLogin'
-import NumberFormat from 'react-number-format'
+import NumberFormat from 'react-number-format';
 // import Fixie from '../assets/images/fixie-reserved.png'
-import { FaChevronLeft, FaPlus, FaMinus } from 'react-icons/fa'
-import { useParams, useNavigate } from 'react-router-dom'
+import { FaChevronLeft, FaPlus, FaMinus } from 'react-icons/fa';
+import { useParams, useNavigate } from 'react-router-dom';
 // import { getData } from '../helpers/http'
-import Button from '../components/Button'
-import { connect, useSelector, useDispatch } from 'react-redux'
-import { getVehicleDetail } from '../redux/actions/vehicleDetail'
-import { increment, decrement } from '../redux/actions/counter'
+import Button from '../components/Button';
+import { connect, useSelector, useDispatch } from 'react-redux';
+import { getVehicleDetail } from '../redux/actions/vehicleDetail';
+import { increment, decrement } from '../redux/actions/counter';
 
 export const Reservationpage = ({ getVehicleDetail }) => {
   // const [vehicleDetail, setVehicle] = useState({})
-  const { vehicleDetail: Detail } = useSelector(state => state)
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const counter = useSelector(state => state.counter)
+  const { vehicleDetail: Detail } = useSelector(state => state);
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const counter = useSelector(state => state.counter);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const onInc = () => {
-    dispatch(increment())
-  }
+    dispatch(increment());
+  };
   const onDec = () => {
-    dispatch(decrement())
-  }
+    dispatch(decrement());
+  };
 
   useEffect(() => {
-    getVehicleDetail(id)
-  }, [])
+    getVehicleDetail(id);
+  }, []);
 
   // const getDataComponent = async (id) => {
   //   const { data } = await getData(`http://localhost:5000/vehicles/${id}`)
@@ -40,12 +40,12 @@ export const Reservationpage = ({ getVehicleDetail }) => {
   // }
 
   const goToDetail = (id) => {
-    navigate(`/vehicles/${id}`)
-  }
+    navigate(`/vehicles/${id}`);
+  };
 
   const goToPayment = (id) => {
-    navigate(`/payment/${id}`)
-  }
+    navigate(`/payment/${id}`);
+  };
 
   return (
     <>
@@ -106,7 +106,7 @@ export const Reservationpage = ({ getVehicleDetail }) => {
             <div className="row mt-4">
               <div className="col mb-4">
                 <Button className="filled w-100" onClick={() => goToPayment(Detail.vehicleDetail.id)} style={{ cursor: 'pointer' }} key={String(Detail.vehicleDetail.id)}>
-                  Pay Now : <NumberFormat value={Detail.vehicleDetail.price * counter.num} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={"Rp. "} />
+                  Pay Now : <NumberFormat value={Detail.vehicleDetail.price * counter.num} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={'Rp. '} />
                 </Button>
               </div>
             </div>
@@ -115,11 +115,11 @@ export const Reservationpage = ({ getVehicleDetail }) => {
         <Footer />
       </body>
     </>
-  )
-}
+  );
+};
 
-const mapStateToProps = state => ({ vehicleDetail: state.vehicleDetail })
+const mapStateToProps = state => ({ vehicleDetail: state.vehicleDetail });
 
-const mapDispatchToProps = { getVehicleDetail }
+const mapDispatchToProps = { getVehicleDetail };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Reservationpage)
+export default connect(mapStateToProps, mapDispatchToProps)(Reservationpage);

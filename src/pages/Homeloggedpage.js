@@ -1,48 +1,48 @@
-import React, { useState, useEffect } from 'react'
-import { default as axios } from 'axios'
-import Footer from '../components/Footer'
-import Button from '../components/Button'
+import React, { useState, useEffect } from 'react';
+import { default as axios } from 'axios';
+import Footer from '../components/Footer';
+import Button from '../components/Button';
 // import Merapi from '../assets/images/merapi.png'
-import User from '../assets/images/user-home.png'
-import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
-import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
-import Input from '../components/Input'
-import NavLogin from '../components/NavLogin'
+import User from '../assets/images/user-home.png';
+import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
+import Input from '../components/Input';
+import NavLogin from '../components/NavLogin';
 
 export const Homeloggedpage = () => {
-  const [vehiclePopular, setVehiclePopular] = useState([])
-  const [page, setPage] = useState({})
-  const navigate = useNavigate()
+  const [vehiclePopular, setVehiclePopular] = useState([]);
+  const [page, setPage] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
-    getVehiclePopular()
-  }, [])
+    getVehiclePopular();
+  }, []);
 
   const getVehiclePopular = async () => {
-    const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
-    setVehiclePopular(data.results)
-    setPage(data.pageInfo)
-  }
+    const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4');
+    setVehiclePopular(data.results);
+    setPage(data.pageInfo);
+  };
 
   const getNextData = async (url) => {
-    const { data } = await axios.get(url)
+    const { data } = await axios.get(url);
     setVehiclePopular([
       ...vehiclePopular,
       ...data.results
-    ])
-    setPage(data.pageInfo)
-  }
+    ]);
+    setPage(data.pageInfo);
+  };
 
   const goToDetail = (id) => {
-    navigate(`/vehicles/${id}`)
-  }
+    navigate(`/vehicles/${id}`);
+  };
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    const location = event.target.elements["location"].value;
-    const categoryId = event.target.elements["categoryId"].value;
-    navigate(`/vehicles?location=${location}&categoryId=${categoryId}`, { replace: true })
-  }
+    const location = event.target.elements['location'].value;
+    const categoryId = event.target.elements['categoryId'].value;
+    navigate(`/vehicles?location=${location}&categoryId=${categoryId}`, { replace: true });
+  };
 
   return (
     <>
@@ -121,7 +121,7 @@ export const Homeloggedpage = () => {
             <div className="row">
               {vehiclePopular.map((data, idx) => {
                 return (
-                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                  <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
                         <img className="img-fluid image-preview" src={data.image} alt={data.name} />
@@ -132,7 +132,7 @@ export const Homeloggedpage = () => {
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </section>
@@ -172,7 +172,7 @@ export const Homeloggedpage = () => {
         <Footer />
       </body>
     </>
-  )
-}
+  );
+};
 
-export default Homeloggedpage
+export default Homeloggedpage;

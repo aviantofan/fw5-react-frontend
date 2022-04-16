@@ -1,23 +1,23 @@
-import React /*{ Component }*/ from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../assets/images/logo.png'
-import Button from './Button'
-import { useNavigate } from 'react-router-dom'
-import Profile from '../assets/images/profile-image.png'
-import { FiMail } from 'react-icons/fi'
-import { FaPowerOff } from 'react-icons/fa'
-import { useDispatch, useSelector } from 'react-redux'
+import React /*{ Component }*/ from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/images/logo.png';
+import Button from './Button';
+import { useNavigate } from 'react-router-dom';
+import Profile from '../assets/images/profile-image.png';
+import { FiMail } from 'react-icons/fi';
+import { FaPowerOff } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
-  const dispatch = useDispatch()
-  const auth = useSelector(state => state.auth)
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth);
+  const navigate = useNavigate();
 
   const onLogout = (e) => {
-    e.preventDefault()
-    dispatch({ type: 'AUTH_LOGOUT' })
-    navigate('/')
-  }
+    e.preventDefault();
+    dispatch({ type: 'AUTH_LOGOUT' });
+    navigate('/');
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
@@ -71,7 +71,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav >
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

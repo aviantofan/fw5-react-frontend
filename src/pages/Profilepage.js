@@ -1,15 +1,15 @@
-import React /*{ Component }*/ from 'react'
-import Footer from '../components/Footer'
+import React /*{ Component }*/ from 'react';
+import Footer from '../components/Footer';
 // import Navlogin from '../components/NavLogin'
-import Profile from '../assets/images/profile-picture.png'
-import { FaPencilAlt } from 'react-icons/fa'
-import Button from '../components/Button'
-import Input from '../components/Input'
-import Navbar from '../components/Navbar'
-import { useSelector } from 'react-redux'
+import Profile from '../assets/images/profile-picture.png';
+import { FaPencilAlt } from 'react-icons/fa';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import Navbar from '../components/Navbar';
+import { useSelector } from 'react-redux';
 
 const Profilepage = () => {
-  const auth = useSelector(state => state.auth)
+  const auth = useSelector(state => state.auth);
   return (
     <>
       <body>
@@ -103,7 +103,7 @@ const Profilepage = () => {
         <Footer />
       </body>
     </>
-  )
-}
+  );
+};
 
-export default Profilepage
+export default Profilepage;

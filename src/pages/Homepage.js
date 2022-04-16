@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 // import { default as axios } from 'axios'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Button from '../components/Button'
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Button from '../components/Button';
 // import Merapi from '../assets/images/merapi.png'
-import User from '../assets/images/user-home.png'
-import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
-import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa'
-import Input from '../components/Input'
-import { getVehiclePopular } from '../redux/actions/vehiclePopular'
-import { connect, useSelector } from 'react-redux'
-import Skeleton from 'react-loading-skeleton'
+import User from '../assets/images/user-home.png';
+import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
+import Input from '../components/Input';
+import { getVehiclePopular } from '../redux/actions/vehiclePopular';
+import { connect, useSelector } from 'react-redux';
+import Skeleton from 'react-loading-skeleton';
 
 export const Homepage = ({ getVehiclePopular }) => {
-  const [vehiclePopular, setVehiclePopular] = useState([])
-  const [page, setPage] = useState({})
-  const navigate = useNavigate()
-  const { vehiclePopular: Popular } = useSelector(state => state)
+  const [vehiclePopular, setVehiclePopular] = useState([]);
+  const [page, setPage] = useState({});
+  const navigate = useNavigate();
+  const { vehiclePopular: Popular } = useSelector(state => state);
 
   useEffect(() => {
-    getVehiclePopular()
-  }, [])
+    getVehiclePopular();
+  }, []);
 
   // const getVehiclePopular = async () => {
   //   const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
@@ -29,24 +29,24 @@ export const Homepage = ({ getVehiclePopular }) => {
   // }
 
   const getNextData = async (url) => {
-    const { data } = getVehiclePopular(url)
+    const { data } = getVehiclePopular(url);
     setVehiclePopular([
       ...vehiclePopular,
       ...data.results
-    ])
-    setPage(data.pageInfo)
-  }
+    ]);
+    setPage(data.pageInfo);
+  };
 
   const goToDetail = (id) => {
-    navigate(`/vehicles/${id}`)
-  }
+    navigate(`/vehicles/${id}`);
+  };
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    const location = event.target.elements["location"].value;
-    const categoryId = event.target.elements["categoryId"].value;
-    navigate(`/vehicles?location=${location}&categoryId=${categoryId}`, { replace: true })
-  }
+    const location = event.target.elements['location'].value;
+    const categoryId = event.target.elements['categoryId'].value;
+    navigate(`/vehicles?location=${location}&categoryId=${categoryId}`, { replace: true });
+  };
   return (
     <>
       <body>
@@ -128,7 +128,7 @@ export const Homepage = ({ getVehiclePopular }) => {
               {!Popular.isLoading && <div className='row my-5'>
                 {Popular.vehiclePopular.map((data, idx) => {
                   return (
-                    <div className='col-sm-6 col-md-3 text-center item-list'>
+                    <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
                       <div className='my-2 d-inline-block position-relative'>
                         <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
                           <img className="img-fluid image-preview" src={data.image} alt={data.name} />
@@ -139,7 +139,7 @@ export const Homepage = ({ getVehiclePopular }) => {
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>}
             </div>
@@ -180,10 +180,10 @@ export const Homepage = ({ getVehiclePopular }) => {
         <Footer />
       </body>
     </>
-  )
-}
-const mapStateToProps = state => ({ vehiclePopular: state.vehiclePopular })
+  );
+};
+const mapStateToProps = state => ({ vehiclePopular: state.vehiclePopular });
 
-const mapDispatchToProps = { getVehiclePopular }
+const mapDispatchToProps = { getVehiclePopular };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Homepage)
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);

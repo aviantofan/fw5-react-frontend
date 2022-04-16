@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import Logo from '../assets/images/logo.png'
-import Profile from '../assets/images/profile-image.png'
-import { Link } from 'react-router-dom'
-import { FiMail } from 'react-icons/fi'
+import React, { Component } from 'react';
+import Logo from '../assets/images/logo.png';
+import Profile from '../assets/images/profile-image.png';
+import { Link } from 'react-router-dom';
+import { FiMail } from 'react-icons/fi';
 
 export default class NavLogin extends Component {
   render() {
@@ -47,6 +47,6 @@ export default class NavLogin extends Component {
           </nav>
         </body>
       </>
-    )
+    );
   }
 }

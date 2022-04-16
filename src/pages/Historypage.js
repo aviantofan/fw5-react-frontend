@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 // import Navlogin from '../components/NavLogin'
-import Vespa from '../assets/images/vespa-history.png'
-import Motorbike from '../assets/images/motorbike-history.png'
-import Lambo from '../assets/images/lambo-history.png'
-import Jeep from '../assets/images/jeep-history.png'
-import { FaChevronRight, FaChevronDown, FaSearch } from 'react-icons/fa'
-import Input from '../components/Input'
-import Navbar from '../components/Navbar'
+import Vespa from '../assets/images/vespa-history.png';
+import Motorbike from '../assets/images/motorbike-history.png';
+import Lambo from '../assets/images/lambo-history.png';
+import Jeep from '../assets/images/jeep-history.png';
+import { FaChevronRight, FaChevronDown, FaSearch } from 'react-icons/fa';
+import Input from '../components/Input';
+import Navbar from '../components/Navbar';
 
 export default class Historypage extends Component {
   render() {
@@ -128,6 +128,6 @@ export default class Historypage extends Component {
           <Footer />
         </body>
       </>
-    )
+    );
   }
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle'
-import './assets/css/style.css'
-import './assets/css/footer.css'
-import './assets/css/navbar.css'
-import './assets/css/button.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import './assets/css/style.css';
+import './assets/css/footer.css';
+import './assets/css/navbar.css';
+import './assets/css/button.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux'
-import store from './redux/store'
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 ReactDOM.render(
   <Provider store={store}>

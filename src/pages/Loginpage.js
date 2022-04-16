@@ -1,22 +1,22 @@
-import React from 'react'
-import { Link, Navigate } from 'react-router-dom'
-import Footer from '../components/Footer'
-import Google from '../assets/images/google.png'
-import Button from '../components/Button'
-import Input from '../components/Input'
-import { connect, useDispatch, useSelector } from 'react-redux'
-import { login } from '../redux/actions/auth'
+import React from 'react';
+import { Link, Navigate } from 'react-router-dom';
+import Footer from '../components/Footer';
+import Google from '../assets/images/google.png';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { login } from '../redux/actions/auth';
 
 export const Loginpage = () => {
-  const dispatch = useDispatch()
-  const auth = useSelector(state => state.auth)
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth);
 
   const onLogin = (e) => {
-    e.preventDefault()
-    const email = e.target.elements['email'].value
-    const password = e.target.elements['password'].value
-    dispatch(login(email, password))
-  }
+    e.preventDefault();
+    const email = e.target.elements['email'].value;
+    const password = e.target.elements['password'].value;
+    dispatch(login(email, password));
+  };
 
   return (
     <>
@@ -94,11 +94,11 @@ export const Loginpage = () => {
         <Footer />
       </body>
     </>
-  )
-}
+  );
+};
 
-const mapStateToProps = state => ({ auth: state.auth })
+const mapStateToProps = state => ({ auth: state.auth });
 
-const mapDispatchToProps = dispatch => ({ dispatch })
+const mapDispatchToProps = dispatch => ({ dispatch });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Loginpage)
+export default connect(mapStateToProps, mapDispatchToProps)(Loginpage);

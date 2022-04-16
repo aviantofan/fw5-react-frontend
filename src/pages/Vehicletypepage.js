@@ -1,36 +1,36 @@
-import React, { /*Component*/useState, useEffect } from 'react'
-import { default as axios } from 'axios'
-import Footer from '../components/Footer'
+import React, { /*Component*/useState, useEffect } from 'react';
+import { default as axios } from 'axios';
+import Footer from '../components/Footer';
 // import Navlogin from '../components/NavLogin'
-import Input from '../components/Input'
-import { FaChevronRight, FaSearch } from 'react-icons/fa'
-import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom'
-import { getVehiclePopular } from '../redux/actions/vehiclePopular'
-import { getCategoryCar } from '../redux/actions/vehicleCategoryCar'
-import { getCategoryMotorbike } from '../redux/actions/vehicleCategoryMotorbike'
-import { getCategoryBike } from '../redux/actions/vehicleCategoryBike'
-import { connect, useSelector } from 'react-redux'
-import Navbar from '../components/Navbar'
+import Input from '../components/Input';
+import { FaChevronRight, FaSearch } from 'react-icons/fa';
+import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom';
+import { getVehiclePopular } from '../redux/actions/vehiclePopular';
+import { getCategoryCar } from '../redux/actions/vehicleCategoryCar';
+import { getCategoryMotorbike } from '../redux/actions/vehicleCategoryMotorbike';
+import { getCategoryBike } from '../redux/actions/vehicleCategoryBike';
+import { connect, useSelector } from 'react-redux';
+import Navbar from '../components/Navbar';
 
 export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategoryMotorbike, getCategoryBike }) => {
-  const [vehiclePopular, setVehiclePopular] = useState([])
-  const [vehicleCategoryCar, setVehicleCategoryCar] = useState([])
-  const [vehicleCategoryMotorbike, setVehicleCategoryMotorbike] = useState([])
-  const [vehicleCategoryBike, setVehicleCategoryBike] = useState([])
-  const [pagePopular, setPagePopular] = useState({})
-  const [pageCar, setPageCar] = useState({})
-  const [pageMotorbike, setPageMotorbike] = useState({})
-  const [pageBike, setPageBike] = useState({})
-  const { vehiclePopular: Popular, vehicleCategoryCar: Car, vehicleCategoryMotorbike: Motorbike, vehicleCategoryBike: Bike } = useSelector(state => state)
+  const [vehiclePopular, setVehiclePopular] = useState([]);
+  const [vehicleCategoryCar, setVehicleCategoryCar] = useState([]);
+  const [vehicleCategoryMotorbike, setVehicleCategoryMotorbike] = useState([]);
+  const [vehicleCategoryBike, setVehicleCategoryBike] = useState([]);
+  const [pagePopular, setPagePopular] = useState({});
+  const [pageCar, setPageCar] = useState({});
+  const [pageMotorbike, setPageMotorbike] = useState({});
+  const [pageBike, setPageBike] = useState({});
+  const { vehiclePopular: Popular, vehicleCategoryCar: Car, vehicleCategoryMotorbike: Motorbike, vehicleCategoryBike: Bike } = useSelector(state => state);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    getVehiclePopular()
-    getCategoryCar()
-    getCategoryMotorbike()
-    getCategoryBike()
-  }, [])
+    getVehiclePopular();
+    getCategoryCar();
+    getCategoryMotorbike();
+    getCategoryBike();
+  }, []);
 
   // const getVehiclePopular = async () => {
   //   const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
@@ -57,50 +57,50 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
   // }
 
   const getNextDataPopular = async (url) => {
-    const { data } = await axios.get(url)
+    const { data } = await axios.get(url);
     setVehiclePopular([
       ...vehiclePopular,
       ...data.results
-    ])
-    setPagePopular(data.pageInfo)
-  }
+    ]);
+    setPagePopular(data.pageInfo);
+  };
 
   const getNextDataCategoryCar = async (url) => {
-    const { data } = await axios.get(url)
+    const { data } = await axios.get(url);
     setVehicleCategoryCar([
       ...vehicleCategoryCar,
       ...data.results
-    ])
-    setPageCar(data.pageInfo)
-  }
+    ]);
+    setPageCar(data.pageInfo);
+  };
 
   const getNextDataCategoryMotorbike = async (url) => {
-    const { data } = await axios.get(url)
+    const { data } = await axios.get(url);
     setVehicleCategoryMotorbike([
       ...vehicleCategoryMotorbike,
       ...data.results
-    ])
-    setPageMotorbike(data.pageInfo)
-  }
+    ]);
+    setPageMotorbike(data.pageInfo);
+  };
 
   const getNextDataCategoryBike = async (url) => {
-    const { data } = await axios.get(url)
+    const { data } = await axios.get(url);
     setVehicleCategoryBike([
       ...vehicleCategoryBike,
       ...data.results
-    ])
-    setPageBike(data.pageInfo)
-  }
+    ]);
+    setPageBike(data.pageInfo);
+  };
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    const name = event.target.elements["name"].value;
-    navigate(`/vehicles?name=${name}`, { replace: true })
-  }
+    const name = event.target.elements['name'].value;
+    navigate(`/vehicles?name=${name}`, { replace: true });
+  };
 
   const goToDetail = (id) => {
-    navigate(`/vehicles/${id}`)
-  }
+    navigate(`/vehicles/${id}`);
+  };
 
   return (
     <>
@@ -133,7 +133,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
             <div className="row">
               {Popular.vehiclePopular.map((data, idx) => {
                 return (
-                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                  <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
                         <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
@@ -144,7 +144,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </section>
@@ -166,7 +166,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
             <div className="row">
               {Car.vehicleCategoryCar.map((data, idx) => {
                 return (
-                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                  <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
                         <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
@@ -177,7 +177,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </section>
@@ -199,7 +199,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
             <div className="row">
               {Motorbike.vehicleCategoryMotorbike.map((data, idx) => {
                 return (
-                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                  <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
                         <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
@@ -210,7 +210,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </section>
@@ -232,7 +232,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
             <div className="row">
               {Bike.vehicleCategoryBike.map((data, idx) => {
                 return (
-                  <div className='col-sm-6 col-md-3 text-center item-list'>
+                  <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
                       <div onClick={() => goToDetail(data.id)} style={{ cursor: 'pointer' }} key={String(data.id)}>
                         <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
@@ -243,7 +243,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </section>
@@ -251,11 +251,11 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
         <Footer />
       </body>
     </>
-  )
-}
+  );
+};
 
-const mapStateToProps = state => ({ vehiclePopular: state.vehiclePopular, vehicleCategoryCar: state.vehicleCategoryCar, vehicleCategoryMotorbike: state.vehicleCategoryMotorbike, vehicleCategoryBike: state.vehicleCategoryBike })
+const mapStateToProps = state => ({ vehiclePopular: state.vehiclePopular, vehicleCategoryCar: state.vehicleCategoryCar, vehicleCategoryMotorbike: state.vehicleCategoryMotorbike, vehicleCategoryBike: state.vehicleCategoryBike });
 
-const mapDispatchToProps = { getVehiclePopular, getCategoryCar, getCategoryMotorbike, getCategoryBike }
+const mapDispatchToProps = { getVehiclePopular, getCategoryCar, getCategoryMotorbike, getCategoryBike };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Vehicletypepage)
+export default connect(mapStateToProps, mapDispatchToProps)(Vehicletypepage);

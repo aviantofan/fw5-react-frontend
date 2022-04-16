@@ -1,22 +1,22 @@
-import React from 'react'
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer'
-import { FaChevronLeft } from 'react-icons/fa'
-import Button from '../components/Button'
+import Footer from '../components/Footer';
+import { FaChevronLeft } from 'react-icons/fa';
+import Button from '../components/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { forgotPassword } from '../redux/actions/auth';
 
 const Forgotpasswordpage = () => {
-  const dispatch = useDispatch()
-  const auth = useSelector(state => state.auth)
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth);
+  const navigate = useNavigate();
 
   const onForgot = (e) => {
-    e.preventDefault()
-    const email = e.target.elements['email'].value
-    dispatch(forgotPassword(email))
-    navigate('/changePassword')
-  }
+    e.preventDefault();
+    const email = e.target.elements['email'].value;
+    dispatch(forgotPassword(email));
+    navigate('/changePassword');
+  };
 
   return (
     <>
@@ -67,7 +67,7 @@ const Forgotpasswordpage = () => {
         <Footer />
       </body>
     </>
-  )
-}
+  );
+};
 
-export default Forgotpasswordpage
+export default Forgotpasswordpage;
