@@ -15,7 +15,6 @@ const auth = (state = initialState, action) => {
   }
   case 'AUTH_REGISTER_FULFILLED': {
     const { data } = action.payload;
-    // console.log(data.result.token)
     state.isLoading = false;
     state.isError = false;
     state.errorMsg = data.message;
@@ -35,12 +34,10 @@ const auth = (state = initialState, action) => {
   }
   case 'AUTH_LOGIN_FULFILLED': {
     const { data } = action.payload;
-    // console.log(data.result.token)
     state.isLoading = false;
     state.isError = false;
     state.token = data.result.token;
     window.localStorage.setItem('token', state.token);
-    console.log(data);
     return { ...state };
   }
   case 'AUTH_LOGIN_REJECTED': {
@@ -63,7 +60,6 @@ const auth = (state = initialState, action) => {
   }
   case 'AUTH_FORGOT_PASSWORD_REJECTED': {
     const { message } = action.payload.response.data;
-    console.log(message);
     state.isLoading = false;
     state.isError = true;
     state.errorMsg = message;
@@ -75,7 +71,6 @@ const auth = (state = initialState, action) => {
   }
   case 'AUTH_CHANGE_PASSWORD_FULFILLED': {
     const { data } = action.payload;
-    console.log(data.message);
     state.isLoading = false;
     state.isError = false;
     state.errorMsg = data.message;
@@ -83,7 +78,6 @@ const auth = (state = initialState, action) => {
   }
   case 'AUTH_CHANGE_PASSWORD_REJECTED': {
     const { message } = action.payload.response.data;
-    console.log(message);
     state.isLoading = false;
     state.isError = true;
     state.errorMsg = message;
