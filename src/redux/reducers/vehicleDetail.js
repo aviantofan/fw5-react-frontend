@@ -15,7 +15,7 @@ const vehicleDetail = (state = dataState, action) => {
   }
   case 'GET_DETAIL_FULFILLED': {
     const { data } = action.payload;
-    state.vehicleDetail = data.results;
+    state.vehicleDetail = data.result;
     state.pageInfo = data.pageInfo;
     state.isLoading = false;
     state.isError = false;
