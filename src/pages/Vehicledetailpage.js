@@ -63,7 +63,7 @@ export const Vehicledetailpage = ({ getVehicleDetail }) => {
         <section className="preview">
           <div className="row pt-5 pic">
             <div className="col text-center">
-              <img src={Detail.vehicleDetail.image} className="img-fluid detail" alt="Vehicle Detail" />
+              <img src={Detail.vehicleDetail?.image} className="img-fluid detail" alt="Vehicle Detail" />
               <div className='position-relative'>
                 <div className='position-absolute top-50 start-0 translate-middle'>
                   <button className="prev"><FaChevronLeft /></button>
