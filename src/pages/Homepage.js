@@ -11,6 +11,7 @@ import Input from '../components/Input';
 import { getVehiclePopular } from '../redux/actions/vehiclePopular';
 import { connect, useSelector } from 'react-redux';
 import Skeleton from 'react-loading-skeleton';
+import noImage from '../assets/images/no-image.jpg';
 
 export const Homepage = ({ getVehiclePopular }) => {
   const [vehiclePopular, setVehiclePopular] = useState([]);
@@ -27,6 +28,13 @@ export const Homepage = ({ getVehiclePopular }) => {
   //   setVehiclePopular(data.results)
   //   setPage(data.pageInfo)
   // }
+
+  const dataEmpty= [
+    {image : noImage, name: 'Unknown', location:'No Location'},
+    {image : noImage, name: 'Unknown', location:'No Location'},
+    {image : noImage, name: 'Unknown', location:'No Location'},
+    {image : noImage, name: 'Unknown', location:'No Location'},
+  ];
 
   const getNextData = async (url) => {
     const { data } = getVehiclePopular(url);
@@ -125,22 +133,41 @@ export const Homepage = ({ getVehiclePopular }) => {
               {Popular.isLoading &&
                 <Skeleton height={150} containerClassName='row' count={8} wrapper={({ children }) => (<div className='col-md-3'>{children}</div>)} />
               }
-              {!Popular.isLoading && <div className='row my-5'>
-                {Popular.vehiclePopular?.map((data, idx) => {
-                  return (
-                    <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
-                      <div className='my-2 d-inline-block position-relative'>
-                        <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
+              {!Popular.isLoading && <div className='row'>
+                {!Popular.isError && <div className='row my-5'>
+                  {Popular.vehiclePopular?.map((data, idx) => {
+                    return (
+                      <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
+                        <div className='my-2 d-inline-block position-relative'>
+                          <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
+                            <img className="img-fluid image-preview" src={data.image ? data.image : noImage} alt={data.name} />
+                            <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
+                              <h5>{data.vehicleName ? data.vehicleName : 'UNKNOWN'}</h5>
+                              <span>{data.location ? data.location : 'No Location'}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>}
+              </div>}
+              {!Popular.isLoading && <div className='row'>
+                {Popular.isError && <div className='row my-5'>
+                  {dataEmpty.map((data, idx) => {
+                    return (
+                      <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
+                        <div className='my-2 d-inline-block position-relative'>
                           <img className="img-fluid image-preview" src={data.image} alt={data.name} />
                           <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                            <h5>{data.vehicleName}</h5>
+                            <h5>{data.name}</h5>
                             <span>{data.location}</span>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>}
               </div>}
             </div>
           </section>

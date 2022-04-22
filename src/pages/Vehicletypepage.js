@@ -11,6 +11,7 @@ import { getCategoryMotorbike } from '../redux/actions/vehicleCategoryMotorbike'
 import { getCategoryBike } from '../redux/actions/vehicleCategoryBike';
 import { connect, useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
+import noImage from '../assets/images/no-image.jpg';
 
 export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategoryMotorbike, getCategoryBike }) => {
   const [vehiclePopular, setVehiclePopular] = useState([]);
@@ -31,6 +32,13 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
     getCategoryMotorbike();
     getCategoryBike();
   }, []);
+
+  const dataEmpty= [
+    {image : noImage, name: 'Unknown', location:'No Location'},
+    {image : noImage, name: 'Unknown', location:'No Location'},
+    {image : noImage, name: 'Unknown', location:'No Location'},
+    {image : noImage, name: 'Unknown', location:'No Location'},
+  ];
 
   // const getVehiclePopular = async () => {
   //   const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
@@ -131,21 +139,38 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
               </div>
             </div>
             <div className="row">
-              {Popular.vehiclePopular.map((data, idx) => {
-                return (
-                  <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
-                    <div className='my-2 d-inline-block position-relative'>
-                      <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
-                        <img className="img-fluid image-preview" src={data.image} alt="Vehicle Type" />
+              {!Popular.isError && <div className='row my-5'>
+                {Popular.vehiclePopular?.map((data, idx) => {
+                  return (
+                    <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
+                      <div className='my-2 d-inline-block position-relative'>
+                        <div onClick={() => goToDetail(data.vehicleId)} style={{ cursor: 'pointer' }} key={String(data.vehicleId)}>
+                          <img className="img-fluid image-preview" src={data.image ? data.image : noImage} alt={data.name} />
+                          <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
+                            <h5>{data.vehicleName ? data.vehicleName : 'UNKNOWN'}</h5>
+                            <span>{data.location ? data.location : 'No Location'}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>}
+              {Popular.isError && <div className='row my-5'>
+                {dataEmpty.map((data, idx) => {
+                  return (
+                    <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
+                      <div className='my-2 d-inline-block position-relative'>
+                        <img className="img-fluid image-preview" src={data.image} alt={data.name} />
                         <div className=' highlight position-absolute text-start bg-white bottom-0 start-0 rounded-end'>
-                          <h5>{data.vehicleName}</h5>
+                          <h5>{data.name}</h5>
                           <span>{data.location}</span>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>}
             </div>
           </section>
 
