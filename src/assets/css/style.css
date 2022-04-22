@@ -871,6 +871,8 @@ section.profile form div{
 }
 section.profile img.img-rounded-circle{
   border-radius: 100px;
+  width: 200px;
+  height: 200px;
   margin-left: 0px;
   margin-bottom: 23px;
 }
@@ -907,6 +909,7 @@ section.profile div.profile-desc p{
   position: absolute;
   width: 0;
   height: 0;
+  cursor: pointer;
 }
 .radio-button .checkmark {
   width: 20px;
@@ -919,7 +922,7 @@ section.profile div.profile-desc p{
   display: inline-block;
   margin-left: 19px;
 }
-.radio-button input:checked~.checkmark {
+.radio-button input:checked~ .checkmark {
   border-color: #072227;
   background-color: #4FBDBA;
 }
@@ -929,6 +932,7 @@ section.profile-edit{
 }
 section.profile-edit label{
   font-weight: 700;
+  cursor: pointer;
 }
 section.contact h5{
   font-weight: 900;
