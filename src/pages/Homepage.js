@@ -126,7 +126,7 @@ export const Homepage = ({ getVehiclePopular }) => {
                 <Skeleton height={150} containerClassName='row' count={8} wrapper={({ children }) => (<div className='col-md-3'>{children}</div>)} />
               }
               {!Popular.isLoading && <div className='row my-5'>
-                {Popular.vehiclePopular.map((data, idx) => {
+                {Popular.vehiclePopular?.map((data, idx) => {
                   return (
                     <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
                       <div className='my-2 d-inline-block position-relative'>
