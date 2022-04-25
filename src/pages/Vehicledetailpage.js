@@ -14,10 +14,12 @@ import Button from '../components/Button';
 import { getVehicleDetail } from '../redux/actions/vehicleDetail';
 import { increment, decrement } from '../redux/actions/counter';
 import Navbar from '../components/Navbar';
+import noImage from '../assets/images/no-image.jpg';
 
 export const Vehicledetailpage = ({ getVehicleDetail }) => {
   // const [vehicleDetail, setVehicle] = useState({})
   const { vehicleDetail: Detail } = useSelector(state => state);
+  const auth = useSelector(state => state.auth);
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -44,12 +46,17 @@ export const Vehicledetailpage = ({ getVehicleDetail }) => {
   // }
 
   const goToReservation = (id) => {
-    navigate(`/reservation/${id}`);
+    if(auth.token){
+      navigate(`/reservation/${id}`);
+    }else{
+      navigate('/login');
+    }
   };
 
   return (
-    <body>
+    <section>
       <Navbar />
+      {auth.userData.role ==='user' || auth.userData.role ===undefined &&
       <main className="container">
         <section className="back">
           <div className='pt-3'>
@@ -148,8 +155,86 @@ export const Vehicledetailpage = ({ getVehicleDetail }) => {
           </div>
         </section>
       </main>
+      }
+      {auth.userData.role ==='admin' &&
+      <main className="container">
+        <section className="back">
+          <div className='pt-3'>
+            <Link to="/vehicleType">
+              <FaChevronLeft />
+              <span>Update item</span>
+            </Link>
+          </div>
+        </section>
+
+        <section className="preview">
+          <div className="row pt-5 pic">
+            <div className="col text-center" style={{ cursor: 'pointer' }}>
+              <img src={noImage} className="img-fluid add" alt="Vehicle Detail" />
+            </div>
+            <div className="col">
+              <div className="desc">
+                <div className="mb-3">
+                  <input placeholder='Name' id='name' className="d-block w-100 input-underline" type="text" />
+                </div>
+                <div className="mb-3">
+                  <input placeholder='Color' id='color' className="d-block w-100 input-underline" type="text" />
+                </div>
+                <div className="mb-3">
+                  <input placeholder='Location' id='loc' className="d-block w-100 input-underline" type="text" />
+                </div>
+                <div className="mb-3">
+                  <input placeholder='Capacity' id='capacity' className="d-block w-100 input-underline" type="text" />
+                </div>
+                <label style={{ fontSize: 24, fontFamily:'Playfair Display', fontWeight:'bold'}} className='mb-2'>Status</label>
+                <select name='isAvailable' className="form-select  w-100 mb-5">
+                  <option value="" style={{ display: 'none' }}>Select Status</option>
+                  <option value="1" className='text-success'>Available</option>
+                  <option value="0" className='text-danger'>Full Booked</option>
+                </select>
+              </div>
+              <div className="day d-flex row justify-content-between align-items-center">
+                <div className="col">
+                  <button onClick={onInc} className="plus"><FaPlus /></button>
+                </div>
+                <div className="col">
+                  <div className="count">{counter.num}</div>
+                </div>
+                <div className="col">
+                  <button onClick={onDec} className="minus"><FaMinus /></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="semi-footer">
+          <div className="row mt-4">
+            <div className="col mb-4">
+              <div className="mb-3">
+                <label style={{ fontSize: 24, fontFamily:'Playfair Display', fontWeight:'bold'}}>Price</label>
+                <input id='price' style={{ height:45 }} className="d-block w-100 form-control" type="text" />
+              </div>
+              <div className="mb-3">
+                <label style={{ fontSize: 24, fontFamily:'Playfair Display', fontWeight:'bold'}}>Reservation Before</label>
+                <input id='reservationBefore' style={{ height:45 }} className="d-block w-100 form-control" type="text" />
+              </div>
+              <select name='categoryId' className="form-select w-100 mb-3 py-3 px-4" style={{backgroundColor:'#072227', color : '#4FBDBA'}}>
+                <option style={{ display: 'none' }}>Category</option>
+                <option value="1" >Car</option>
+                <option value="2" >Motorbike</option>
+                <option value="3" >Bike</option>
+              </select>
+              <Button className="filled w-100"  style={{ cursor: 'pointer' }}>
+               Update Item
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+      }
       <Footer />
-    </body>
+    </section>
   );
 };
 
