@@ -7,18 +7,23 @@ import Button from '../components/Button';
 // import Input from '../components/Input';
 import Navbar from '../components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
-import { profile } from '../redux/actions/profile';
-import  {getDataUser}  from '../redux/actions/auth';
+import  {getDataUser , updateDataUser}  from '../redux/actions/auth';
 
-const Profilepage = ({getDataUser}) => {
+const Profilepage = () => {
   const auth = useSelector(state => state.auth);
   const [updateProfile, setUpdateProfile] = useState({});
-  const [gender, setGender] = useState('');
+  const [gender, setGender] = useState();
+  const [image, setImage] = useState();
   const hiddenFileInput = useRef(null);
   const dispatch = useDispatch();
+
+  useEffect(()=>{
+    setImage(auth.userData.image);
+    setGender(auth.userData.gender);
+  }, [auth.userData.image, auth.userData.gender]);
+  
   const {
-    id, 
-    image, 
+    id,
     name, 
     email, 
     createdAt, 
@@ -35,16 +40,14 @@ const Profilepage = ({getDataUser}) => {
   const fileInputHandler = (e) => {
     const reader = new FileReader();
     const image = e.target.files[0];
-
-    const profileImage = document.querySelector('#profile-image');
-    reader.readAsDataURL(image);
-
-    reader.onload = (e) => {
-      profileImage.src = e.target.result;
-    };    
+    reader.readAsDataURL(image); 
+    
+    reader.onload = () => {
+      setImage(reader.result);
+    };
     
     const data = {image};
-    dispatch(profile(data, id));
+    dispatch(updateDataUser(data, id));
   };
 
   const genderChange = (e) => {
@@ -66,12 +69,6 @@ const Profilepage = ({getDataUser}) => {
     }
   };
 
-  useEffect(() => {
-    if (auth.userData) {
-      setGender(auth.userData.gender);
-    }
-  }, [auth.userData]);
-
   const update = (e) => {
     e.preventDefault();
     const gender = updateProfile.gender;
@@ -81,7 +78,13 @@ const Profilepage = ({getDataUser}) => {
     const name = document.getElementById('name').value;
     const birthdate = document.getElementById('birthdate').value;
     const data = {gender, email, address, phone, name, birthdate};
-    dispatch(profile(data,id));
+    dispatch(updateDataUser(data,id));
+
+    useEffect(()=>{
+      if(auth.isSuccess){
+        getDataUser(auth.token);
+      }
+    },[auth.isSuccess]);
   };
   return (
     <>
