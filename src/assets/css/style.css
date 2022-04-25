@@ -594,6 +594,11 @@ section.preview img.detail{
   height: 409px;
   object-fit: cover;
 }
+section.preview img.add{
+  width: 610px;
+  height: 480px;
+  object-fit: cover;
+}
 section.preview img.detail1{
   width: 233px;
   height: 158px;
