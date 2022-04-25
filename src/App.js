@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Homepage from './pages/Homepage';
-import Homeloggedpage from './pages/Homeloggedpage';
 import Vehicletypepage from './pages/Vehicletypepage';
 import Registerpage from './pages/Registerpage';
 import Loginpage from './pages/Loginpage';
@@ -12,6 +11,7 @@ import Profilepage from './pages/Profilepage';
 import Reservationpage from './pages/Reservationpage';
 import Vehiclelistpage from './pages/Vehiclelistpage';
 import Changepassword from './pages/Changepassword';
+import AddVehicle from './pages/AddVehicle';
 import { useDispatch, useSelector } from 'react-redux';
 import { unstable_HistoryRouter as HistoryRouter, /*BrowserRouter*/ Route, Routes } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
@@ -43,7 +43,6 @@ const App = () => {
         {/* <BrowserRouter> */}
         <Routes>
           <Route path='/' element={<Homepage />} />
-          <Route path='homeLogged' element={<Homeloggedpage />} />
           <Route path='vehicleType' element={<Vehicletypepage />} />
           <Route path='vehicles' element={<Vehiclelistpage />} />
           <Route path='vehicles/:id' element={<Vehicledetailpage />} />
@@ -55,6 +54,7 @@ const App = () => {
           <Route path='history' element={<Historypage />} />
           <Route path='reservation/:id' element={<Reservationpage />} />
           <Route path='changePassword' element={<Changepassword />} />
+          <Route path='addVehicle' element={<AddVehicle/>} />
         </Routes>
         {/* </BrowserRouter> */}
       </HistoryRouter>
