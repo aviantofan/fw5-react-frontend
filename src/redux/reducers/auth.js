@@ -3,7 +3,8 @@ const initialState = {
   userData: {},
   isLoading: false,
   isError: false,
-  errorMsg: ''
+  errorMsg: '',
+  isSuccess: false,
 };
 
 const auth = (state = initialState, action) => {
@@ -91,6 +92,27 @@ const auth = (state = initialState, action) => {
     const { data } = action.payload;
     state.isLoading = false;
     state.userData = data.result;
+    return { ...state };
+  }
+  case 'UPDATE_PROFILE_PENDING': {
+    state.isLoading = true;
+    state.isError = false;
+    state.isSuccess = false;
+    return { ...state };
+  }
+  case 'UPDATE_PROFILE_FULFILLED': {
+    const { data } = action.payload;
+    state.isLoading = false;
+    state.isError = false;
+    state.userData = data.result;
+    state.isSuccess = true;
+    return { ...state };
+  }
+  case 'UPDATE_PROFILE_REJECTED': {
+    const { data } = action.payload;
+    state.isError = true;
+    state.errorMsg = data.message;
+    state.isSuccess = false;
     return { ...state };
   }
   case 'AUTH_LOGOUT': {
