@@ -1,5 +1,5 @@
 const initialState = {
-  num: 1
+  num: 0
 };
 
 const counter = (state = initialState, action) => {
