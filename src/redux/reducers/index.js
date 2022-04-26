@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import auth from './auth';
-import profile from './profile';
 import vehicle from './vehicle';
 import vehiclePopular from './vehiclePopular';
 import vehicleCategoryCar from './vehicleCategoryCar';
@@ -12,7 +11,6 @@ import counter from './counter';
 
 const rootReducers = combineReducers({
   auth,
-  profile,
   vehicle,
   vehiclePopular,
   vehicleCategoryCar,
