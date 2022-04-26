@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import Button from './Button';
 import { useNavigate } from 'react-router-dom';
-import Profile from '../assets/images/profile-image.png';
 import { FiMail } from 'react-icons/fi';
 import { FaPowerOff } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
