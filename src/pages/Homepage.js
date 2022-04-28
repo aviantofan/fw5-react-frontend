@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import { default as axios } from 'axios'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
-// import Merapi from '../assets/images/merapi.png'
 import User from '../assets/images/user-home.png';
 import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
@@ -22,12 +20,6 @@ export const Homepage = ({ getVehiclePopular }) => {
   useEffect(() => {
     getVehiclePopular();
   }, []);
-
-  // const getVehiclePopular = async () => {
-  //   const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
-  //   setVehiclePopular(data.results)
-  //   setPage(data.pageInfo)
-  // }
 
   const dataEmpty= [
     {image : noImage, name: 'Unknown', location:'No Location'},
