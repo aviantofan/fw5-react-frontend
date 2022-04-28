@@ -16,6 +16,7 @@ export const AddVehicle = () => {
   const hiddenFileInput = useRef(null);
   const [image, setImage] = useState();
   const [input, setInput] = useState();
+  const [paymentMethod, setPaymentMethod] = useState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,6 +25,11 @@ export const AddVehicle = () => {
   };
   const onDec = () => {
     dispatch(decrement());
+  };
+
+  const paymentMethodChange = (e) => {
+    e.target.type === 'radio';
+    setPaymentMethod(e.target.id);
   };
 
   const uploadFile = (e) => {
@@ -53,9 +59,10 @@ export const AddVehicle = () => {
       const capacity = e.target.elements['capacity'].value;
       const categoryId = e.target.elements['categoryId'].value;
       const reservationBefore = e.target.elements['reservationBefore'].value;
+      const paymentMethod = e.target.elements['paymentMethod'].value;
       const price = e.target.elements['price'].value;
-      const qty = counter.num;
-      const data = {image, name, color, loc, isAvailable, capacity, categoryId, reservationBefore, price, qty};
+      const stock = counter.num;
+      const data = {image, name, color, loc, isAvailable, capacity, categoryId, reservationBefore, paymentMethod, price, stock};
       dispatch(insertVehicle(data));
       navigate('/vehicleType');
     }
@@ -66,9 +73,10 @@ export const AddVehicle = () => {
     const capacity = e.target.elements['capacity'].value;
     const categoryId = e.target.elements['categoryId'].value;
     const reservationBefore = e.target.elements['reservationBefore'].value;
+    const paymentMethod = e.target.elements['paymentMethod'].value;
     const price = e.target.elements['price'].value;
-    const qty = counter.num;
-    const data = {name, color, loc, isAvailable, capacity, categoryId, reservationBefore, price, qty};
+    const stock = counter.num;
+    const data = {name, color, loc, isAvailable, capacity, categoryId, reservationBefore, paymentMethod, price, stock};
     console.log(data);
     dispatch(insertVehicle(data));
     navigate('/vehicleType');
@@ -152,6 +160,50 @@ export const AddVehicle = () => {
                   <label style={{ fontSize: 24, fontFamily:'Playfair Display', fontWeight:'bold'}}>Reservation Before</label>
                   <Input id='reservationBefore' name='reservationBefore' style={{ height:45 }} className="d-block w-100 form-control" type="text" />
                 </div>
+                <label style={{ fontSize: 24, fontFamily:'Playfair Display', fontWeight:'bold'}}>Payment Method</label>
+                <section className='addvehicle'>
+                  <div className="d-flex justify-content-center mb-5">
+                    <div className="me-5">
+                      <label className="radio-button" htmlFor="Cash">
+                        <input 
+                          type="radio" 
+                          name="paymentMethod"
+                          id='Cash'
+                          onChange={paymentMethodChange} 
+                          checked={paymentMethod === 'Cash'}
+                          value='Cash'/>
+                        <div className="checkmark"></div>
+                        <div className="text">Cash</div>
+                      </label>
+                    </div>
+                    <div className="me-5">
+                      <label className="radio-button" htmlFor="Transfer">
+                        <input 
+                          type="radio"
+                          name="paymentMethod"
+                          id='Transfer'
+                          onChange={paymentMethodChange} 
+                          checked={paymentMethod === 'Transfer'}
+                          value='Transfer'/>
+                        <div className="checkmark"></div>
+                        <div className="text">Transfer</div>
+                      </label>
+                    </div>
+                    <div>
+                      <label className="radio-button" htmlFor="Excash">
+                        <input 
+                          type="radio"
+                          name="paymentMethod"
+                          id='Excash'
+                          onChange={paymentMethodChange} 
+                          checked={paymentMethod === 'Excash'}
+                          value='Excash'/>
+                        <div className="checkmark"></div>
+                        <div className="text">Excash</div>
+                      </label>
+                    </div>
+                  </div>
+                </section>
                 <Button type='submit' className="filled w-100" style={{ cursor: 'pointer', fontWeight:'bold' }}>Save Item</Button>
               </div>
             </div>
