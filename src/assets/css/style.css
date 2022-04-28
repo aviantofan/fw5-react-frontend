@@ -935,7 +935,11 @@ section.profile-edit{
   font-family: 'Nunito', sans-serif;
   margin-top: 400px;
 }
-section.profile-edit label{
+section.addvehicle{
+  font-family: 'Nunito', sans-serif;
+  margin-top: 25px;
+}
+section.addvehicle label{
   font-weight: 700;
   cursor: pointer;
 }
