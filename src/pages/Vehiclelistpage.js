@@ -1,51 +1,33 @@
-import React, { /*Component*/ useEffect, useState } from 'react';
-// import NavLogin from '../components/NavLogin'
+import React, { useEffect, useState } from 'react';
 import { default as axios } from 'axios';
-import { Link, useNavigate, /*useParams*/ useSearchParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
-import { FaChevronLeft } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronCircleDown } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
+import { connect, useSelector } from 'react-redux';
+import { getVehicleList } from '../redux/actions/vehicleList';
+import Button from '../components/Button';
 
-export const Vehiclelistpage = () => {
-  const [listVehicle, setListVehicle] = useState([]);
-  const [searchParams, /*setSearchParams*/] = useSearchParams();
-  const [/*page*/, setPage] = useState([]);
+export const Vehiclelistpage = ({getVehicleList}) => {
+  const [vehicleList, setVehicleList] = useState([]);
+  const { vehicleList : List } = useSelector(state => state);
+  const [page, setPage] = useState({});
   const navigate = useNavigate();
-  // const { id } = useParams()
+
+  const getNextData = async (url) => {
+    const { data } = await axios.get(url);
+    setVehicleList([
+      ...vehicleList,
+      ...data.results
+    ]);
+    console.log(data.results);
+    setPage(data.pageInfo);
+  };
 
   useEffect(() => {
-    if (searchParams.get('name')) {
-      getDataSearchName(searchParams.get('name'));
-    } if (searchParams.get('location')) {
-      getDataSearchLoc(searchParams.get('location'));
-    } if (searchParams.get('categoryId')) {
-      getDataSearchCategory(searchParams.get('categoryId'));
-    }
-  });
-
-  const getDataSearchName = async (name) => {
-    const { data } = await axios.get(`http://localhost:5000/vehicles?name=${name}`);
-    setListVehicle(data.results);
-    setPage(data.pageInfo);
-  };
-
-  const getDataSearchLoc = async (location) => {
-    const { data } = await axios.get(`http://localhost:5000/vehicles?location=${location}`);
-    setListVehicle(data.results);
-    setPage(data.pageInfo);
-  };
-
-  const getDataSearchCategory = async (categoryId) => {
-    const { data } = await axios.get(`http://localhost:5000/vehicles?categoryId=${categoryId}`);
-    setListVehicle(data.results);
-    setPage(data.pageInfo);
-  };
-
-  // const getListVehicle = async () => {
-  //   const { data } = await axios.get(`http://localhost:5000/vehicles`);
-  //   setListVehicle(data.results);
-  //   setPage(data.pageInfo);
-  // }
+    window.scrollTo(0, 0);
+    getVehicleList();
+  }, []);
 
   const goToDetail = (id) => {
     navigate(`/vehicles/${id}`);
@@ -53,24 +35,45 @@ export const Vehiclelistpage = () => {
 
   return (
     <>
-      <body>
+      <section>
         <Navbar />
         <main className="container">
-          <section className="back pt-4">
-            <Link to="/vehicleType">
-              <FaChevronLeft />
-              <span>Vehicle Type</span>
-            </Link>
+          <section className="back">
+            <div className='pt-3'>
+              <Link to="/">
+                <FaChevronLeft />
+                <span>Vehicle List</span>
+              </Link>
+            </div>
           </section>
-
+          <section>
+            <div className='row mt-4'>
+              <div className='col'>
+                <select name='paymentMethod' className="form-select" >
+                  <option value="" style={{ display: 'none' }}>Sort</option>
+                  <option value="name">Name</option>
+                  <option value="price">Price</option>
+                </select>
+              </div>
+              <div className='col'>
+                <select name='paymentMethod' className="form-select" >
+                  <option value="desc" style={{ display: 'none' }}>Z-A</option>
+                  <option value="asc">A-Z</option>
+                </select>
+              </div>
+              <div className='col'>
+                <Button type="submit" className="filled w-100 h-100">Explore</Button>
+              </div>
+            </div>
+          </section>
           <section className="destination">
-            <div className="row">
+            <div className="row text-center mb-5" >
               <div className="col">
-                <h2 className="home">Search Found Items</h2>
+                <h2 className="home mb-4">List Of All Items</h2>
               </div>
             </div>
             <div className="row">
-              {listVehicle.map((data, idx) => {
+              {List.vehicleList?.map((data, idx) => {
                 return (
                   <div key={idx} className='col-sm-6 col-md-3 text-center item-list'>
                     <div className='my-2 d-inline-block position-relative'>
@@ -86,11 +89,24 @@ export const Vehiclelistpage = () => {
                 );
               })}
             </div>
+            <div className='row text-center mb-5'>
+              <section className='back mb-5'>
+                <button onClick={() => getNextData(List.pageInfo.next)} className='button-transparent pt-3'>
+                  <FaChevronCircleDown />
+                  <span>View More</span>
+                </button>
+              </section>
+            </div>
           </section>
         </main>
         <Footer />
-      </body>
+      </section>
     </>
   );
 };
-export default Vehiclelistpage;
+
+const mapStateToProps = state => ({ vehicleList : state.vehicleList });
+
+const mapDispatchToProps = { getVehicleList };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Vehiclelistpage);
