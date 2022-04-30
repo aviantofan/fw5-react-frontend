@@ -1,5 +1,6 @@
 const initialState={
   vehicle:{},
+  pageInfo:{},
   num:0,
   isLoading: false,
   isError: false,

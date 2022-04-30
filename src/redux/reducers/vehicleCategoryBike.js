@@ -18,13 +18,13 @@ const vehicleCategoryBike = (state = dataState, action) => {
     state.vehicleCategoryBike = data.results;
     state.pageInfo = data.pageInfo;
     state.isLoading = false;
-    state.isError = false;
+    state.error = false;
     return { ...state };
   }
   case 'GET_BIKE_REJECTED': {
     const { message } = action.payload.response.data;
     state.isLoading = false;
-    state.isError = true;
+    state.error = true;
     state.errorMsg = message;
     return { ...state };
   }
