@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 // import Navlogin from '../components/NavLogin'
 import Input from '../components/Input';
 import { FaChevronRight, FaSearch } from 'react-icons/fa';
-import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom';
+import { Link, useNavigate /*useSearchParams*/ } from 'react-router-dom';
 import { getVehiclePopular } from '../redux/actions/vehiclePopular';
 import { getCategoryCar } from '../redux/actions/vehicleCategoryCar';
 import { getCategoryMotorbike } from '../redux/actions/vehicleCategoryMotorbike';
@@ -131,10 +131,12 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
               </div>
               <div className="col">
                 <div className="direction justify-content-center">
-                  <button onClick={() => getNextDataPopular(pagePopular.next)} className="button-transparent mt-2">
+                  <Link to='/vehicleList'>
+                    <button className="button-transparent mt-2">
                     View all
-                    <FaChevronRight />
-                  </button>
+                      <FaChevronRight />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -181,10 +183,12 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
               </div>
               <div className="col">
                 <div className="direction justify-content-center">
-                  <button onClick={() => getNextDataCategoryCar(pageCar.next)} className="button-transparent mt-2">
+                  <Link to ='/vehicleList'>
+                    <button className="button-transparent mt-2">
                     View all
-                    <FaChevronRight />
-                  </button>
+                      <FaChevronRight />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -214,10 +218,12 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
               </div>
               <div className="col">
                 <div className="direction justify-content-center">
-                  <button onClick={() => getNextDataCategoryMotorbike(pageMotorbike.next)} className="button-transparent mt-2">
+                  <Link to='/vehicleList'>
+                    <button className="button-transparent mt-2">
                     View all
-                    <FaChevronRight />
-                  </button>
+                      <FaChevronRight />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -247,10 +253,12 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
               </div>
               <div className="col">
                 <div className="direction justify-content-center">
-                  <button onClick={() => getNextDataCategoryBike(pageBike.next)} className="button-transparent mt-2">
+                  <Link to='/vehicleList'>
+                    <button className="button-transparent mt-2">
                     View all
-                    <FaChevronRight />
-                  </button>
+                      <FaChevronRight />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
