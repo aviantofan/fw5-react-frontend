@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
 import User from '../assets/images/user-home.png';
-import { /*Link*/ useNavigate /*useSearchParams*/ } from 'react-router-dom';
+import { Link, useNavigate /*useSearchParams*/ } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
 import Input from '../components/Input';
 import { getVehiclePopular } from '../redux/actions/vehiclePopular';
@@ -45,7 +45,8 @@ export const Homepage = ({ getVehiclePopular }) => {
     event.preventDefault();
     const location = event.target.elements['location'].value;
     const categoryId = event.target.elements['categoryId'].value;
-    navigate(`/vehicles?location=${location}&categoryId=${categoryId}`, { replace: true });
+    const paymentMethod = event.target.elements['paymentMethod'].value;
+    navigate(`/vehicles?location=${location}&categoryId=${categoryId}&paymentMethod=${paymentMethod}`, { replace: true });
   };
   return (
     <>
@@ -85,11 +86,11 @@ export const Homepage = ({ getVehiclePopular }) => {
                 </div>
                 <div className="row select-option">
                   <div className="col-sm-5 mb-4 option">
-                    <select className="form-select" >
-                      <option value="">Payment</option>
-                      <option value="cash">Cash</option>
-                      <option value="tf">Transfer</option>
-                      <option value="va">Virtual Account</option>
+                    <select name='paymentMethod' className="form-select" >
+                      <option value="" style={{ display: 'none' }}>Payment</option>
+                      <option value="Cash">Cash</option>
+                      <option value="Transfer">Transfer</option>
+                      <option value="Excash">Excash</option>
                     </select>
                   </div>
                   <div className="col-sm-5 mb-5 option">
@@ -114,10 +115,12 @@ export const Homepage = ({ getVehiclePopular }) => {
               </div>
               <div className="col">
                 <div className="direction justify-content-center">
-                  <button onClick={() => getNextData(Popular.pageInfo.next)} className="button-transparent mt-2">
+                  <Link to='/vehicleList'>
+                    <button /*onClick={() => getNextData(Popular.pageInfo.next)}*/ className="button-transparent mt-2">
                     View all
-                    <FaChevronRight />
-                  </button>
+                      <FaChevronRight />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
