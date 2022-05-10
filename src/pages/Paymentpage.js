@@ -42,7 +42,7 @@ export const Paymentpage = ({ getVehicleDetail }) => {
     const isReturned = '1';
     const data = { userId, vehicleId, rentStartDate, rentEndDate, prepayment, isReturned };
     dispatch(postTransaction(token, data));
-    // navigate(`/history`)
+    navigate('/history');
   };
 
   const goToReservation = (id) => {
@@ -118,7 +118,7 @@ export const Paymentpage = ({ getVehicleDetail }) => {
                 <div className="col">
                   <div className="identity mb-3 d-flex flex-column">
                     <span className="fw-bold">Identity :</span>
-                    <span>{auth.userData.name} (+6290987682)</span>
+                    <span>{auth.userData.name} {auth.userData.phone}</span>
                     <span>{auth.userData.email}</span>
                   </div>
                 </div>
