@@ -11,8 +11,9 @@ export const insertVehicle = (data) =>{
   params.append ('capacity', data.capacity);
   params.append ('categoryId', data.categoryId);
   params.append ('reservationBefore', data.reservationBefore);
+  params.append ('paymentMethod', data.paymentMethod);
   params.append ('price', data.price);
-  params.append ('qty', data.qty);
+  params.append ('stock', data.stock);
   return({
     type:'VEHICLE_INSERT',
     payload: http(token).post('/vehicles', params)

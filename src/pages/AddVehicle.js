@@ -63,23 +63,23 @@ export const AddVehicle = () => {
       const price = e.target.elements['price'].value;
       const stock = counter.num;
       const data = {image, name, color, loc, isAvailable, capacity, categoryId, reservationBefore, paymentMethod, price, stock};
+      console.log(data);
       dispatch(insertVehicle(data));
-      navigate('/vehicleType');
+    }else{
+      const name = e.target.elements['name'].value;
+      const color = e.target.elements['color'].value;
+      const loc = e.target.elements['loc'].value;
+      const isAvailable = e.target.elements['isAvailable'].value;
+      const capacity = e.target.elements['capacity'].value;
+      const categoryId = e.target.elements['categoryId'].value;
+      const reservationBefore = e.target.elements['reservationBefore'].value;
+      const paymentMethod = e.target.elements['paymentMethod'].value;
+      const price = e.target.elements['price'].value;
+      const stock = counter.num;
+      const data = {name, color, loc, isAvailable, capacity, categoryId, reservationBefore, paymentMethod, price, stock};
+      console.log(data);
+      dispatch(insertVehicle(data));
     }
-    const name = e.target.elements['name'].value;
-    const color = e.target.elements['color'].value;
-    const loc = e.target.elements['loc'].value;
-    const isAvailable = e.target.elements['isAvailable'].value;
-    const capacity = e.target.elements['capacity'].value;
-    const categoryId = e.target.elements['categoryId'].value;
-    const reservationBefore = e.target.elements['reservationBefore'].value;
-    const paymentMethod = e.target.elements['paymentMethod'].value;
-    const price = e.target.elements['price'].value;
-    const stock = counter.num;
-    const data = {name, color, loc, isAvailable, capacity, categoryId, reservationBefore, paymentMethod, price, stock};
-    console.log(data);
-    dispatch(insertVehicle(data));
-    navigate('/vehicleType');
   };
   
   return (
