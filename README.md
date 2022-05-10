@@ -16,4 +16,4 @@ npm i
 npm run start
 ```
 ## DEPLOYMENT
-https://vehicool-frontend.netlify.app
+https://vehicool.netlify.app/
