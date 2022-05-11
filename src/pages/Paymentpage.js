@@ -1,12 +1,8 @@
 import React, { /*Component*/ useEffect /*useState*/ } from 'react';
-import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
-// import Navlogin from '../components/NavLogin'
 import NumberFormat from 'react-number-format';
-// import Payment from '../assets/images/payment.png'
 import { FaChevronLeft } from 'react-icons/fa';
 import { useParams, useNavigate } from 'react-router-dom';
-// import { getData } from '../helpers/http'
 import Button from '../components/Button';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { getVehicleDetail } from '../redux/actions/vehicleDetail';
@@ -16,6 +12,7 @@ import Navbar from '../components/Navbar';
 export const Paymentpage = ({ getVehicleDetail }) => {
   // const [vehicleDetail, setVehicle] = useState({})
   const { vehicleDetail: Detail } = useSelector(state => state);
+  const  transactions  = useSelector(state => state.transactions);
   const auth = useSelector(state => state.auth);
   const counter = useSelector(state => state.counter);
   const { id } = useParams();
@@ -26,21 +23,17 @@ export const Paymentpage = ({ getVehicleDetail }) => {
     getVehicleDetail(id);
   }, []);
 
-  // const getDataComponent = async (id) => {
-  //   const { data } = await getData(`${APP_URL}/vehicles/${id}`)
-  //   setVehicle(data.results)
-  // }
-
   const onPay = (e) => {
     e.preventDefault();
     const token = window.localStorage.getItem('token');
     const userId = auth.userData.id;
     const vehicleId = Detail.vehicleDetail.id;
-    const rentStartDate = '2021-09-10';
-    const rentEndDate = '2021-09-15';
+    const rentStartDate = transactions.data.rentStartDate;
+    const rentEndDate = transactions.data.rentEndDate;
     const prepayment = Detail.vehicleDetail.price * counter.num;
-    const isReturned = '1';
+    const isReturned = '0';
     const data = { userId, vehicleId, rentStartDate, rentEndDate, prepayment, isReturned };
+    console.log(data);
     dispatch(postTransaction(token, data));
     navigate('/history');
   };
@@ -98,7 +91,7 @@ export const Paymentpage = ({ getVehicleDetail }) => {
                       </div>
                       <div className='col text-center'>
                         <div className="dates">
-                          <span className="text-muted">Jan 18-20-2021</span>
+                          <span className="text-muted">{transactions?.data.rentStartDate}</span>
                         </div>
                       </div>
                     </div>
@@ -161,7 +154,7 @@ export const Paymentpage = ({ getVehicleDetail }) => {
     </>
   );
 };
-const mapStateToProps = state => ({ vehicleDetail: state.vehicleDetail });
+const mapStateToProps = state => ({ vehicleDetail: state.vehicleDetail});
 
 const mapDispatchToProps = { getVehicleDetail };
 
