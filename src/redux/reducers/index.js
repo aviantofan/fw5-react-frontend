@@ -10,6 +10,7 @@ import vehicleCategoryMotorbike from './vehicleCategoryMotorbike';
 import vehicleCategoryBike from './vehicleCategoryBike';
 import vehicleDetail from './vehicleDetail';
 import transactions from './transaction';
+import history from './history';
 import counter from './counter';
 
 const persistAuth = {
@@ -27,6 +28,7 @@ const rootReducers = combineReducers({
   vehicleCategoryBike,
   vehicleDetail,
   transactions,
+  history,
   counter
 });
 
