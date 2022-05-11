@@ -14,6 +14,7 @@ export const login = (email, password) => {
 export const register = (data) => {
   const param = new URLSearchParams(); //query string-like body
   param.append('name', data.name);
+  param.append('username', data.username);
   param.append('email', data.email);
   param.append('password', data.password);
   return ({

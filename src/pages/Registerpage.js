@@ -14,9 +14,10 @@ const Registerpage = () => {
   const onRegister = (e) => {
     e.preventDefault();
     const name = e.target.elements['name'].value;
+    const username = e.target.elements['username'].value;
     const email = e.target.elements['email'].value;
     const password = e.target.elements['password'].value;
-    const data = { name, email, password };
+    const data = { name, username, email, password };
     dispatch(register(data));
   };
 
@@ -58,6 +59,11 @@ const Registerpage = () => {
                     </div>
                     <div className="col-md-12">
                       <div className="mb-4">
+                        <Input placeholder="Username" name="username" type="text" className="email w-100" />
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <div className="mb-4">
                         <Input placeholder="Email" name="email" type="email" className="email w-100" />
                       </div>
                     </div>
@@ -68,7 +74,6 @@ const Registerpage = () => {
                     </div>
                     <div className='col-md-10'>
                       <div>
-                        {!auth.isError && auth.errorMsg && <div className='alert alert-success'>{auth.errorMsg}</div>}
                         {auth.isError && auth.errorMsg && <div className='alert alert-danger'>{auth.errorMsg}</div>}
                       </div>
                     </div>
