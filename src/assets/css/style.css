@@ -381,7 +381,7 @@ section.testimonials .profile-pic .prev svg {
   font-size: 24px;
   background-color: rgba(255, 255, 255, 0.5);
   color: white;
-  margin-top: 130px;
+  margin-top: 70px;
   margin-left: 120px;
 }
 .header-register .header-content div input.email{
@@ -807,6 +807,7 @@ form input::placeholder {
 }
 .history-contain:hover {
   justify-content: space-between;
+  margin-left: -200px;
 }
 .history-contain:hover .delete {
   display: block !important;
@@ -820,10 +821,8 @@ form input::placeholder {
 .weekly-history {
   margin-top: 40px;
 }
-.vehicle-image1,
-.vehicle-image2 {
+.vehicle-image {
   border-radius: 8px;
-  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
