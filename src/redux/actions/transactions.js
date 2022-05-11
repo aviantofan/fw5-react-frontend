@@ -13,3 +13,14 @@ export const postTransaction = (token, data) => {
     payload: http(token).post('/histories', params)
   });
 };
+
+export const getDataTransaction = (dataTransaction) => {
+  const data = {
+    'rentStartDate' : dataTransaction.rentStartDate,
+    'rentEndDate' : dataTransaction.rentEndDate
+  };
+  return({
+    type:'GET_DATA_TRANSACTION',
+    payload : data
+  });
+};

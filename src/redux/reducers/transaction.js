@@ -1,11 +1,16 @@
 const detailState = {
   pageInfo: {},
+  data: null,
   isLoading: false,
   isError: false,
 };
 
 const transactions = (state = detailState, action) => {
   switch (action.type) {
+  case 'GET_DATA_TRANSACTION': {
+    state.data = action.payload;
+    return { ...state };
+  }
   case 'POST_TRANSACTION_PENDING': {
     state.isLoading = true;
     state.isError = false;

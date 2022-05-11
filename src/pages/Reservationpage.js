@@ -1,18 +1,13 @@
 import React, { /*Component*/ useEffect /*useState*/ } from 'react';
-// import { Link } from 'react-router-dom'
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import Input from '../components/Input';
-// import Reversebuttonplusminus from '../components/Reversebuttonplusminus'
-// import Navlogin from '../components/NavLogin'
 import NumberFormat from 'react-number-format';
-// import Fixie from '../assets/images/fixie-reserved.png'
 import { FaChevronLeft, FaPlus, FaMinus } from 'react-icons/fa';
 import { useParams, useNavigate } from 'react-router-dom';
-// import { getData } from '../helpers/http'
 import Button from '../components/Button';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { getVehicleDetail } from '../redux/actions/vehicleDetail';
+import { getDataTransaction } from '../redux/actions/transactions';
 import { increment, decrement } from '../redux/actions/counter';
 
 export const Reservationpage = ({ getVehicleDetail }) => {
@@ -34,16 +29,16 @@ export const Reservationpage = ({ getVehicleDetail }) => {
     getVehicleDetail(id);
   }, []);
 
-  // const getDataComponent = async (id) => {
-  //   const { data } = await getData(`http://localhost:5000/vehicles/${id}`)
-  //   setVehicle(data.results)
-  // }
-
   const goToDetail = (id) => {
     navigate(`/vehicles/${id}`);
   };
 
   const goToPayment = (id) => {
+    const rentStartDate = document.getElementById('rentStartDate').value;
+    const rentEndDate = document.getElementById('rentEndDate').value;
+    const data = {rentStartDate, rentEndDate};
+    console.log(data);
+    dispatch(getDataTransaction(data));
     navigate(`/payment/${id}`);
   };
 
@@ -89,12 +84,10 @@ export const Reservationpage = ({ getVehicleDetail }) => {
                 <div className='col'>
                   <div className='row'>
                     <div className="col-12 mb-4">
-                      <Input className="form-option w-100" type="date"></Input>
+                      <input id='rentStartDate' className="form-option w-100" type="date"></input>
                     </div>
                     <div className="col-12 mb-4">
-                      <select className="form-select w-100">
-                        <option value="">1 Day</option>
-                      </select>
+                      <input id='rentEndDate' className="form-option w-100" type="date"></input>
                     </div>
                   </div>
                 </div>
