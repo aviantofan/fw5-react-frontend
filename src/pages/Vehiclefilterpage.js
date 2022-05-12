@@ -4,6 +4,7 @@ import { Link, useNavigate, /*useParams*/ useSearchParams } from 'react-router-d
 import Footer from '../components/Footer';
 import { FaChevronLeft } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
+import http from '../helpers/http';
 
 export const Vehiclefilterpage = () => {
   const [listVehicle, setListVehicle] = useState([]);
@@ -40,13 +41,13 @@ export const Vehiclefilterpage = () => {
   },[]);
 
   const getDataSearchName = async (name) => {
-    const { data } = await axios.get(`http://localhost:5000/vehicles?name=${name}`);
+    const { data } = await http().get(`/vehicles?name=${name}`);
     setListVehicle(data.results);
     setPage(data.pageInfo);
   };
 
   const getDataFilter = async (location, categoryId, paymentMethod) => {
-    const { data } = await axios.get(`http://localhost:5000/vehicles?location=${location}&categoryId=${categoryId}&paymentMethod=${paymentMethod}&limit=10&sort&order`);
+    const { data } = await http().get(`/vehicles?location=${location}&categoryId=${categoryId}&paymentMethod=${paymentMethod}&limit=10&sort&order`);
     setListVehicle(data.results);
     setPage(data.pageInfo);
   };
