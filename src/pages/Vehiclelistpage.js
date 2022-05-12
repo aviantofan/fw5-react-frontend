@@ -20,7 +20,6 @@ export const Vehiclelistpage = ({getVehicleList}) => {
       ...vehicleList,
       ...data.results
     ]);
-    console.log(data.results);
     setPage(data.pageInfo);
   };
 
