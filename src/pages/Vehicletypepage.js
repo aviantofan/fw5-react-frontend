@@ -14,14 +14,6 @@ import Navbar from '../components/Navbar';
 import noImage from '../assets/images/no-image.jpg';
 
 export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategoryMotorbike, getCategoryBike }) => {
-  const [vehiclePopular, setVehiclePopular] = useState([]);
-  const [vehicleCategoryCar, setVehicleCategoryCar] = useState([]);
-  const [vehicleCategoryMotorbike, setVehicleCategoryMotorbike] = useState([]);
-  const [vehicleCategoryBike, setVehicleCategoryBike] = useState([]);
-  const [pagePopular, setPagePopular] = useState({});
-  const [pageCar, setPageCar] = useState({});
-  const [pageMotorbike, setPageMotorbike] = useState({});
-  const [pageBike, setPageBike] = useState({});
   const { vehiclePopular: Popular, vehicleCategoryCar: Car, vehicleCategoryMotorbike: Motorbike, vehicleCategoryBike: Bike } = useSelector(state => state);
 
   const navigate = useNavigate();
@@ -40,66 +32,6 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
     {image : noImage, name: 'Unknown', location:'No Location'},
   ];
 
-  // const getVehiclePopular = async () => {
-  //   const { data } = await axios.get('http://localhost:5000/vehicles/p/populars?limit=4')
-  //   setVehiclePopular(data.results)
-  //   setPagePopular(data.pageInfo)
-  // }
-
-  // const getCategoryCar = async () => {
-  //   const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=1&limit=4')
-  //   setVehicleCategoryCar(data.results)
-  //   setPageCar(data.pageInfo)
-  // }
-
-  // const getCategoryMotorbike = async () => {
-  //   const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=2&limit=4')
-  //   setVehicleCategoryMotorbike(data.results)
-  //   setPageMotorbike(data.pageInfo)
-  // }
-
-  // const getCategoryBike = async () => {
-  //   const { data } = await axios.get('http://localhost:5000/vehicles/category?categoryId=3&limit=4')
-  //   setVehicleCategoryBike(data.results)
-  //   setPageBike(data.pageInfo)
-  // }
-
-  const getNextDataPopular = async (url) => {
-    const { data } = await axios.get(url);
-    setVehiclePopular([
-      ...vehiclePopular,
-      ...data.results
-    ]);
-    setPagePopular(data.pageInfo);
-  };
-
-  const getNextDataCategoryCar = async (url) => {
-    const { data } = await axios.get(url);
-    setVehicleCategoryCar([
-      ...vehicleCategoryCar,
-      ...data.results
-    ]);
-    setPageCar(data.pageInfo);
-  };
-
-  const getNextDataCategoryMotorbike = async (url) => {
-    const { data } = await axios.get(url);
-    setVehicleCategoryMotorbike([
-      ...vehicleCategoryMotorbike,
-      ...data.results
-    ]);
-    setPageMotorbike(data.pageInfo);
-  };
-
-  const getNextDataCategoryBike = async (url) => {
-    const { data } = await axios.get(url);
-    setVehicleCategoryBike([
-      ...vehicleCategoryBike,
-      ...data.results
-    ]);
-    setPageBike(data.pageInfo);
-  };
-
   const handleSearch = async (event) => {
     event.preventDefault();
     const name = event.target.elements['name'].value;
@@ -112,7 +44,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
 
   return (
     <>
-      <body>
+      <section>
         <Navbar />
         <main className="container">
           <section className="search">
@@ -282,7 +214,7 @@ export const Vehicletypepage = ({ getVehiclePopular, getCategoryCar, getCategory
           </section>
         </main>
         <Footer />
-      </body>
+      </section>
     </>
   );
 };

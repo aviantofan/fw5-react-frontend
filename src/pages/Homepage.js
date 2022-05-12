@@ -28,15 +28,6 @@ export const Homepage = ({ getVehiclePopular }) => {
     {image : noImage, name: 'Unknown', location:'No Location'},
   ];
 
-  const getNextData = async (url) => {
-    const { data } = getVehiclePopular(url);
-    setVehiclePopular([
-      ...vehiclePopular,
-      ...data.results
-    ]);
-    setPage(data.pageInfo);
-  };
-
   const goToDetail = (id) => {
     navigate(`/vehicles/${id}`);
   };
